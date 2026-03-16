@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scrollers – AI reklamní videa pro e-commerce značky</title>
   <meta name="description" content="AI kreativní studio. Pomáháme e-commerce značkám tvořit video kreativy rychleji, levněji a bez natáčení." />
+
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://scrollers.ai/" />
+  <meta property="og:title"       content="Scrollers – AI reklamní videa pro e-commerce značky" />
+  <meta property="og:description" content="AI kreativní studio. Pomáháme e-commerce značkám tvořit video kreativy rychleji, levněji a bez natáčení." />
+  <meta property="og:image"       content="https://scrollers.ai/og-image.jpg" />
+  <meta property="og:locale"      content="cs_CZ" />
+  <meta property="og:site_name"   content="Scrollers" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Scrollers – AI reklamní videa pro e-commerce značky" />
+  <meta name="twitter:description" content="AI kreativní studio. Pomáháme e-commerce značkám tvořit video kreativy rychleji, levněji a bez natáčení." />
+  <meta name="twitter:image"       content="https://scrollers.ai/og-image.jpg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://scrollers.ai/" />
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 110'><rect width='110' height='110' rx='28' fill='%230c0c20'/><path d='M73 27C73 14,37 14,37 35C37 51,75 51,75 67C75 88,39 88,39 75' stroke='url(%23g)' stroke-width='10' stroke-linecap='round' fill='none'/><defs><linearGradient id='g' x1='5' y1='5' x2='105' y2='105' gradientUnits='userSpaceOnUse'><stop stop-color='%237c6dfa'/><stop offset='1' stop-color='%232dd4bf'/></linearGradient></defs></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -89,7 +110,9 @@
     #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 20px 0; transition: all .3s; }
     #nav.sc { background: rgba(9,9,18,.92); backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); padding: 13px 0; }
     .ni { display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-size: clamp(18px,1.5vw,22px); font-weight: 900; letter-spacing: -.03em; text-decoration: none; background: linear-gradient(130deg,#fff 30%,var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .logo-mark { flex-shrink: 0; width: 34px; height: 34px; }
+    .logo-text { font-size: clamp(18px,1.5vw,22px); font-weight: 900; letter-spacing: -.03em; background: linear-gradient(130deg,#fff 30%,var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .nl { display: flex; align-items: center; gap: 28px; list-style: none; }
     .nl a { color: var(--text-muted); text-decoration: none; font-size: clamp(13px,.95vw,15px); font-weight: 500; transition: color .2s; }
     .nl a:hover { color: var(--text); }
@@ -141,7 +164,7 @@
       position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
       width: 54px; height: 6px; background: rgba(0,0,0,.9); border-radius: 3px; z-index: 10;
     }
-    .pf-screen { aspect-ratio: 9/19.5; position: relative; overflow: hidden; }
+    .pf-screen { aspect-ratio: 9/16; position: relative; overflow: hidden; }
 
     .pf-slide {
       position: absolute; inset: 0;
@@ -745,26 +768,27 @@
     .hero-visual { display: flex; align-items: flex-start; justify-content: center; padding-top: clamp(10px,2vw,24px); }
     .hero-visual .split-visual { width: 92%; }
 
-    /* slide-info hide on hover for interactive vimeo */
+    /* ── WWD phone slider ── */
+    /* slide-info hide on hover */
     .pf-slide.active:hover .slide-info { opacity:0; pointer-events:none; }
     .slide-info { transition: opacity .25s; }
 
-    /* ── fill phone containers without black bars ── */
-    /* Videos are 9:16, containers are 9:19.5 → scale width to fill height */
-    .pf-slide iframe {
-      position: absolute !important;
-      top: 0 !important; left: 50% !important;
-      width: calc(100% * 19.5 / 16) !important;
-      height: 100% !important;
-      transform: translateX(-50%) !important;
+    /* custom sound toggle button — visible only on hover */
+    .slide-sound {
+      position: absolute; top: 12px; right: 12px; z-index: 4;
+      display: flex; align-items: center; gap: 5px;
+      background: rgba(0,0,0,.62); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.18); border-radius: 100px;
+      color: #fff; padding: 6px 13px 6px 10px;
+      font-size: .7rem; font-weight: 700; font-family: inherit;
+      cursor: pointer; opacity: 0; pointer-events: none;
+      transition: opacity .25s, background .15s;
     }
-    .ph-scr iframe {
-      position: absolute !important;
-      top: 0 !important; left: 50% !important;
-      width: calc(100% * 19.5 / 16) !important;
-      height: 100% !important;
-      transform: translateX(-50%) !important;
-    }
+    .slide-sound svg { flex-shrink: 0; }
+    .slide-sound:hover { background: rgba(0,0,0,.88); }
+    .pf-slide.active:hover .slide-sound { opacity: 1; pointer-events: auto; }
+
+    /* ── showcase phones: background=1 fills automatically ── */
 
     /* wwd showcase slider */
     .wwd-showcase { display: flex; flex-direction: column; align-items: center; gap: 20px; }
@@ -808,6 +832,7 @@
        RESPONSIVE
     ══════════════════════════════ */
     @media (max-width: 980px) {
+      .logo-text { display: none; }
       .wwd-inner { grid-template-columns: 1fr; }
       .wwd-text { order: 1; }
       .split-visual { order: 2; }
@@ -849,7 +874,29 @@
 <nav id="nav">
   <div class="container">
     <div class="ni">
-      <a href="#hero" class="logo">Scrollers</a>
+      <a href="#hero" class="logo">
+        <svg class="logo-mark" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="nlg" x1="5" y1="5" x2="105" y2="105" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#d8b4fe"/>
+              <stop offset="0.48" stop-color="#7c6dfa"/>
+              <stop offset="1" stop-color="#2dd4bf"/>
+            </linearGradient>
+            <filter id="nGlow" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="110" height="110" rx="28" fill="#0c0c20"/>
+          <rect width="110" height="110" rx="28" fill="url(#nlg)" fill-opacity="0.09"/>
+          <rect x="0.5" y="0.5" width="109" height="109" rx="27.5" stroke="url(#nlg)" stroke-opacity="0.3" stroke-width="1"/>
+          <path d="M73 27C73 14,37 14,37 35C37 51,75 51,75 67C75 88,39 88,39 75"
+            stroke="url(#nlg)" stroke-width="10" stroke-linecap="round" fill="none" filter="url(#nGlow)"/>
+          <circle cx="82" cy="82" r="6" fill="url(#nlg)" fill-opacity="0.22"/>
+          <path d="M79.5 82 l5 -3 l0 6z" fill="url(#nlg)"/>
+        </svg>
+        <span class="logo-text">Scrollers</span>
+      </a>
       <ul class="nl">
         <li><a href="#compare">Proč AI</a></li>
         <li><a href="#services">Balíčky</a></li>
@@ -907,7 +954,7 @@
 
           <!-- AI side (behind) -->
           <div class="cs-side cs-ai">
-            <img src="https://i.imgur.com/5DriZTe.png" alt="AI video · Scrollers">
+            <img src="https://i.imgur.com/JeLALv7.jpeg" alt="AI video · Scrollers" loading="lazy">
             <div class="cs-shade"></div>
             <div class="cs-info cs-info-ai">
               <span class="split-label ai-lbl"><span class="lbl-dot"></span>AI video · Scrollers</span>
@@ -922,7 +969,7 @@
 
           <!-- Real side (clipped on top) -->
           <div class="cs-side cs-real" id="csReal">
-            <img src="https://i.imgur.com/zE1JayN.jpeg" alt="Skutečný influencer">
+            <img src="https://i.imgur.com/cbYiO7U.png" alt="Skutečný influencer" loading="lazy">
             <div class="cs-shade"></div>
             <div class="cs-info cs-info-real">
               <span class="split-label real-lbl"><span class="lbl-dot"></span>Skutečný influencer</span>
@@ -1018,7 +1065,11 @@
 
             <!-- Slide 1: Kulina miska -->
             <div class="pf-slide active">
-              <iframe src="https://player.vimeo.com/video/1173981601?badge=0&autopause=0&player_id=vwwd1&app_id=58479&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <iframe src="https://player.vimeo.com/video/1173981601?badge=0&autopause=0&player_id=vwwd1&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <span>Zapnout zvuk</span>
+              </button>
               <div class="slide-info">
                 <div class="si-type">AI UGC Video</div>
                 <div class="si-title">Recenze misky</div>
@@ -1028,17 +1079,25 @@
 
             <!-- Slide 2: Dermacol -->
             <div class="pf-slide">
-              <iframe src="https://player.vimeo.com/video/1173981367?badge=0&autopause=0&player_id=vwwd2&app_id=58479&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <iframe src="https://player.vimeo.com/video/1173981367?badge=0&autopause=0&player_id=vwwd2&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <span>Zapnout zvuk</span>
+              </button>
               <div class="slide-info">
                 <div class="si-type">AI UGC Video</div>
-                <div class="si-title">UGC video</div>
+                <div class="si-title">Recenze produktu</div>
                 <div class="si-brand">Dermacol.cz</div>
               </div>
             </div>
 
             <!-- Slide 3: Kulina panvica -->
             <div class="pf-slide">
-              <iframe src="https://player.vimeo.com/video/1173986088?badge=0&autopause=0&player_id=vwwd3&app_id=58479&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <iframe src="https://player.vimeo.com/video/1173986088?badge=0&autopause=0&player_id=vwwd3&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <span>Zapnout zvuk</span>
+              </button>
               <div class="slide-info">
                 <div class="si-type">Produktová reklama</div>
                 <div class="si-title">Recenze pánve</div>
@@ -1482,7 +1541,7 @@
             <iframe src="https://player.vimeo.com/video/1173981367?badge=0&autopause=0&player_id=vsc2&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;" allowfullscreen></iframe>
             <div class="ph-info-b">
               <div class="ph-lbl">AI UGC video</div>
-              <div class="ph-name">UGC video</div>
+              <div class="ph-name">Recenze produktu</div>
               <div class="ph-tag">Dermacol.cz</div>
             </div>
           </div>
@@ -1635,7 +1694,7 @@
       <!-- Bruno Duhár -->
       <div class="team-member fi">
         <div class="team-photo">
-          <img src="https://i.imgur.com/NcoLuyS.png" alt="Bruno Duhár" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+          <img src="https://i.imgur.com/NcoLuyS.png" alt="Bruno Duhár" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
         </div>
         <div>
           <div class="team-name">Bruno Duhár</div>
@@ -1653,7 +1712,7 @@
       <!-- Daniel Kráľ -->
       <div class="team-member fi d1">
         <div class="team-photo">
-          <img src="https://i.imgur.com/RO5Tbvh.png" alt="Daniel Kráľ" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+          <img src="https://i.imgur.com/RO5Tbvh.png" alt="Daniel Kráľ" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
         </div>
         <div>
           <div class="team-name">Daniel Kráľ</div>
@@ -1773,7 +1832,7 @@
       </div>
     </div>
     <div class="ft-bot">
-      <span class="ft-copy">© 2025 Scrollers. Všechna práva vyhrazena.</span>
+      <span class="ft-copy">© 2026 Scrollers. Všechna práva vyhrazena.</span>
       <span class="ft-made">Vytvořeno s <span>♥</span> a umělou inteligencí</span>
     </div>
   </div>
@@ -1781,7 +1840,7 @@
 
 <!-- Language switcher -->
 <div class="lang-sw" id="langSw">
-  <button class="lang-btn" id="langBtn">🇨🇿 <span id="langCurrent">CS</span></button>
+  <button class="lang-btn" id="langBtn">🇨🇿 <span id="langCurrent">CZ</span></button>
   <div class="lang-dropdown" id="langDropdown">
     <div class="lang-opt" data-lang="cs">🇨🇿 Čeština</div>
     <div class="lang-opt" data-lang="en">🇬🇧 English</div>
@@ -1835,18 +1894,50 @@
     return wwdPlayers;
   }
 
+  const wwdSoundBtns = document.querySelectorAll('#wwdScreen .slide-sound');
+
+  function resetSoundBtn(btn) {
+    btn.dataset.muted = 'true';
+    btn.querySelector('svg').innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
+    btn.querySelector('span').textContent = (typeof LANGS !== 'undefined' && LANGS[currentLang]) ? LANGS[currentLang]['wwd-sound-on'] : 'Zapnout zvuk';
+  }
+
   function wwdGoTo(idx) {
-    // Mute & pause previous video
     const players = getWwdPlayers();
+    // Mute previous + reset its button
     if (players && players[wwdCurrent]) {
       players[wwdCurrent].setMuted(true).catch(() => {});
     }
+    resetSoundBtn(wwdSoundBtns[wwdCurrent]);
     wwdSlides[wwdCurrent].classList.remove('active');
     wwdDots[wwdCurrent].classList.remove('active');
     wwdCurrent = (idx + wwdSlides.length) % wwdSlides.length;
     wwdSlides[wwdCurrent].classList.add('active');
     wwdDots[wwdCurrent].classList.add('active');
   }
+
+  // Sound toggle buttons
+  wwdSoundBtns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      const players = getWwdPlayers();
+      const player  = players && players[i];
+      if (!player) return;
+      const muted = btn.dataset.muted === 'true';
+      player.setMuted(!muted).catch(() => {});
+      btn.dataset.muted = String(!muted);
+      const tSound = (typeof LANGS !== 'undefined' && LANGS[currentLang]) ? LANGS[currentLang] : {};
+      if (!muted) {
+        // switching to muted
+        btn.querySelector('svg').innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
+        btn.querySelector('span').textContent = tSound['wwd-sound-on'] || 'Zapnout zvuk';
+      } else {
+        // switching to unmuted
+        btn.querySelector('svg').innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>';
+        btn.querySelector('span').textContent = tSound['wwd-sound-off'] || 'Ztlumit';
+      }
+    });
+  });
+
   document.getElementById('wwdNext').addEventListener('click', () => wwdGoTo(wwdCurrent + 1));
   document.getElementById('wwdPrev').addEventListener('click', () => wwdGoTo(wwdCurrent - 1));
   wwdDots.forEach((d, i) => d.addEventListener('click', () => wwdGoTo(i)));
@@ -2178,10 +2269,13 @@
       // FOOTER
       'ft-compare': 'Proč AI', 'ft-services': 'Balíčky', 'ft-calculator': 'Kalkulačka',
       'ft-showcase': 'Ukázky', 'ft-about': 'O nás', 'ft-faq': 'FAQ', 'ft-contact': 'Kontakt',
-      'ft-copy': '© 2025 Scrollers. Všechna práva vyhrazena.',
+      'ft-copy': '© 2026 Scrollers. Všechna práva vyhrazena.',
       'ft-made': 'Vytvořeno s <span>♥</span> a umělou inteligencí',
       // STICKY CTA
       'sticky-cta': 'Domluvit nezávazný call',
+      // WWD sound button
+      'wwd-sound-on':  'Zapnout zvuk',
+      'wwd-sound-off': 'Ztlumit',
       // FORM states
       'f-sending': 'Odesílám…',
       'f-retry': 'Zkuste to znovu',
@@ -2391,9 +2485,12 @@
       'faq-a6': 'We start with a short discovery call — we understand your brand and goals. Then we prepare the first sample creatives so you can see how our work looks in practice. Only then do you decide whether to continue. No commitment upfront.',
       'ft-compare': 'Why AI', 'ft-services': 'Packages', 'ft-calculator': 'Calculator',
       'ft-showcase': 'Showcase', 'ft-about': 'About', 'ft-faq': 'FAQ', 'ft-contact': 'Contact',
-      'ft-copy': '© 2025 Scrollers. All rights reserved.',
+      'ft-copy': '© 2026 Scrollers. All rights reserved.',
       'ft-made': 'Made with <span>♥</span> and artificial intelligence',
       'sticky-cta': 'Book a free call',
+      // WWD sound button
+      'wwd-sound-on':  'Sound on',
+      'wwd-sound-off': 'Mute',
       'f-sending': 'Sending…',
       'f-retry': 'Try again',
     }
@@ -2618,6 +2715,15 @@
     document.querySelector('#succMsg h3').textContent = t['succ-h3'];
     document.querySelector('#succMsg p').textContent = t['succ-p'];
 
+    // WWD sound buttons — reset to default (muted) label in current language
+    document.querySelectorAll('#wwdScreen .slide-sound').forEach(btn => {
+      if (btn.dataset.muted === 'true') {
+        btn.querySelector('span').textContent = t['wwd-sound-on'];
+      } else {
+        btn.querySelector('span').textContent = t['wwd-sound-off'];
+      }
+    });
+
     // FAQ
     document.querySelector('#faq .tag').innerHTML = '<span class="dot"></span>' + t['faq-tag'];
     document.querySelector('#faq .sh-title').innerHTML = t['faq-h2'];
@@ -2655,7 +2761,7 @@
     }
 
     // Update lang button display
-    document.getElementById('langCurrent').textContent = lang.toUpperCase();
+    document.getElementById('langCurrent').textContent = lang === 'cs' ? 'CZ' : 'EN';
     document.querySelector('.lang-btn').childNodes[0].textContent = lang === 'cs' ? '🇨🇿 ' : '🇬🇧 ';
     document.querySelectorAll('.lang-opt').forEach(o => {
       o.classList.toggle('active', o.dataset.lang === lang);
