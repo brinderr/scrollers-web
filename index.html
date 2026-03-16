@@ -749,9 +749,56 @@
     .pf-slide.active:hover .slide-info { opacity:0; pointer-events:none; }
     .slide-info { transition: opacity .25s; }
 
+    /* ── fill phone containers without black bars ── */
+    /* Videos are 9:16, containers are 9:19.5 → scale width to fill height */
+    .pf-slide iframe {
+      position: absolute !important;
+      top: 0 !important; left: 50% !important;
+      width: calc(100% * 19.5 / 16) !important;
+      height: 100% !important;
+      transform: translateX(-50%) !important;
+    }
+    .ph-scr iframe {
+      position: absolute !important;
+      top: 0 !important; left: 50% !important;
+      width: calc(100% * 19.5 / 16) !important;
+      height: 100% !important;
+      transform: translateX(-50%) !important;
+    }
+
     /* wwd showcase slider */
     .wwd-showcase { display: flex; flex-direction: column; align-items: center; gap: 20px; }
     .wwd-showcase-phone { width: clamp(240px, 28vw, 300px) !important; box-shadow: 0 40px 80px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.04), 0 0 80px rgba(124,109,250,.2) !important; }
+
+    /* ── language switcher ── */
+    .lang-sw { position:fixed; bottom:20px; left:20px; z-index:200; }
+    .lang-btn {
+      display:flex; align-items:center; gap:6px;
+      background:var(--surface); border:1px solid var(--border-hi);
+      border-radius:100px; padding:7px 13px;
+      font-family:inherit; font-size:.72rem; font-weight:700;
+      color:var(--text-muted); cursor:pointer;
+      transition:border-color .2s, background .2s;
+      box-shadow:0 4px 16px rgba(0,0,0,.4);
+    }
+    .lang-btn:hover { border-color:rgba(124,109,250,.4); background:rgba(124,109,250,.06); color:var(--text); }
+    .lang-dropdown {
+      position:absolute; bottom:calc(100% + 8px); left:0;
+      background:var(--surface); border:1px solid var(--border-hi);
+      border-radius:12px; overflow:hidden; min-width:130px;
+      box-shadow:0 8px 32px rgba(0,0,0,.5);
+      opacity:0; pointer-events:none; transform:translateY(6px);
+      transition:opacity .2s, transform .2s;
+    }
+    .lang-sw.open .lang-dropdown { opacity:1; pointer-events:auto; transform:translateY(0); }
+    .lang-opt {
+      display:flex; align-items:center; gap:8px;
+      padding:10px 14px; font-size:.72rem; font-weight:600;
+      color:var(--text-muted); cursor:pointer;
+      transition:background .15s, color .15s;
+    }
+    .lang-opt:hover { background:rgba(124,109,250,.1); color:var(--text); }
+    .lang-opt.active { color:var(--accent-2); }
 
     /* sticky mobile cta */
     .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 150; padding: 12px 20px 20px; background: linear-gradient(to top,rgba(9,9,18,1) 50%,transparent); }
@@ -875,7 +922,7 @@
 
           <!-- Real side (clipped on top) -->
           <div class="cs-side cs-real" id="csReal">
-            <img src="https://i.imgur.com/Sv7Y2JU.jpeg" alt="Skutečný influencer">
+            <img src="https://i.imgur.com/zE1JayN.jpeg" alt="Skutečný influencer">
             <div class="cs-shade"></div>
             <div class="cs-info cs-info-real">
               <span class="split-label real-lbl"><span class="lbl-dot"></span>Skutečný influencer</span>
@@ -1531,9 +1578,36 @@
     <div class="about-grid">
       <div class="about-vis fi">
         <div class="ab-glow"></div>
-        <div style="text-align:center;position:relative;z-index:1;">
-          <div class="ab-letter">S.</div>
-          <div style="font-size:clamp(12px,.9vw,14px);color:var(--text-muted);margin-top:4px;">AI Creative Studio</div>
+        <div style="text-align:center;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;">
+          <!-- Scrollers logomark -->
+          <svg width="148" height="148" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sLg" x1="5" y1="5" x2="105" y2="105" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#d8b4fe"/>
+                <stop offset="0.48" stop-color="#7c6dfa"/>
+                <stop offset="1" stop-color="#2dd4bf"/>
+              </linearGradient>
+              <filter id="sGlow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <!-- BG -->
+            <rect width="110" height="110" rx="28" fill="#0c0c20"/>
+            <rect width="110" height="110" rx="28" fill="url(#sLg)" fill-opacity="0.09"/>
+            <rect x="0.5" y="0.5" width="109" height="109" rx="27.5" stroke="url(#sLg)" stroke-opacity="0.3" stroke-width="1"/>
+            <!-- Inner glow halo -->
+            <ellipse cx="55" cy="55" rx="34" ry="34" fill="url(#sLg)" fill-opacity="0.09"/>
+            <!-- S lettermark: two bezier arcs forming a clean bold S -->
+            <path d="M 73 27 C 73 14, 37 14, 37 35 C 37 51, 75 51, 75 67 C 75 88, 39 88, 39 75"
+              stroke="url(#sLg)" stroke-width="10" stroke-linecap="round" fill="none" filter="url(#sGlow)"/>
+            <!-- Small play-dot accent bottom right -->
+            <circle cx="82" cy="82" r="7" fill="url(#sLg)" fill-opacity="0.18"/>
+            <path d="M79.5 82 l5 -3 l0 6 z" fill="url(#sLg)"/>
+          </svg>
+          <!-- Wordmark -->
+          <div style="margin-top:14px;font-size:clamp(20px,2.2vw,26px);font-weight:900;letter-spacing:-.03em;background:linear-gradient(130deg,#fff 30%,var(--accent-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Scrollers</div>
+          <div style="font-size:clamp(11px,.82vw,13px);color:var(--text-dim);margin-top:5px;letter-spacing:.11em;text-transform:uppercase;font-weight:600;">AI Creative Studio</div>
         </div>
       </div>
       <div class="about-txt">
@@ -1607,7 +1681,7 @@
         <h2 class="fi d1">Chcete AI video<br /><span class="gt">pro vaši značku?</span></h2>
         <p class="fi d2">Domluvme si krátký 20minutový call. Ukážeme vám ukázky a probereme, jak AI kreativy mohou fungovat pro váš e-shop.</p>
         <div class="ct-list fi d3">
-          <div class="ct-item"><div class="ct-ico">✉️</div><span>ahoj@scrollers.cz</span></div>
+          <div class="ct-item"><div class="ct-ico">✉️</div><a href="mailto:info@scrollers.ai" style="color:inherit;text-decoration:none;">info@scrollers.ai</a></div>
           <div class="ct-item"><div class="ct-ico">⚡</div><span>Odpovídáme do 24 hodin</span></div>
           <div class="ct-item"><div class="ct-ico">☎️</div><span>Call domluvíte přes formulář</span></div>
         </div>
@@ -1705,6 +1779,15 @@
   </div>
 </footer>
 
+<!-- Language switcher -->
+<div class="lang-sw" id="langSw">
+  <button class="lang-btn" id="langBtn">🇨🇿 <span id="langCurrent">CS</span></button>
+  <div class="lang-dropdown" id="langDropdown">
+    <div class="lang-opt" data-lang="cs">🇨🇿 Čeština</div>
+    <div class="lang-opt" data-lang="en">🇬🇧 English</div>
+  </div>
+</div>
+
 <div class="sticky-cta" id="stickyCta">
   <a href="#contact">
     Domluvit nezávazný call
@@ -1764,18 +1847,9 @@
     wwdSlides[wwdCurrent].classList.add('active');
     wwdDots[wwdCurrent].classList.add('active');
   }
-  function wwdStartAuto() { wwdTimer = setInterval(() => wwdGoTo(wwdCurrent + 1), 5000); }
-  function wwdResetAuto()  { clearInterval(wwdTimer); wwdStartAuto(); }
-
-  document.getElementById('wwdNext').addEventListener('click', () => { wwdGoTo(wwdCurrent + 1); wwdResetAuto(); });
-  document.getElementById('wwdPrev').addEventListener('click', () => { wwdGoTo(wwdCurrent - 1); wwdResetAuto(); });
-  wwdDots.forEach((d, i) => d.addEventListener('click', () => { wwdGoTo(i); wwdResetAuto(); }));
-  const wwdPf = document.querySelector('.wwd-showcase-phone');
-  if (wwdPf) {
-    wwdPf.addEventListener('mouseenter', () => clearInterval(wwdTimer));
-    wwdPf.addEventListener('mouseleave', wwdStartAuto);
-  }
-  wwdStartAuto();
+  document.getElementById('wwdNext').addEventListener('click', () => wwdGoTo(wwdCurrent + 1));
+  document.getElementById('wwdPrev').addEventListener('click', () => wwdGoTo(wwdCurrent - 1));
+  wwdDots.forEach((d, i) => d.addEventListener('click', () => wwdGoTo(i)));
 
   // ── Calculator ──
   const vSl = document.getElementById('vSl');
@@ -1879,6 +1953,728 @@
     window.addEventListener('touchmove', e => { if(dragging) setPos(e.touches[0].clientX); }, {passive:true});
     window.addEventListener('touchend',  () => { dragging=false; });
   })();
+
+  // ── Language switcher ──
+  const LANGS = {
+    cs: {
+      'title': 'Scrollers – AI reklamní videa pro e-commerce značky',
+      'meta-desc': 'AI kreativní studio. Pomáháme e-commerce značkám tvořit video kreativy rychleji, levněji a bez natáčení.',
+      // NAV
+      'nav-compare': 'Proč AI',
+      'nav-services': 'Balíčky',
+      'nav-calculator': 'Kalkulačka',
+      'nav-about': 'O nás',
+      'nav-faq': 'FAQ',
+      'nav-contact': 'Domluvit call',
+      // MOB MENU
+      'mob-compare': 'Proč AI',
+      'mob-services': 'Balíčky',
+      'mob-calculator': 'Kalkulačka',
+      'mob-about': 'O nás',
+      'mob-faq': 'FAQ',
+      'mob-contact': 'Kontakt',
+      // HERO
+      'hero-h1': 'Realistické AI videa,<br />která <span class="gt">nahrazují skutečné herce.</span>',
+      'hero-sub': 'Vytváříme AI obsah, který je k nerozeznání od skutečně natočeného videa — <strong>bez influencerů, bez natáčení.</strong> Ušetřete čas i náklady, aniž by zákazník poznal rozdíl.',
+      'hero-cta1': 'Nezávazná poptávka',
+      'hero-cta2': 'Spočítat úspory',
+      // COMPARISON SLIDER
+      'cs-bottom': '99,9 % lidí nerozezná AI video od natočeného',
+      'cs-ai-label': 'AI video · Scrollers',
+      'cs-real-label': 'Skutečný influencer',
+      'cs-bullet-ai-1': '✓ Rychlé dodání',
+      'cs-bullet-ai-2': '✓ Bez castingu a natáčení',
+      'cs-bullet-ai-3': '✓ Neomezené varianty',
+      'cs-bullet-ai-4': '✓ Zlomek ceny',
+      'cs-bullet-real-1': '✗ Casting a výběr herce',
+      'cs-bullet-real-2': '✗ Týdny přípravy',
+      'cs-bullet-real-3': '✗ Nejistý výsledek',
+      'cs-bullet-real-4': '✗ Vysoká cena',
+      // CLIENTS
+      'clients-label': 'Důvěřují nám',
+      'clients-coming-name': 'Vaše značka?',
+      'clients-coming-sub': '→ Domluvte call',
+      'client-aivh-type': 'Edukační platforma',
+      // WHAT WE DO
+      'wwd-tag': 'Co děláme',
+      'wwd-h2': 'AI videa, která vypadají <span class="gt">jako skutečná</span>',
+      'wwd-lead': 'Vytváříme video obsah pomocí AI, který je k nerozeznání od tradičně natočeného. Výsledek je stejně kvalitní jako práce skutečného influencera — ale rychlejší, levnější a plně pod vaší kontrolou.',
+      'wwd-use1-strong': 'Sociální sítě — organický i placený obsah',
+      'wwd-use1-span': 'UGC videa, Reels, TikTok, Facebook Ads — krátký obsah pro všechny formáty a platformy, který zastaví scroll.',
+      'wwd-use2-strong': 'Delší reklamní videa a storytelling',
+      'wwd-use2-span': 'Produktové rozborové videa, brand storytelling, YouTube reklamy — propracovanější formáty, které prodávají.',
+      'wwd-use3-strong': 'TV reklamy, brand filmy a komplexní projekty',
+      'wwd-use3-span': 'Profesionálně vypadající video obsah pro TV, větší kampaně nebo náročnější brand projekty — bez drahé produkce.',
+      'wwd-use4-strong': 'Edukační videa, AI klony a firemní obsah',
+      'wwd-use4-span': 'Tréninkové a onboardingové videa s AI klonem konkrétní osoby, kurzy, interní školení nebo vzdělávací platformy.',
+      'wwd-note': '<strong>Proč je to lepší než skutečný influencer?</strong><br />AI je předvídatelná, rychlá a nikdy nedodá něco jiného, než jste chtěli. Žádná domluva, žádné zpoždění, výsledek přesně podle briefu.',
+      // PILLARS
+      'pillars-title': 'Proč to dává smysl — <span class="gt">na první pohled</span>',
+      'pillar1-title': 'Bez natáčení',
+      'pillar1-sub': 'Stačí fotografie produktu. Žádný kameraman, studio ani herci. AI udělá zbytek.',
+      'pillar2-num': 'Méně',
+      'pillar2-title': 'Výrazně levněji',
+      'pillar2-sub': 'Zlomek ceny oproti tradičnímu natáčení nebo spolupráci s influencery.',
+      'pillar3-num': 'Dny',
+      'pillar3-title': '3× rychleji',
+      'pillar3-sub': 'Hotové za 3–5 pracovních dní. Tradiční produkce trvá týdny.',
+      'pillar4-title': 'Plná kontrola',
+      'pillar4-sub': 'Influenceři jsou nepředvídatelní. Výsledek od nás odpovídá přesně vašemu briefu.',
+      // COMPARE
+      'cmp-tag': 'Porovnání',
+      'cmp-h2': 'Jak to vypadá <span class="gt">v praxi</span>',
+      'cmp-sub': 'Jeden produkt, dva způsoby výroby videa. Podívejte se na rozdíl.',
+      'cmp-bad-title': 'Tradiční postup',
+      'cmp-bad-sub': 'Influencer nebo produkce',
+      'cmp-bad-1-strong': 'Hledání influencera',
+      'cmp-bad-1-span': 'Oslovení, domluva, smlouva, čekání na dostupnost — týden nebo víc.',
+      'cmp-bad-2-strong': 'Organizace natáčení',
+      'cmp-bad-2-span': 'Kameraman, lokace, cestování. Logistika stojí čas i peníze.',
+      'cmp-bad-3-strong': 'Výsledek je nejistý',
+      'cmp-bad-3-span': 'Influencer natočí to, co on chce. Ne vždy to odpovídá vašemu brandu.',
+      'cmp-bad-4-strong': 'Jedno video = velké peníze',
+      'cmp-bad-4-span': 'Na A/B testování a více kreativ jednoduše nemáte budget.',
+      'cmp-ctl-heading-bad': 'Jak dlouho to trvá',
+      'cmp-ctl-step1-bad': 'Domluva a brief',
+      'cmp-ctl-time1-bad': '3–5 dní',
+      'cmp-ctl-step2-bad': 'Natáčení',
+      'cmp-ctl-time2-bad': '1–2 týdny',
+      'cmp-ctl-step3-bad': 'Střih a schválení',
+      'cmp-ctl-time3-bad': '3–4 týdny celkem',
+      'cmp-good-sub': 'Moderní přístup',
+      'cmp-good-1-strong': 'Pošlete fotku produktu',
+      'cmp-good-1-span': 'Žádné natáčení, žádné fyzické zasílání. Stačí fotografie a brief.',
+      'cmp-good-2-strong': 'My vytvoříme video',
+      'cmp-good-2-span': 'AI generuje kreativy přesně podle vašeho brandu. Plná kontrola.',
+      'cmp-good-3-strong': 'Výsledek přesně podle briefu',
+      'cmp-good-3-span': 'Žádná překvapení. Video vypadá přesně jak chcete — a jako skutečné.',
+      'cmp-good-4-strong': 'Více kreativ za stejné peníze',
+      'cmp-good-4-span': 'Testujte více variant najednou. Algoritmy vám najdou vítěze rychleji.',
+      'cmp-ctl-heading-good': 'Jak dlouho to trvá',
+      'cmp-ctl-step1-good': 'Brief',
+      'cmp-ctl-time1-good': '1 den',
+      'cmp-ctl-step2-good': 'AI produkce',
+      'cmp-ctl-time2-good': '2–3 dny',
+      'cmp-ctl-step3-good': 'Hotové kreativy',
+      'cmp-ctl-time3-good': '3–5 dní celkem',
+      // CALCULATOR
+      'calc-tag': 'Kalkulačka úspor',
+      'calc-h2': 'Kolik <span class="gt">ušetříte</span><br />s AI kreativami?',
+      'calc-p': 'Nastavte, kolik videí aktuálně tvoříte a co vás jedno stojí. Okamžitě uvidíte, co byste mohli ušetřit. Výsledky jsou orientační — přesnou nabídku sestavíme na callu.',
+      'calc-label-v': 'Videí za měsíc',
+      'calc-label-c': 'Cena za jedno video (Kč)',
+      'calc-hint-v1': '1 video', 'calc-hint-v2': '30 videí',
+      'calc-hint-c1': '3 000 Kč', 'calc-hint-c2': '120 000 Kč',
+      'calc-header': 'Orientační výsledek',
+      'calc-bar-title': 'Porovnání měsíčních nákladů',
+      'calc-bar-now': 'Nyní',
+      'calc-bar-with': 'Se Scrollers',
+      'calc-lbl-savm': 'Měsíční úspora',
+      'calc-sub-savm': 'každý měsíc',
+      'calc-lbl-savy': 'Roční úspora',
+      'calc-sub-savy': 'za rok',
+      'calc-lbl-perv': 'Cena za video',
+      'calc-sub-perv': 'se Scrollers',
+      'calc-lbl-more': 'Videí za stejný budget',
+      'calc-sub-more': 'místo',
+      'calc-disclaimer': '⚠️ Výsledky jsou orientační. Skutečná cena závisí na rozsahu projektu a může být vyšší. Přesnou nabídku sestavíme na bezplatném callu.',
+      'calc-cta-p': 'Zajímá vás přesná cena pro váš konkrétní projekt?',
+      'calc-cta-btn': 'Chci přesnou nabídku',
+      // SERVICES
+      'svc-tag': 'Naše balíčky',
+      'svc-h2': 'Co pro vás <span class="gt">vytvoříme</span>',
+      'svc-sub': 'Vyberte balíček, který odpovídá vašim potřebám — nebo se ozvěte pro individuální řešení.',
+      'pkg1-badge': 'Nejpopulárnější',
+      'pkg1-desc': 'Krátké AI videa pro sociální sítě a reklamy. Realistický UGC formát — bez herců, bez natáčení.',
+      'pkg1-f1': 'Realistické AI UGC videa', 'pkg1-f2': 'Meta Ads & TikTok Ads kreativy',
+      'pkg1-f3': 'Instagram Reels, Stories, TikTok', 'pkg1-f4': 'A/B testování hooků a CTA', 'pkg1-f5': 'Vertikální 9:16 formát',
+      'pkg2-badge': 'All-in-one marketing',
+      'pkg2-desc': 'Veškerý AI vizuální obsah mimo sociální sítě — produktové fotky, bannery, TV spoty a další marketingové materiály.',
+      'pkg2-f1': 'Produktové fotky a vizuály', 'pkg2-f2': 'Bannery pro web, email & newsletter',
+      'pkg2-f3': 'Billboardy a tiskové materiály', 'pkg2-f4': 'TV spoty a YouTube videa', 'pkg2-f5': 'Display reklamy a Google Ads',
+      'pkg3-badge': 'Enterprise',
+      'pkg3-desc': 'Interní firemní videa a e-learning s AI avatary. Škálovatelné řešení — prezentujte obsah tváří konkrétní osoby bez natáčení.',
+      'pkg3-f1': 'Video kurzy a e-learning', 'pkg3-f2': 'Onboarding a interní školení',
+      'pkg3-f3': 'AI klon konkrétní osoby / mluvčího', 'pkg3-f4': 'Firemní prezentace a komunikace', 'pkg3-f5': 'Edukační platformy a LMS',
+      'pkg4-badge': 'Na míru',
+      'pkg4-desc': 'Poradenství, školení a vlastní řešení na míru. Naučíme váš tým pracovat s AI nebo vytvoříme cokoliv nestandardního.',
+      'pkg4-f1': 'Online školení AI tvorby pro firmy', 'pkg4-f2': 'Konzultace a strategické poradenství',
+      'pkg4-f3': 'Coaching v oblasti AI obsahu', 'pkg4-f4': 'Individuální řešení na míru', 'pkg4-f5': 'Dlouhodobá spolupráce',
+      'pkg-cta': 'Nezávazná poptávka →',
+      // SHOWCASE
+      'sc-tag': 'Jak to vypadá',
+      'sc-h2': 'Výsledky, které <span class="gt">vidíte hned</span>',
+      'sc-p': 'Naše AI videa vypadají jako profesionálně natočený obsah. Platformy jako Meta a TikTok tento formát odměňují — vypadá autenticky a zastavuje scroll.',
+      'sc-chip1': '📱 9:16 pro Reels a TikTok', 'sc-chip2': '🎯 Optimalizováno pro konverze',
+      'sc-chip3': '🔁 Neomezené varianty', 'sc-chip4': '⚡ Do 5 pracovních dní',
+      'sc-btn': 'Chci ukázky pro svůj produkt',
+      // HOW
+      'how-tag': 'Jak to funguje',
+      'how-h2': 'Od briefu k videu<br /><span class="gt">za 3 jednoduché kroky</span>',
+      'step1-h3': 'Pošlete brief a fotku',
+      'step1-p': 'Sdílíte nám produkt, cílovou skupinu a záměr. Stačí fotografie — fyzické zasílání není nutné. Zbytek zvládneme my.',
+      'step1-chip': '⚡ Rychlý onboarding',
+      'step2-h3': 'Tvoříme AI kreativy',
+      'step2-p': 'Náš tým připraví scénáře a AI produkuje videa přesně podle vašeho brandu, tónu a reklamního cíle.',
+      'step2-chip': '🎨 Plná kreativní kontrola',
+      'step3-h3': 'Každý měsíc nové kreativy',
+      'step3-p': 'V rámci měsíčního balíčku dostáváte pravidelný přísun nových unikátních videí. Algoritmy tak mají vždy čerstvý obsah k testování. Jednorázové zakázky jsou také možné — ale balíček vám dá lepší poměr ceny a výkonu.',
+      'step3-chip': '📦 Měsíční kreativní balíček',
+      // TESTIMONIALS
+      'testi-tag': 'Reference',
+      'testi-h2': 'Co říkají <span class="gt">naši klienti</span>',
+      'testi1-quote': '„Se Scrollers jsme konečně dokázali zásobovat kampaně pravidelným proudem čerstvých kreativ. Příprava jednoho videa trvala dříve týdny — teď to máme do pěti dní a testujeme mnohem více variant najednou."',
+      'testi1-name': 'Marketing tým', 'testi1-role': 'Performance marketing',
+      'testi2-quote': '„Jako e-shop s tisíci produkty jsme potřebovali škálovatelné řešení pro video obsah. AI kreativy od Scrollers nám umožnily pokrýt mnohem víc kategorií bez navyšování produkčního rozpočtu."',
+      'testi2-name': 'E-commerce tým', 'testi2-role': 'Digitální marketing',
+      // ABOUT
+      'about-tag': 'O nás',
+      'about-h2': 'Nejsme agentura.<br /><span class="gt">Jsme AI kreativní studio.</span>',
+      'about-p1': 'Scrollers je studio zaměřené na tvorbu realistického video obsahu pomocí moderních AI nástrojů. Pomáháme firmám tvořit obsah rychle, škálovatelně a bez zbytečných nákladů — výsledek je k nerozeznání od tradičně natočeného videa.',
+      'about-p2': 'Věříme, že dobrý obsah nemusí stát jmění ani trvat týdny. AI to změnila — a my vám to přinášíme.',
+      'about-val1': 'AI-first', 'about-val2': 'Rychlost', 'about-val3': 'Výsledky', 'about-val4': 'Transparentnost', 'about-val5': 'Škálovatelnost',
+      'team-tag': 'Náš tím',
+      'team-h3': 'Lidé za <span class="gt">Scrollers</span>',
+      'bruno-role': 'Vedoucí AI tvorby',
+      'bruno-bio': 'Specialista na tvorbu realistického AI video obsahu s hlubokými zkušenostmi v oblasti AI produkce. Vede tým kreativních tvůrců stojících za výsledným obsahem pro naše klienty. Expert na nejnovější AI nástroje a technologie pro video tvorbu — od konceptu až po finální kreativy.',
+      'daniel-role': 'Vedoucí obchodu & procesů',
+      'daniel-bio': 'Expert na digitální marketing, e-commerce a online reklamu. Jako ředitel e-commerce ve společnosti Dermacol získal hluboké zkušenosti v oblasti výkonnostního marketingu, Amazon Marketplace a škálování online prodeje. Ve Scrollers zajišťuje komunikaci s klienty a strategický rozvoj agentury.',
+      // CONTACT
+      'ct-tag': 'Kontakt',
+      'ct-h2': 'Chcete AI video<br /><span class="gt">pro vaši značku?</span>',
+      'ct-p': 'Domluvme si krátký 20minutový call. Ukážeme vám ukázky a probereme, jak AI kreativy mohou fungovat pro váš e-shop.',
+      'ct-info1': 'Odpovídáme do 24 hodin',
+      'ct-info2': 'Call domluvíte přes formulář',
+      'f-label-name': 'Jméno', 'f-ph-name': 'Jan Novák',
+      'f-label-firm': 'Firma / E-shop', 'f-ph-firm': 'Váš e-shop',
+      'f-label-email': 'E-mail', 'f-ph-email': 'jan@vaseznacka.cz',
+      'f-label-pkg': 'Co vás zajímá?',
+      'f-opt0': 'Vyberte balíček',
+      'f-opt1': 'Social & Paid Ads (UGC videa, Meta/TikTok Ads)',
+      'f-opt2': 'Marketingové vizuály & Reklamy',
+      'f-opt3': 'AI obsah pro firmy (kurzy, školení, onboarding)',
+      'f-opt4': 'Custom & Poradenství (konzultace, coaching)',
+      'f-opt5': 'Chci se nejdřív poradit',
+      'f-label-msg': 'Zpráva (volitelné)', 'f-ph-msg': 'Řekněte nám více o vašem produktu nebo projektu…',
+      'f-submit': 'Odeslat poptávku',
+      'f-note': 'Nezávazné · Odpovídáme do 24 hodin v pracovní dny',
+      'succ-h3': 'Zpráva odeslána!',
+      'succ-p': 'Děkujeme za zájem. Ozveme se vám do 24 hodin.',
+      // FAQ
+      'faq-tag': 'Časté dotazy',
+      'faq-h2': 'Máte otázky?<br /><span class="gt">Máme odpovědi.</span>',
+      'faq-q1': 'Je na videích poznat, že jsou vytvořena AI?',
+      'faq-a1': 'Naše videa jsou navržena tak, aby vypadala jako přirozený UGC obsah nebo profesionálně produkované reklamy. Při správném briefu je výsledek od tradičně natočeného videa k nerozeznání. Meta a TikTok AI obsah aktivně podporují — platformám nezáleží na způsobu výroby, ale na angažovanosti a výkonu.',
+      'faq-q2': 'Musím posílat fyzický produkt?',
+      'faq-a2': 'Ne — a to je jedna z největších výhod AI produkce. Stačí nám fotografie vašeho produktu a popis. Žádné balení, žádné zasílání, žádné čekání na doručení. Celý proces probíhá online a je díky tomu mnohem rychlejší a pohodlnější.',
+      'faq-q3': 'Jak dlouho trvá výroba jednoho videa?',
+      'faq-a3': 'Standardní video kreativa je hotová do 3–5 pracovních dní od schválení briefu. U složitějších kampaňových videí počítejte s 5–7 dny. Urgentní zakázky řešíme individuálně.',
+      'faq-q4': 'Jak funguje měsíční balíček?',
+      'faq-a4': 'V rámci měsíčního balíčku dostáváte pravidelný přísun nových kreativ každý měsíc — takže vaše kampaně mají vždy čerstvý obsah pro testování. Balíček je výrazně výhodnější než jednorázové zakázky. Jednorázová produkce je také možná, ale cena za video vyjde dráže.',
+      'faq-q5': 'Pro jaké platformy videa vytváříte?',
+      'faq-a5': 'Primárně Meta (Facebook a Instagram), TikTok a YouTube. Dodáváme ve správných formátech — vertikální 9:16 pro Stories a Reels, čtvercové 1:1 nebo horizontální 16:9 dle potřeby.',
+      'faq-q6': 'Jak začít, pokud jsme nikdy AI video nepoužívali?',
+      'faq-a6': 'Začínáme krátkým discovery callem — pochopíme váš brand a cíle. Pak připravíme první ukázkové kreativy, na nichž vidíte, jak naše práce vypadá v praxi. Teprve poté se rozhodujete o pokračování. Žádný závazek předem.',
+      // FOOTER
+      'ft-compare': 'Proč AI', 'ft-services': 'Balíčky', 'ft-calculator': 'Kalkulačka',
+      'ft-showcase': 'Ukázky', 'ft-about': 'O nás', 'ft-faq': 'FAQ', 'ft-contact': 'Kontakt',
+      'ft-copy': '© 2025 Scrollers. Všechna práva vyhrazena.',
+      'ft-made': 'Vytvořeno s <span>♥</span> a umělou inteligencí',
+      // STICKY CTA
+      'sticky-cta': 'Domluvit nezávazný call',
+      // FORM states
+      'f-sending': 'Odesílám…',
+      'f-retry': 'Zkuste to znovu',
+    },
+    en: {
+      'title': 'Scrollers – AI Ad Videos for E-Commerce Brands',
+      'meta-desc': 'AI creative studio. We help e-commerce brands create video creatives faster, cheaper, and without filming.',
+      'nav-compare': 'Why AI',
+      'nav-services': 'Packages',
+      'nav-calculator': 'Calculator',
+      'nav-about': 'About',
+      'nav-faq': 'FAQ',
+      'nav-contact': 'Book a call',
+      'mob-compare': 'Why AI',
+      'mob-services': 'Packages',
+      'mob-calculator': 'Calculator',
+      'mob-about': 'About',
+      'mob-faq': 'FAQ',
+      'mob-contact': 'Contact',
+      'hero-h1': 'Realistic AI videos<br />that <span class="gt">replace real actors.</span>',
+      'hero-sub': 'We create AI content indistinguishable from real footage — <strong>no influencers, no filming.</strong> Save time and costs while customers can\'t tell the difference.',
+      'hero-cta1': 'Get a free quote',
+      'hero-cta2': 'Calculate savings',
+      'cs-bottom': '99.9% of people can\'t tell AI video from real footage',
+      'cs-ai-label': 'AI video · Scrollers',
+      'cs-real-label': 'Real influencer',
+      'cs-bullet-ai-1': '✓ Fast delivery',
+      'cs-bullet-ai-2': '✓ No casting or filming',
+      'cs-bullet-ai-3': '✓ Unlimited variants',
+      'cs-bullet-ai-4': '✓ Fraction of the cost',
+      'cs-bullet-real-1': '✗ Casting & actor selection',
+      'cs-bullet-real-2': '✗ Weeks of preparation',
+      'cs-bullet-real-3': '✗ Uncertain outcome',
+      'cs-bullet-real-4': '✗ High cost',
+      'clients-label': 'Trusted by',
+      'clients-coming-name': 'Your brand?',
+      'clients-coming-sub': '→ Book a call',
+      'client-aivh-type': 'Educational platform',
+      'wwd-tag': 'What we do',
+      'wwd-h2': 'AI videos that look <span class="gt">completely real</span>',
+      'wwd-lead': 'We create AI video content indistinguishable from traditionally filmed footage. The result is just as high quality as a real influencer — but faster, cheaper, and fully under your control.',
+      'wwd-use1-strong': 'Social media — organic & paid content',
+      'wwd-use1-span': 'UGC videos, Reels, TikTok, Facebook Ads — short content for all formats and platforms that stops the scroll.',
+      'wwd-use2-strong': 'Longer ad videos and brand storytelling',
+      'wwd-use2-span': 'Product review videos, brand storytelling, YouTube ads — more elaborate formats that sell.',
+      'wwd-use3-strong': 'TV commercials, brand films & complex projects',
+      'wwd-use3-span': 'Professionally-looking video content for TV, larger campaigns or demanding brand projects — without expensive production.',
+      'wwd-use4-strong': 'Educational videos, AI clones & corporate content',
+      'wwd-use4-span': 'Training and onboarding videos with an AI clone of a specific person, courses, internal training, or educational platforms.',
+      'wwd-note': '<strong>Why is this better than a real influencer?</strong><br />AI is predictable, fast and never delivers something different than what you wanted. No negotiations, no delays — result exactly as briefed.',
+      'pillars-title': 'Why it makes sense — <span class="gt">at first glance</span>',
+      'pillar1-title': 'No filming needed',
+      'pillar1-sub': 'Just a product photo. No cameraman, studio or actors. AI does the rest.',
+      'pillar2-num': 'Less',
+      'pillar2-title': 'Significantly cheaper',
+      'pillar2-sub': 'A fraction of the cost compared to traditional filming or influencer collaborations.',
+      'pillar3-num': 'Days',
+      'pillar3-title': '3× faster',
+      'pillar3-sub': 'Done in 3–5 business days. Traditional production takes weeks.',
+      'pillar4-title': 'Full control',
+      'pillar4-sub': 'Influencers are unpredictable. Our results match exactly what you briefed.',
+      'cmp-tag': 'Comparison',
+      'cmp-h2': 'How it looks <span class="gt">in practice</span>',
+      'cmp-sub': 'One product, two ways to make a video. See the difference.',
+      'cmp-bad-title': 'Traditional approach',
+      'cmp-bad-sub': 'Influencer or production',
+      'cmp-bad-1-strong': 'Finding an influencer',
+      'cmp-bad-1-span': 'Outreach, negotiation, contract, waiting for availability — a week or more.',
+      'cmp-bad-2-strong': 'Organizing the shoot',
+      'cmp-bad-2-span': 'Cameraman, location, travel. Logistics cost time and money.',
+      'cmp-bad-3-strong': 'Uncertain outcome',
+      'cmp-bad-3-span': 'The influencer films what they want. It doesn\'t always match your brand.',
+      'cmp-bad-4-strong': 'One video = big money',
+      'cmp-bad-4-span': 'You simply don\'t have the budget for A/B testing and multiple creatives.',
+      'cmp-ctl-heading-bad': 'How long it takes',
+      'cmp-ctl-step1-bad': 'Brief & negotiation',
+      'cmp-ctl-time1-bad': '3–5 days',
+      'cmp-ctl-step2-bad': 'Filming',
+      'cmp-ctl-time2-bad': '1–2 weeks',
+      'cmp-ctl-step3-bad': 'Editing & approval',
+      'cmp-ctl-time3-bad': '3–4 weeks total',
+      'cmp-good-sub': 'Modern approach',
+      'cmp-good-1-strong': 'Send a product photo',
+      'cmp-good-1-span': 'No filming, no physical shipping. Just a photo and a brief.',
+      'cmp-good-2-strong': 'We create the video',
+      'cmp-good-2-span': 'AI generates creatives exactly to your brand. Full control.',
+      'cmp-good-3-strong': 'Result exactly as briefed',
+      'cmp-good-3-span': 'No surprises. The video looks exactly how you want — and like real footage.',
+      'cmp-good-4-strong': 'More creatives for the same budget',
+      'cmp-good-4-span': 'Test multiple variants at once. Algorithms find your winner faster.',
+      'cmp-ctl-heading-good': 'How long it takes',
+      'cmp-ctl-step1-good': 'Brief',
+      'cmp-ctl-time1-good': '1 day',
+      'cmp-ctl-step2-good': 'AI production',
+      'cmp-ctl-time2-good': '2–3 days',
+      'cmp-ctl-step3-good': 'Finished creatives',
+      'cmp-ctl-time3-good': '3–5 days total',
+      'calc-tag': 'Savings calculator',
+      'calc-h2': 'How much <span class="gt">will you save</span><br />with AI creatives?',
+      'calc-p': 'Set how many videos you currently make and what one costs. You\'ll instantly see what you could save. Results are indicative — we\'ll build the exact offer on a call.',
+      'calc-label-v': 'Videos per month',
+      'calc-label-c': 'Price per video (CZK)',
+      'calc-hint-v1': '1 video', 'calc-hint-v2': '30 videos',
+      'calc-hint-c1': '3,000 CZK', 'calc-hint-c2': '120,000 CZK',
+      'calc-header': 'Indicative result',
+      'calc-bar-title': 'Monthly cost comparison',
+      'calc-bar-now': 'Now',
+      'calc-bar-with': 'With Scrollers',
+      'calc-lbl-savm': 'Monthly savings',
+      'calc-sub-savm': 'every month',
+      'calc-lbl-savy': 'Annual savings',
+      'calc-sub-savy': 'per year',
+      'calc-lbl-perv': 'Price per video',
+      'calc-sub-perv': 'with Scrollers',
+      'calc-lbl-more': 'Videos for same budget',
+      'calc-sub-more': 'instead of',
+      'calc-disclaimer': '⚠️ Results are indicative. Actual price depends on project scope and may be higher. We\'ll build an exact offer on a free call.',
+      'calc-cta-p': 'Want an exact price for your specific project?',
+      'calc-cta-btn': 'Get exact pricing',
+      'svc-tag': 'Our packages',
+      'svc-h2': 'What we\'ll <span class="gt">create for you</span>',
+      'svc-sub': 'Choose the package that fits your needs — or reach out for a custom solution.',
+      'pkg1-badge': 'Most popular',
+      'pkg1-desc': 'Short AI videos for social media and ads. Realistic UGC format — no actors, no filming.',
+      'pkg1-f1': 'Realistic AI UGC videos', 'pkg1-f2': 'Meta Ads & TikTok Ads creatives',
+      'pkg1-f3': 'Instagram Reels, Stories, TikTok', 'pkg1-f4': 'A/B testing of hooks and CTAs', 'pkg1-f5': 'Vertical 9:16 format',
+      'pkg2-badge': 'All-in-one marketing',
+      'pkg2-desc': 'All AI visual content outside social media — product photos, banners, TV spots, and other marketing materials.',
+      'pkg2-f1': 'Product photos and visuals', 'pkg2-f2': 'Banners for web, email & newsletter',
+      'pkg2-f3': 'Billboards and print materials', 'pkg2-f4': 'TV spots and YouTube videos', 'pkg2-f5': 'Display ads and Google Ads',
+      'pkg3-badge': 'Enterprise',
+      'pkg3-desc': 'Internal corporate videos and e-learning with AI avatars. Scalable solution — present content with a specific person\'s face without filming.',
+      'pkg3-f1': 'Video courses and e-learning', 'pkg3-f2': 'Onboarding and internal training',
+      'pkg3-f3': 'AI clone of a specific person / spokesperson', 'pkg3-f4': 'Corporate presentations and communications', 'pkg3-f5': 'Educational platforms and LMS',
+      'pkg4-badge': 'Custom',
+      'pkg4-desc': 'Consulting, training, and custom-built solutions. We\'ll train your team to work with AI or create anything non-standard.',
+      'pkg4-f1': 'Online AI creation training for companies', 'pkg4-f2': 'Consulting and strategic advisory',
+      'pkg4-f3': 'Coaching in AI content creation', 'pkg4-f4': 'Individual custom solutions', 'pkg4-f5': 'Long-term partnership',
+      'pkg-cta': 'Free inquiry →',
+      'sc-tag': 'See the results',
+      'sc-h2': 'Results you <span class="gt">see immediately</span>',
+      'sc-p': 'Our AI videos look like professionally filmed content. Platforms like Meta and TikTok reward this format — it looks authentic and stops the scroll.',
+      'sc-chip1': '📱 9:16 for Reels and TikTok', 'sc-chip2': '🎯 Optimized for conversions',
+      'sc-chip3': '🔁 Unlimited variants', 'sc-chip4': '⚡ Within 5 business days',
+      'sc-btn': 'Get samples for my product',
+      'how-tag': 'How it works',
+      'how-h2': 'From brief to video<br /><span class="gt">in 3 simple steps</span>',
+      'step1-h3': 'Send your brief & photo',
+      'step1-p': 'Share your product, target audience and intent. Just a photo — no physical shipping needed. We handle the rest.',
+      'step1-chip': '⚡ Quick onboarding',
+      'step2-h3': 'We create AI creatives',
+      'step2-p': 'Our team prepares scripts and AI produces videos exactly to your brand, tone and advertising goal.',
+      'step2-chip': '🎨 Full creative control',
+      'step3-h3': 'New creatives every month',
+      'step3-p': 'Within a monthly package you receive a regular stream of new unique videos. Algorithms always have fresh content to test. One-off orders are also possible — but the package gives you a better price-performance ratio.',
+      'step3-chip': '📦 Monthly creative package',
+      'testi-tag': 'Testimonials',
+      'testi-h2': 'What our <span class="gt">clients say</span>',
+      'testi1-quote': '"With Scrollers we were finally able to supply our campaigns with a steady stream of fresh creatives. Preparing one video used to take weeks — now we have it within five days and test many more variants at once."',
+      'testi1-name': 'Marketing team', 'testi1-role': 'Performance marketing',
+      'testi2-quote': '"As an e-shop with thousands of products we needed a scalable solution for video content. AI creatives from Scrollers allowed us to cover far more categories without increasing our production budget."',
+      'testi2-name': 'E-commerce team', 'testi2-role': 'Digital marketing',
+      'about-tag': 'About us',
+      'about-h2': 'We\'re not an agency.<br /><span class="gt">We\'re an AI creative studio.</span>',
+      'about-p1': 'Scrollers is a studio focused on creating realistic video content using modern AI tools. We help companies create content quickly, scalably, and without unnecessary costs — the result is indistinguishable from traditionally filmed video.',
+      'about-p2': 'We believe great content doesn\'t have to cost a fortune or take weeks. AI changed that — and we bring it to you.',
+      'about-val1': 'AI-first', 'about-val2': 'Speed', 'about-val3': 'Results', 'about-val4': 'Transparency', 'about-val5': 'Scalability',
+      'team-tag': 'Our team',
+      'team-h3': 'The people behind <span class="gt">Scrollers</span>',
+      'bruno-role': 'Head of AI Production',
+      'bruno-bio': 'Specialist in creating realistic AI video content with deep experience in AI production. Leads the team of creative producers behind the content for our clients. Expert in the latest AI tools and technologies for video creation — from concept to final creatives.',
+      'daniel-role': 'Head of Business & Operations',
+      'daniel-bio': 'Expert in digital marketing, e-commerce and online advertising. As e-commerce director at Dermacol, gained deep experience in performance marketing, Amazon Marketplace and scaling online sales. At Scrollers he manages client communications and strategic agency development.',
+      'ct-tag': 'Contact',
+      'ct-h2': 'Want an AI video<br /><span class="gt">for your brand?</span>',
+      'ct-p': 'Let\'s schedule a short 20-minute call. We\'ll show you samples and discuss how AI creatives can work for your e-shop.',
+      'ct-info1': 'We reply within 24 hours',
+      'ct-info2': 'Schedule a call via the form',
+      'f-label-name': 'Name', 'f-ph-name': 'John Smith',
+      'f-label-firm': 'Company / E-shop', 'f-ph-firm': 'Your e-shop',
+      'f-label-email': 'Email', 'f-ph-email': 'john@yourbrand.com',
+      'f-label-pkg': 'What are you interested in?',
+      'f-opt0': 'Select a package',
+      'f-opt1': 'Social & Paid Ads (UGC videos, Meta/TikTok Ads)',
+      'f-opt2': 'Marketing Visuals & Ads',
+      'f-opt3': 'AI Content for Business (courses, training, onboarding)',
+      'f-opt4': 'Custom & Consulting (consultation, coaching)',
+      'f-opt5': 'I\'d like to consult first',
+      'f-label-msg': 'Message (optional)', 'f-ph-msg': 'Tell us more about your product or project…',
+      'f-submit': 'Send inquiry',
+      'f-note': 'Non-binding · We reply within 24 hours on business days',
+      'succ-h3': 'Message sent!',
+      'succ-p': 'Thank you for your interest. We\'ll get back to you within 24 hours.',
+      'faq-tag': 'FAQ',
+      'faq-h2': 'Have questions?<br /><span class="gt">We have answers.</span>',
+      'faq-q1': 'Can you tell the videos are made by AI?',
+      'faq-a1': 'Our videos are designed to look like natural UGC content or professionally produced ads. With the right brief the result is indistinguishable from traditionally filmed video. Meta and TikTok actively support AI content — platforms care about engagement and performance, not how it was made.',
+      'faq-q2': 'Do I need to send a physical product?',
+      'faq-a2': 'No — and that\'s one of the biggest advantages of AI production. We just need photos of your product and a description. No packaging, no shipping, no waiting for delivery. The entire process happens online and is therefore much faster and more convenient.',
+      'faq-q3': 'How long does it take to produce one video?',
+      'faq-a3': 'A standard video creative is ready within 3–5 business days from brief approval. For more complex campaign videos expect 5–7 days. Urgent orders are handled individually.',
+      'faq-q4': 'How does the monthly package work?',
+      'faq-a4': 'Within the monthly package you receive a regular supply of new creatives every month — so your campaigns always have fresh content for testing. The package is significantly more cost-effective than one-off orders. One-off production is also possible but the per-video price will be higher.',
+      'faq-q5': 'Which platforms do you create videos for?',
+      'faq-a5': 'Primarily Meta (Facebook and Instagram), TikTok and YouTube. We deliver in the correct formats — vertical 9:16 for Stories and Reels, square 1:1 or horizontal 16:9 as needed.',
+      'faq-q6': 'How do I start if we\'ve never used AI video before?',
+      'faq-a6': 'We start with a short discovery call — we understand your brand and goals. Then we prepare the first sample creatives so you can see how our work looks in practice. Only then do you decide whether to continue. No commitment upfront.',
+      'ft-compare': 'Why AI', 'ft-services': 'Packages', 'ft-calculator': 'Calculator',
+      'ft-showcase': 'Showcase', 'ft-about': 'About', 'ft-faq': 'FAQ', 'ft-contact': 'Contact',
+      'ft-copy': '© 2025 Scrollers. All rights reserved.',
+      'ft-made': 'Made with <span>♥</span> and artificial intelligence',
+      'sticky-cta': 'Book a free call',
+      'f-sending': 'Sending…',
+      'f-retry': 'Try again',
+    }
+  };
+
+  let currentLang = 'cs';
+
+  function applyLang(lang) {
+    const t = LANGS[lang];
+    if (!t) return;
+    currentLang = lang;
+
+    // Page meta
+    document.title = t['title'];
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', t['meta-desc']);
+    document.documentElement.lang = lang;
+
+    // NAV desktop
+    const nl = document.querySelector('.nl');
+    if (nl) {
+      nl.querySelector('a[href="#compare"]').textContent = t['nav-compare'];
+      nl.querySelector('a[href="#services"]').textContent = t['nav-services'];
+      nl.querySelector('a[href="#calculator"]').textContent = t['nav-calculator'];
+      nl.querySelector('a[href="#about"]').textContent = t['nav-about'];
+      nl.querySelector('a[href="#faq"]').textContent = t['nav-faq'];
+      nl.querySelector('a[href="#contact"]').textContent = t['nav-contact'];
+    }
+    // MOB MENU
+    const mm = document.querySelector('.mob-menu');
+    if (mm) {
+      mm.querySelector('a[href="#compare"]').textContent = t['mob-compare'];
+      mm.querySelector('a[href="#services"]').textContent = t['mob-services'];
+      mm.querySelector('a[href="#calculator"]').textContent = t['mob-calculator'];
+      mm.querySelector('a[href="#about"]').textContent = t['mob-about'];
+      mm.querySelector('a[href="#faq"]').textContent = t['mob-faq'];
+      mm.querySelector('a[href="#contact"]').textContent = t['mob-contact'];
+    }
+    // HERO
+    document.querySelector('.hero-h1').innerHTML = t['hero-h1'];
+    document.querySelector('.hero-sub').innerHTML = t['hero-sub'];
+    const heroBtns = document.querySelectorAll('.hero-acts a');
+    if (heroBtns[0]) heroBtns[0].childNodes[0].textContent = t['hero-cta1'] + ' ';
+    if (heroBtns[1]) heroBtns[1].textContent = t['hero-cta2'];
+
+    // COMPARISON SLIDER
+    document.querySelector('.cs-bottom').textContent = t['cs-bottom'];
+    document.querySelector('.split-label.ai-lbl').innerHTML = '<span class="lbl-dot"></span>' + t['cs-ai-label'];
+    document.querySelector('.split-label.real-lbl').innerHTML = '<span class="lbl-dot"></span>' + t['cs-real-label'];
+    const aiBullets = document.querySelectorAll('.cs-bullets-ai .cs-bullet');
+    ['cs-bullet-ai-1','cs-bullet-ai-2','cs-bullet-ai-3','cs-bullet-ai-4'].forEach((k,i) => { if(aiBullets[i]) aiBullets[i].textContent = t[k]; });
+    const realBullets = document.querySelectorAll('.cs-bullets-real .cs-bullet');
+    ['cs-bullet-real-1','cs-bullet-real-2','cs-bullet-real-3','cs-bullet-real-4'].forEach((k,i) => { if(realBullets[i]) realBullets[i].textContent = t[k]; });
+
+    // CLIENTS
+    document.querySelector('.cl-label').textContent = t['clients-label'];
+    document.querySelector('.cl-coming-name').textContent = t['clients-coming-name'];
+    document.querySelector('.cl-coming-sub').textContent = t['clients-coming-sub'];
+    const aivhType = document.querySelector('.cl-logo:nth-child(3) .cl-type');
+    if (aivhType) aivhType.textContent = t['client-aivh-type'];
+
+    // WHAT WE DO
+    document.querySelector('#whatwedo .tag').innerHTML = '<span class="dot"></span>' + t['wwd-tag'];
+    document.querySelector('.wwd-text h2').innerHTML = t['wwd-h2'];
+    document.querySelector('.wwd-text .lead').textContent = t['wwd-lead'];
+    const uses = document.querySelectorAll('.wwd-use');
+    [['wwd-use1-strong','wwd-use1-span'],['wwd-use2-strong','wwd-use2-span'],['wwd-use3-strong','wwd-use3-span'],['wwd-use4-strong','wwd-use4-span']].forEach(([sk,spk],i) => {
+      if (!uses[i]) return;
+      uses[i].querySelector('strong').textContent = t[sk];
+      uses[i].querySelector('span').textContent = t[spk];
+    });
+    document.querySelector('.wwd-note').innerHTML = t['wwd-note'];
+
+    // PILLARS
+    document.querySelector('.pillars-title').innerHTML = t['pillars-title'];
+    const pillars = document.querySelectorAll('.pillar');
+    if (pillars[0]) { pillars[0].querySelector('.pillar-title').textContent = t['pillar1-title']; pillars[0].querySelector('.pillar-sub').textContent = t['pillar1-sub']; }
+    if (pillars[1]) { pillars[1].querySelector('.pillar-num').textContent = t['pillar2-num']; pillars[1].querySelector('.pillar-title').textContent = t['pillar2-title']; pillars[1].querySelector('.pillar-sub').textContent = t['pillar2-sub']; }
+    if (pillars[2]) { pillars[2].querySelector('.pillar-num').textContent = t['pillar3-num']; pillars[2].querySelector('.pillar-title').textContent = t['pillar3-title']; pillars[2].querySelector('.pillar-sub').textContent = t['pillar3-sub']; }
+    if (pillars[3]) { pillars[3].querySelector('.pillar-title').textContent = t['pillar4-title']; pillars[3].querySelector('.pillar-sub').textContent = t['pillar4-sub']; }
+
+    // COMPARE section
+    document.querySelector('#compare .tag').innerHTML = '<span class="dot"></span>' + t['cmp-tag'];
+    document.querySelector('#compare .sh-title').innerHTML = t['cmp-h2'];
+    document.querySelector('#compare .sh-sub').textContent = t['cmp-sub'];
+    const badCol = document.querySelector('.cmp-col.bad');
+    const goodCol = document.querySelector('.cmp-col.good');
+    if (badCol) {
+      badCol.querySelector('.cmp-head-title').textContent = t['cmp-bad-title'];
+      badCol.querySelector('.cmp-head-sub').textContent = t['cmp-bad-sub'];
+      const bi = badCol.querySelectorAll('.cmp-item');
+      [['cmp-bad-1-strong','cmp-bad-1-span'],['cmp-bad-2-strong','cmp-bad-2-span'],['cmp-bad-3-strong','cmp-bad-3-span'],['cmp-bad-4-strong','cmp-bad-4-span']].forEach(([sk,spk],i) => {
+        if (!bi[i]) return; bi[i].querySelector('strong').textContent = t[sk]; bi[i].querySelector('span').textContent = t[spk];
+      });
+      badCol.querySelector('.ctl-heading').textContent = t['cmp-ctl-heading-bad'];
+      const bs = badCol.querySelectorAll('.ctl-step'); const bt = badCol.querySelectorAll('.ctl-time');
+      [['cmp-ctl-step1-bad','cmp-ctl-time1-bad'],['cmp-ctl-step2-bad','cmp-ctl-time2-bad'],['cmp-ctl-step3-bad','cmp-ctl-time3-bad']].forEach(([sk,tk],i) => { if(bs[i]) bs[i].textContent=t[sk]; if(bt[i]) bt[i].textContent=t[tk]; });
+    }
+    if (goodCol) {
+      goodCol.querySelector('.cmp-head-sub').textContent = t['cmp-good-sub'];
+      const gi = goodCol.querySelectorAll('.cmp-item');
+      [['cmp-good-1-strong','cmp-good-1-span'],['cmp-good-2-strong','cmp-good-2-span'],['cmp-good-3-strong','cmp-good-3-span'],['cmp-good-4-strong','cmp-good-4-span']].forEach(([sk,spk],i) => {
+        if (!gi[i]) return; gi[i].querySelector('strong').textContent = t[sk]; gi[i].querySelector('span').textContent = t[spk];
+      });
+      goodCol.querySelector('.ctl-heading').textContent = t['cmp-ctl-heading-good'];
+      const gs = goodCol.querySelectorAll('.ctl-step'); const gt2 = goodCol.querySelectorAll('.ctl-time');
+      [['cmp-ctl-step1-good','cmp-ctl-time1-good'],['cmp-ctl-step2-good','cmp-ctl-time2-good'],['cmp-ctl-step3-good','cmp-ctl-time3-good']].forEach(([sk,tk],i) => { if(gs[i]) gs[i].textContent=t[sk]; if(gt2[i]) gt2[i].textContent=t[tk]; });
+    }
+
+    // CALCULATOR
+    document.querySelector('#calculator .tag').innerHTML = '<span class="dot"></span>' + t['calc-tag'];
+    document.querySelector('#calculator h2').innerHTML = t['calc-h2'];
+    document.querySelector('#calculator p.fi').textContent = t['calc-p'];
+    const ciTops = document.querySelectorAll('.ci-top label');
+    if (ciTops[0]) ciTops[0].textContent = t['calc-label-v'];
+    if (ciTops[1]) ciTops[1].textContent = t['calc-label-c'];
+    const hints = document.querySelectorAll('.ci-range-hint');
+    if (hints[0]) { hints[0].children[0].textContent = t['calc-hint-v1']; hints[0].children[1].textContent = t['calc-hint-v2']; }
+    if (hints[1]) { hints[1].children[0].textContent = t['calc-hint-c1']; hints[1].children[1].textContent = t['calc-hint-c2']; }
+    document.querySelector('.cr-header').textContent = t['calc-header'];
+    document.querySelector('.cr-bar-title').textContent = t['calc-bar-title'];
+    const barNames = document.querySelectorAll('.cr-bar-name');
+    if (barNames[0]) barNames[0].textContent = t['calc-bar-now'];
+    if (barNames[1]) barNames[1].textContent = t['calc-bar-with'];
+    const crCards = document.querySelectorAll('.cr-card');
+    if (crCards[0]) { crCards[0].querySelector('.cr-card-lbl').textContent = t['calc-lbl-savm']; crCards[0].querySelector('.cr-card-sub').textContent = t['calc-sub-savm']; }
+    if (crCards[1]) { crCards[1].querySelector('.cr-card-lbl').textContent = t['calc-lbl-savy']; crCards[1].querySelector('.cr-card-sub').textContent = t['calc-sub-savy']; }
+    if (crCards[2]) { crCards[2].querySelector('.cr-card-lbl').textContent = t['calc-lbl-perv']; crCards[2].querySelector('.cr-card-sub').textContent = t['calc-sub-perv']; }
+    if (crCards[3]) { crCards[3].querySelector('.cr-card-lbl').textContent = t['calc-lbl-more']; crCards[3].querySelector('.cr-card-sub').innerHTML = t['calc-sub-more'] + ' <span id="rOrig">' + document.getElementById('rOrig').textContent + '</span>'; }
+    document.querySelector('.cr-disclaimer').textContent = t['calc-disclaimer'];
+    document.querySelector('.cr-cta p').textContent = t['calc-cta-p'];
+    const calcCtaBtn = document.querySelector('.cr-cta .btn');
+    if (calcCtaBtn) calcCtaBtn.childNodes[0].textContent = t['calc-cta-btn'] + ' ';
+
+    // SERVICES
+    document.querySelector('#services .tag').innerHTML = '<span class="dot"></span>' + t['svc-tag'];
+    document.querySelector('#services .sh-title').innerHTML = t['svc-h2'];
+    document.querySelector('#services .sh-sub').textContent = t['svc-sub'];
+    const pkgs = document.querySelectorAll('.pkg');
+    [['pkg1','pkg1-f1','pkg1-f2','pkg1-f3','pkg1-f4','pkg1-f5'],
+     ['pkg2','pkg2-f1','pkg2-f2','pkg2-f3','pkg2-f4','pkg2-f5'],
+     ['pkg3','pkg3-f1','pkg3-f2','pkg3-f3','pkg3-f4','pkg3-f5'],
+     ['pkg4','pkg4-f1','pkg4-f2','pkg4-f3','pkg4-f4','pkg4-f5']].forEach(([pk,...fks], i) => {
+      if (!pkgs[i]) return;
+      pkgs[i].querySelector('.pkg-badge').textContent = t[pk+'-badge'];
+      pkgs[i].querySelector('.pkg-desc').textContent = t[pk+'-desc'];
+      const lis = pkgs[i].querySelectorAll('.pkg-feats li');
+      fks.forEach((fk,j) => { if(lis[j]) lis[j].textContent = t[fk]; });
+      pkgs[i].querySelector('.pkg-cta').textContent = t['pkg-cta'];
+    });
+
+    // SHOWCASE
+    document.querySelector('#showcase .tag').innerHTML = '<span class="dot"></span>' + t['sc-tag'];
+    document.querySelector('#showcase h2').innerHTML = t['sc-h2'];
+    document.querySelector('#showcase .sc-text p').textContent = t['sc-p'];
+    const chips = document.querySelectorAll('.sc-chip');
+    ['sc-chip1','sc-chip2','sc-chip3','sc-chip4'].forEach((k,i) => { if(chips[i]) chips[i].textContent = t[k]; });
+    const scBtn = document.querySelector('#showcase .btn-primary');
+    if (scBtn) scBtn.childNodes[0].textContent = t['sc-btn'] + ' ';
+
+    // HOW IT WORKS
+    document.querySelector('#how .tag').innerHTML = '<span class="dot"></span>' + t['how-tag'];
+    document.querySelector('#how .sh-title').innerHTML = t['how-h2'];
+    const steps = document.querySelectorAll('.step');
+    [['step1-h3','step1-p','step1-chip'],['step2-h3','step2-p','step2-chip'],['step3-h3','step3-p','step3-chip']].forEach(([hk,pk,ck],i) => {
+      if (!steps[i]) return;
+      steps[i].querySelector('h3').textContent = t[hk];
+      steps[i].querySelector('p').textContent = t[pk];
+      steps[i].querySelector('.step-chip').textContent = t[ck];
+    });
+
+    // TESTIMONIALS
+    document.querySelector('#testi .tag').innerHTML = '<span class="dot"></span>' + t['testi-tag'];
+    document.querySelector('#testi .sh-title').innerHTML = t['testi-h2'];
+    const tc = document.querySelectorAll('.testi-card');
+    if (tc[0]) { tc[0].querySelector('.testi-quote').textContent = t['testi1-quote']; tc[0].querySelector('.testi-name').textContent = t['testi1-name']; tc[0].querySelector('.testi-role').textContent = t['testi1-role']; }
+    if (tc[1]) { tc[1].querySelector('.testi-quote').textContent = t['testi2-quote']; tc[1].querySelector('.testi-name').textContent = t['testi2-name']; tc[1].querySelector('.testi-role').textContent = t['testi2-role']; }
+
+    // ABOUT
+    document.querySelector('#about .about-txt .tag').innerHTML = '<span class="dot"></span>' + t['about-tag'];
+    document.querySelector('#about .about-txt h2').innerHTML = t['about-h2'];
+    const aboutPs = document.querySelectorAll('#about .about-txt p');
+    if (aboutPs[0]) aboutPs[0].textContent = t['about-p1'];
+    if (aboutPs[1]) aboutPs[1].textContent = t['about-p2'];
+    const abVals = document.querySelectorAll('.ab-val');
+    ['about-val1','about-val2','about-val3','about-val4','about-val5'].forEach((k,i) => { if(abVals[i]) abVals[i].textContent = t[k]; });
+    document.querySelector('.team-intro .tag').innerHTML = '<span class="dot"></span>' + t['team-tag'];
+    document.querySelector('.team-intro h3').innerHTML = t['team-h3'];
+    const members = document.querySelectorAll('.team-member');
+    if (members[0]) { members[0].querySelector('.team-role-badge').textContent = t['bruno-role']; members[0].querySelector('.team-bio').textContent = t['bruno-bio']; }
+    if (members[1]) { members[1].querySelector('.team-role-badge').textContent = t['daniel-role']; members[1].querySelector('.team-bio').textContent = t['daniel-bio']; }
+
+    // CONTACT
+    document.querySelector('#contact .tag').innerHTML = '<span class="dot"></span>' + t['ct-tag'];
+    document.querySelector('#contact .ct-left h2').innerHTML = t['ct-h2'];
+    document.querySelector('#contact .ct-left p').textContent = t['ct-p'];
+    const ctItems = document.querySelectorAll('.ct-item');
+    if (ctItems[1]) ctItems[1].querySelector('span').textContent = t['ct-info1'];
+    if (ctItems[2]) ctItems[2].querySelector('span').textContent = t['ct-info2'];
+    // Form
+    const fLabels = document.querySelectorAll('.f-grp label');
+    const fInputs = document.querySelectorAll('.f-grp input, .f-grp textarea, .f-grp select');
+    if (fLabels[0]) fLabels[0].textContent = t['f-label-name'];
+    if (fLabels[1]) fLabels[1].textContent = t['f-label-firm'];
+    if (fLabels[2]) fLabels[2].textContent = t['f-label-email'];
+    if (fLabels[3]) fLabels[3].textContent = t['f-label-pkg'];
+    if (fLabels[4]) fLabels[4].textContent = t['f-label-msg'];
+    const nameInput = document.querySelector('input[name="jmeno"]');
+    if (nameInput) nameInput.placeholder = t['f-ph-name'];
+    const firmInput = document.querySelector('input[name="firma"]');
+    if (firmInput) firmInput.placeholder = t['f-ph-firm'];
+    const emailInput = document.querySelector('input[name="email"]');
+    if (emailInput) emailInput.placeholder = t['f-ph-email'];
+    const msgArea = document.querySelector('textarea[name="zprava"]');
+    if (msgArea) msgArea.placeholder = t['f-ph-msg'];
+    const selOpts = document.querySelectorAll('select[name="balicek"] option');
+    ['f-opt0','f-opt1','f-opt2','f-opt3','f-opt4','f-opt5'].forEach((k,i) => { if(selOpts[i]) selOpts[i].textContent = t[k]; });
+    const fSubmit = document.querySelector('.f-submit');
+    if (fSubmit && !fSubmit.disabled) fSubmit.childNodes[0].textContent = t['f-submit'] + ' ';
+    const fNote = document.querySelector('.f-note');
+    if (fNote) fNote.textContent = t['f-note'];
+    document.querySelector('#succMsg h3').textContent = t['succ-h3'];
+    document.querySelector('#succMsg p').textContent = t['succ-p'];
+
+    // FAQ
+    document.querySelector('#faq .tag').innerHTML = '<span class="dot"></span>' + t['faq-tag'];
+    document.querySelector('#faq .sh-title').innerHTML = t['faq-h2'];
+    const faqItems = document.querySelectorAll('.faq-item');
+    [['faq-q1','faq-a1'],['faq-q2','faq-a2'],['faq-q3','faq-a3'],['faq-q4','faq-a4'],['faq-q5','faq-a5'],['faq-q6','faq-a6']].forEach(([qk,ak],i) => {
+      if (!faqItems[i]) return;
+      const qBtn = faqItems[i].querySelector('.faq-q');
+      // Preserve the chevron div
+      const chev = qBtn.querySelector('.faq-chev');
+      qBtn.textContent = t[qk];
+      if (chev) qBtn.appendChild(chev);
+      faqItems[i].querySelector('.faq-ans-inner').textContent = t[ak];
+    });
+
+    // FOOTER
+    const ftLinks = document.querySelector('.ft-links');
+    if (ftLinks) {
+      ftLinks.querySelector('a[href="#compare"]').textContent = t['ft-compare'];
+      ftLinks.querySelector('a[href="#services"]').textContent = t['ft-services'];
+      ftLinks.querySelector('a[href="#calculator"]').textContent = t['ft-calculator'];
+      ftLinks.querySelector('a[href="#showcase"]').textContent = t['ft-showcase'];
+      ftLinks.querySelector('a[href="#about"]').textContent = t['ft-about'];
+      ftLinks.querySelector('a[href="#faq"]').textContent = t['ft-faq'];
+      ftLinks.querySelector('a[href="#contact"]').textContent = t['ft-contact'];
+    }
+    document.querySelector('.ft-copy').textContent = t['ft-copy'];
+    document.querySelector('.ft-made').innerHTML = t['ft-made'];
+
+    // STICKY CTA
+    const stCtaA = document.querySelector('#stickyCta a');
+    if (stCtaA) {
+      const svg = stCtaA.querySelector('svg');
+      stCtaA.textContent = t['sticky-cta'] + ' ';
+      if (svg) stCtaA.appendChild(svg);
+    }
+
+    // Update lang button display
+    document.getElementById('langCurrent').textContent = lang.toUpperCase();
+    document.querySelector('.lang-btn').childNodes[0].textContent = lang === 'cs' ? '🇨🇿 ' : '🇬🇧 ';
+    document.querySelectorAll('.lang-opt').forEach(o => {
+      o.classList.toggle('active', o.dataset.lang === lang);
+    });
+  }
+
+  // Toggle dropdown
+  const langSw = document.getElementById('langSw');
+  document.getElementById('langBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    langSw.classList.toggle('open');
+  });
+  document.addEventListener('click', () => langSw.classList.remove('open'));
+  document.querySelectorAll('.lang-opt').forEach(opt => {
+    opt.addEventListener('click', () => {
+      applyLang(opt.dataset.lang);
+      langSw.classList.remove('open');
+    });
+  });
 
   // ── Smooth anchors ──
   document.querySelectorAll('a[href^="#"]').forEach(a => {
