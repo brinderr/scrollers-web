@@ -119,10 +119,26 @@
     .nl .nc { background: var(--accent) !important; color: #fff !important; padding: 9px 20px; border-radius: 100px; font-weight: 700 !important; transition: box-shadow .2s, transform .2s !important; }
     .nl .nc:hover { box-shadow: 0 0 24px var(--accent-glow); transform: translateY(-1px); }
     .ham { display: none; background: none; border: none; cursor: pointer; color: var(--text); }
-    .mob-menu { display: none; position: fixed; inset: 0; z-index: 199; background: var(--bg-2); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
-    .mob-menu.open { display: flex; }
-    .mob-menu a { font-size: clamp(20px,5vw,28px); font-weight: 800; color: var(--text); text-decoration: none; transition: color .2s; }
+    .mob-menu {
+      display: flex; position: fixed; inset: 0; z-index: 199;
+      background: var(--bg-2); flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transform: translateY(-12px);
+      transition: opacity .28s ease, transform .28s ease, visibility .28s;
+    }
+    .mob-menu.open {
+      opacity: 1; visibility: visible; pointer-events: auto;
+      transform: translateY(0);
+    }
+    .mob-menu a {
+      font-size: clamp(22px,5vw,30px); font-weight: 800; color: var(--text);
+      text-decoration: none; transition: color .2s;
+      transform: translateY(0); opacity: 1;
+    }
     .mob-menu a:hover { color: var(--accent-2); }
+    /* ham icon animates to X when open */
+    .ham { transition: transform .2s; }
+    .ham.active { transform: rotate(90deg); }
     .mob-x { position: absolute; top: 24px; right: 24px; background: none; border: none; color: var(--text-muted); font-size: 26px; cursor: pointer; }
 
     /* ══════════════════════════════
@@ -865,6 +881,21 @@
       .f-row { grid-template-columns: 1fr; }
       .cr-cards { grid-template-columns: 1fr; }
       .ph-big.sm:last-child { display: none; }
+
+      /* ── Boost smallest text sizes on mobile ── */
+      .tag { font-size: .72rem; }
+      .cl-label, .cl-type, .mq-item { font-size: .75rem; }
+      .pillar-sub, .cmp-txt span, .svc p { font-size: 14px; }
+      .cr-card-lbl, .cr-bar-name, .cr-bar-amt,
+      .ctl-step, .ctl-time, .ci-range-hint span { font-size: .75rem; }
+      .svc-feat, .svc-badge { font-size: .72rem; }
+      .pkg-feat, .pkg-feats li { font-size: 13.5px; }
+      .testi-text { font-size: 14px; }
+      .faq-q { font-size: 15px; }
+      .faq-ans-inner { font-size: 14px; }
+      .ft-links a, .ft-copy, .ft-made { font-size: 13px; }
+      .step-desc { font-size: 14px; }
+      .cr-disclaimer { font-size: .73rem; }
     }
   </style>
 </head>
@@ -1860,9 +1891,18 @@
   window.addEventListener('scroll', () => nav.classList.toggle('sc', scrollY > 50), {passive:true});
 
   // ── Mobile menu ──
-  document.getElementById('hamBtn').addEventListener('click', () => document.getElementById('mobMenu').classList.add('open'));
-  document.getElementById('mobX').addEventListener('click',   () => document.getElementById('mobMenu').classList.remove('open'));
-  document.querySelectorAll('.mob-menu a').forEach(a => a.addEventListener('click', () => document.getElementById('mobMenu').classList.remove('open')));
+  const hamBtn = document.getElementById('hamBtn');
+  const mobMenu = document.getElementById('mobMenu');
+
+  function openMenu()  { mobMenu.classList.add('open');    hamBtn.classList.add('active');    document.body.style.overflow = 'hidden'; }
+  function closeMenu() { mobMenu.classList.remove('open'); hamBtn.classList.remove('active'); document.body.style.overflow = ''; }
+  function toggleMenu() { mobMenu.classList.contains('open') ? closeMenu() : openMenu(); }
+
+  hamBtn.addEventListener('click', toggleMenu);
+  document.getElementById('mobX').addEventListener('click', closeMenu);
+  document.querySelectorAll('.mob-menu a').forEach(a => a.addEventListener('click', closeMenu));
+  // close on backdrop click (outside the menu links area)
+  mobMenu.addEventListener('click', e => { if (e.target === mobMenu) closeMenu(); });
 
   // ── Sticky CTA ──
   const heroEl = document.getElementById('hero');
