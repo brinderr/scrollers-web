@@ -766,7 +766,7 @@
     .cs-side { position:absolute; inset:0; }
     .cs-side img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none; }
     .cs-shade { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,0) 52%); pointer-events:none; }
-    .cs-real { z-index:1; clip-path:inset(0 50% 0 0); }
+    .cs-real { z-index:1; clip-path:inset(0 50% 0 0); will-change:clip-path; }
     .cs-ai   { z-index:0; }
     .cs-info { position:absolute; bottom:calc(40px + clamp(14px,2vw,22px)); display:flex; flex-direction:column; gap:6px; z-index:2; }
     .cs-info-real { left:clamp(12px,1.8vw,18px); }
@@ -779,6 +779,17 @@
     .cs-handle-line { flex:1; width:2px; background:rgba(255,255,255,.65); }
     .cs-handle-btn { width:42px; height:42px; border-radius:50%; background:#fff; color:#111; border:none; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:.55rem; letter-spacing:.04em; gap:1px; flex-shrink:0; box-shadow:0 4px 20px rgba(0,0,0,.5); }
     .cs-bottom { position:absolute; bottom:0; left:0; right:0; height:40px; background:var(--surface); border-top:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:.72rem; color:var(--text-dim); z-index:5; }
+
+    /* drag hint arrows */
+    .cs-hint { position:absolute; top:calc((100% - 40px)/2); transform:translateY(-50%); z-index:9; pointer-events:none; transition:opacity .5s ease; }
+    .cs-hint.gone { opacity:0; }
+    .cs-hint-left  { left:14px; }
+    .cs-hint-right { right:14px; }
+    .cs-hint-arrow { width:34px; height:34px; background:rgba(255,255,255,.18); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.32); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+    .cs-hint-left  .cs-hint-arrow { animation:hintL 1.3s ease-in-out infinite; }
+    .cs-hint-right .cs-hint-arrow { animation:hintR 1.3s ease-in-out infinite; }
+    @keyframes hintL { 0%,100%{transform:translateX(0)} 50%{transform:translateX(-6px)} }
+    @keyframes hintR { 0%,100%{transform:translateX(0)} 50%{transform:translateX(6px)} }
 
     /* hero visual */
     .hero-visual { display: flex; align-items: flex-start; justify-content: center; padding-top: clamp(10px,2vw,24px); }
@@ -882,6 +893,10 @@
       .cr-cards { grid-template-columns: 1fr; }
       .ph-big.sm:last-child { display: none; }
 
+      /* ── Comparison slider mobile ── */
+      .split-label { font-size: .6rem; padding: 4px 9px; }
+      .cs-bullet { font-size: .58rem; }
+
       /* ── Boost smallest text sizes on mobile ── */
       .tag { font-size: .72rem; }
       .cl-label, .cl-type, .mq-item { font-size: .75rem; }
@@ -983,7 +998,7 @@
       <div class="hero-visual fi d2">
         <div class="split-visual cs-wrap" id="compSlider">
 
-          <!-- AI side (behind) -->
+          <!-- AI side (behind) — info lives here so real photo slides over it -->
           <div class="cs-side cs-ai">
             <img src="https://i.imgur.com/JeLALv7.jpeg" alt="AI video · Scrollers" loading="lazy">
             <div class="cs-shade"></div>
@@ -998,7 +1013,7 @@
             </div>
           </div>
 
-          <!-- Real side (clipped on top) -->
+          <!-- Real side (clips on top) — info lives here so AI photo slides over it -->
           <div class="cs-side cs-real" id="csReal">
             <img src="https://i.imgur.com/cbYiO7U.png" alt="Skutečný influencer" loading="lazy">
             <div class="cs-shade"></div>
@@ -1022,6 +1037,18 @@
               <svg width="9" height="9" fill="none" stroke="currentColor" stroke-width="2.8" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
             </div>
             <div class="cs-handle-line"></div>
+          </div>
+
+          <!-- Drag hint arrows — fade out after first interaction -->
+          <div class="cs-hint cs-hint-left" id="csHintL">
+            <div class="cs-hint-arrow">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="cs-hint cs-hint-right" id="csHintR">
+            <div class="cs-hint-arrow">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            </div>
           </div>
 
           <!-- Bottom bar -->
@@ -1367,6 +1394,88 @@
   </div>
 </section>
 
+<!-- ══ SERVICES ══ -->
+<section id="services" class="section-pad">
+  <div class="container">
+    <div class="section-header">
+      <div class="tag"><span class="dot"></span>Naše balíčky</div>
+      <h2 class="sh-title fi">Co pro vás <span class="gt">vytvoříme</span></h2>
+      <p class="sh-sub fi d1">Vyberte balíček, který odpovídá vašim potřebám — nebo se ozvěte pro individuální řešení.</p>
+    </div>
+    <div class="pkg-grid">
+
+      <!-- Balíček 1 -->
+      <div class="pkg featured fi">
+        <span class="pkg-icon">📱</span>
+        <div class="pkg-name">Social & Paid Ads</div>
+        <span class="pkg-badge">Nejpopulárnější</span>
+        <p class="pkg-desc">Krátké AI videa pro sociální sítě a reklamy. Realistický UGC formát — bez herců, bez natáčení.</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-feats">
+          <li>Realistické AI UGC videa</li>
+          <li>Meta Ads & TikTok Ads kreativy</li>
+          <li>Instagram Reels, Stories, TikTok</li>
+          <li>A/B testování hooků a CTA</li>
+          <li>Vertikální 9:16 formát</li>
+        </ul>
+        <a href="#contact" class="pkg-cta">Nezávazná poptávka →</a>
+      </div>
+
+      <!-- Balíček 2 -->
+      <div class="pkg fi d1">
+        <span class="pkg-icon">🖼️</span>
+        <div class="pkg-name">Marketingové vizuály & Reklamy</div>
+        <span class="pkg-badge">All-in-one marketing</span>
+        <p class="pkg-desc">Veškerý AI vizuální obsah mimo sociální sítě — produktové fotky, bannery, TV spoty a další marketingové materiály.</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-feats">
+          <li>Produktové fotky a vizuály</li>
+          <li>Bannery pro web, email & newsletter</li>
+          <li>Billboardy a tiskové materiály</li>
+          <li>TV spoty a YouTube videa</li>
+          <li>Display reklamy a Google Ads</li>
+        </ul>
+        <a href="#contact" class="pkg-cta">Nezávazná poptávka →</a>
+      </div>
+
+      <!-- Balíček 3 -->
+      <div class="pkg fi d2">
+        <span class="pkg-icon">🤖</span>
+        <div class="pkg-name">AI obsah pro firmy</div>
+        <span class="pkg-badge">Enterprise</span>
+        <p class="pkg-desc">Interní firemní videa a e-learning s AI avatary. Škálovatelné řešení — prezentujte obsah tváří konkrétní osoby bez natáčení.</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-feats">
+          <li>Video kurzy a e-learning</li>
+          <li>Onboarding a interní školení</li>
+          <li>AI klon konkrétní osoby / mluvčího</li>
+          <li>Firemní prezentace a komunikace</li>
+          <li>Edukační platformy a LMS</li>
+        </ul>
+        <a href="#contact" class="pkg-cta">Nezávazná poptávka →</a>
+      </div>
+
+      <!-- Balíček 4 -->
+      <div class="pkg fi d3">
+        <span class="pkg-icon">⚡</span>
+        <div class="pkg-name">Custom & Poradenství</div>
+        <span class="pkg-badge">Na míru</span>
+        <p class="pkg-desc">Poradenství, školení a vlastní řešení na míru. Naučíme váš tým pracovat s AI nebo vytvoříme cokoliv nestandardního.</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-feats">
+          <li>Online školení AI tvorby pro firmy</li>
+          <li>Konzultace a strategické poradenství</li>
+          <li>Coaching v oblasti AI obsahu</li>
+          <li>Individuální řešení na míru</li>
+          <li>Dlouhodobá spolupráce</li>
+        </ul>
+        <a href="#contact" class="pkg-cta">Nezávazná poptávka →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ══ CALCULATOR ══ -->
 <section id="calculator" class="section-pad">
   <div class="container">
@@ -1447,88 +1556,6 @@
           </a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ SERVICES ══ -->
-<section id="services" class="section-pad">
-  <div class="container">
-    <div class="section-header">
-      <div class="tag"><span class="dot"></span>Naše balíčky</div>
-      <h2 class="sh-title fi">Co pro vás <span class="gt">vytvoříme</span></h2>
-      <p class="sh-sub fi d1">Vyberte balíček, který odpovídá vašim potřebám — nebo se ozvěte pro individuální řešení.</p>
-    </div>
-    <div class="pkg-grid">
-
-      <!-- Balíček 1 -->
-      <div class="pkg featured fi">
-        <span class="pkg-icon">📱</span>
-        <div class="pkg-name">Social & Paid Ads</div>
-        <span class="pkg-badge">Nejpopulárnější</span>
-        <p class="pkg-desc">Krátké AI videa pro sociální sítě a reklamy. Realistický UGC formát — bez herců, bez natáčení.</p>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-feats">
-          <li>Realistické AI UGC videa</li>
-          <li>Meta Ads & TikTok Ads kreativy</li>
-          <li>Instagram Reels, Stories, TikTok</li>
-          <li>A/B testování hooků a CTA</li>
-          <li>Vertikální 9:16 formát</li>
-        </ul>
-        <a href="#contact" class="pkg-cta">Nezávazná poptávka →</a>
-      </div>
-
-      <!-- Balíček 2 -->
-      <div class="pkg fi d1">
-        <span class="pkg-icon">🖼️</span>
-        <div class="pkg-name">Marketingové vizuály & Reklamy</div>
-        <span class="pkg-badge">All-in-one marketing</span>
-        <p class="pkg-desc">Veškerý AI vizuální obsah mimo sociální sítě — produktové fotky, bannery, TV spoty a další marketingové materiály.</p>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-feats">
-          <li>Produktové fotky a vizuály</li>
-          <li>Bannery pro web, email & newsletter</li>
-          <li>Billboardy a tiskové materiály</li>
-          <li>TV spoty a YouTube videa</li>
-          <li>Display reklamy a Google Ads</li>
-        </ul>
-        <a href="#contact" class="pkg-cta">Nezávazná poptávka →</a>
-      </div>
-
-      <!-- Balíček 3 -->
-      <div class="pkg fi d2">
-        <span class="pkg-icon">🤖</span>
-        <div class="pkg-name">AI obsah pro firmy</div>
-        <span class="pkg-badge">Enterprise</span>
-        <p class="pkg-desc">Interní firemní videa a e-learning s AI avatary. Škálovatelné řešení — prezentujte obsah tváří konkrétní osoby bez natáčení.</p>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-feats">
-          <li>Video kurzy a e-learning</li>
-          <li>Onboarding a interní školení</li>
-          <li>AI klon konkrétní osoby / mluvčího</li>
-          <li>Firemní prezentace a komunikace</li>
-          <li>Edukační platformy a LMS</li>
-        </ul>
-        <a href="#contact" class="pkg-cta">Nezávazná poptávka →</a>
-      </div>
-
-      <!-- Balíček 4 -->
-      <div class="pkg fi d3">
-        <span class="pkg-icon">⚡</span>
-        <div class="pkg-name">Custom & Poradenství</div>
-        <span class="pkg-badge">Na míru</span>
-        <p class="pkg-desc">Poradenství, školení a vlastní řešení na míru. Naučíme váš tým pracovat s AI nebo vytvoříme cokoliv nestandardního.</p>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-feats">
-          <li>Online školení AI tvorby pro firmy</li>
-          <li>Konzultace a strategické poradenství</li>
-          <li>Coaching v oblasti AI obsahu</li>
-          <li>Individuální řešení na míru</li>
-          <li>Dlouhodobá spolupráce</li>
-        </ul>
-        <a href="#contact" class="pkg-cta">Nezávazná poptávka →</a>
-      </div>
-
     </div>
   </div>
 </section>
@@ -2066,23 +2093,58 @@
     const wrap   = document.getElementById('compSlider');
     const real   = document.getElementById('csReal');
     const handle = document.getElementById('csHandle');
+    const hintL  = document.getElementById('csHintL');
+    const hintR    = document.getElementById('csHintR');
     if (!wrap || !real || !handle) return;
-    let dragging = false;
 
-    function setPos(clientX) {
-      const r = wrap.getBoundingClientRect();
-      let p = (clientX - r.left) / r.width;
-      p = Math.max(0.04, Math.min(0.96, p));
-      real.style.clipPath   = `inset(0 ${(1-p)*100}% 0 0)`;
-      handle.style.left     = `${p*100}%`;
+    let dragging  = false;
+    let rafId     = null;
+    let lastX     = 0;
+    let wrapRect  = null;
+    let hintDone  = false;
+
+    function hideHints() {
+      if (hintDone) return;
+      hintDone = true;
+      if (hintL) hintL.classList.add('gone');
+      if (hintR) hintR.classList.add('gone');
     }
 
-    wrap.addEventListener('mousedown',  e => { dragging=true; setPos(e.clientX); e.preventDefault(); });
-    window.addEventListener('mousemove', e => { if(dragging) setPos(e.clientX); });
-    window.addEventListener('mouseup',   () => { dragging=false; });
-    wrap.addEventListener('touchstart',  e => { dragging=true; setPos(e.touches[0].clientX); }, {passive:true});
-    window.addEventListener('touchmove', e => { if(dragging) setPos(e.touches[0].clientX); }, {passive:true});
-    window.addEventListener('touchend',  () => { dragging=false; });
+    function applyPos(clientX) {
+      const r = wrapRect;
+      let p = (clientX - r.left) / r.width;
+      p = Math.max(0.04, Math.min(0.96, p));
+      real.style.clipPath = `inset(0 ${(1-p)*100}% 0 0)`;
+      handle.style.left   = `${p*100}%`;
+    }
+
+    function scheduleDrag(clientX) {
+      lastX = clientX;
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => { applyPos(lastX); rafId = null; });
+      }
+    }
+
+    wrap.addEventListener('mousedown', e => {
+      dragging = true;
+      wrapRect = wrap.getBoundingClientRect();
+      applyPos(e.clientX);
+      hideHints();
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', e => { if (dragging) scheduleDrag(e.clientX); });
+    window.addEventListener('mouseup',   () => { dragging = false; });
+
+    wrap.addEventListener('touchstart', e => {
+      dragging = true;
+      wrapRect = wrap.getBoundingClientRect();
+      applyPos(e.touches[0].clientX);
+      hideHints();
+    }, {passive: true});
+    window.addEventListener('touchmove', e => {
+      if (dragging) scheduleDrag(e.touches[0].clientX);
+    }, {passive: true});
+    window.addEventListener('touchend', () => { dragging = false; });
   })();
 
   // ── Language switcher ──
