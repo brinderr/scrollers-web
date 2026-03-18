@@ -451,7 +451,7 @@
     .ph-big.sm  { width: clamp(110px,13vw,150px); }
     .ph-big.md  { width: clamp(140px,17vw,190px); transform: translateY(-20px); box-shadow: 0 40px 80px rgba(0,0,0,.7), 0 0 40px rgba(124,109,250,.15); }
     .ph-notch-b { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 48px; height: 5px; background: rgba(0,0,0,.9); border-radius: 3px; z-index: 2; }
-    .ph-scr { aspect-ratio: 9/19.5; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 12px 10px; }
+    .ph-scr { aspect-ratio: 9/16; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 12px 10px; }
     .ph-bg { position: absolute; inset: 0; }
     .ph-bg-a { background: linear-gradient(160deg,#2a1a68 0%,#0f0c28 50%,#110021 100%); animation: phAnim 6s ease-in-out infinite; }
     .ph-bg-b { background: linear-gradient(160deg,#0c2240 0%,#1a0532 50%,#050d1a 100%); animation: phAnim 7.5s ease-in-out infinite; }
@@ -768,14 +768,14 @@
     .cs-shade { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,0) 52%); pointer-events:none; }
     .cs-real { z-index:1; clip-path:inset(0 50% 0 0); will-change:clip-path; }
     .cs-ai   { z-index:0; }
-    .cs-info { position:absolute; bottom:calc(40px + clamp(14px,2vw,22px)); display:flex; flex-direction:column; gap:6px; z-index:2; }
+    .cs-info { position:absolute; bottom:calc(40px + clamp(14px,2vw,22px)); display:flex; flex-direction:column; gap:6px; z-index:2; max-width:calc(50% - clamp(22px,3.6vw,36px)); overflow:hidden; }
     .cs-info-real { left:clamp(12px,1.8vw,18px); }
     .cs-info-ai   { right:clamp(12px,1.8vw,18px); align-items:flex-end; display:flex; flex-direction:column; gap:6px; }
     .cs-bullets { background:rgba(0,0,0,.55); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:8px 12px; display:flex; flex-direction:column; gap:4px; }
     .cs-bullet { font-size:clamp(.6rem,.62vw,.7rem); font-weight:600; line-height:1.4; }
     .cs-bullets-real .cs-bullet { color:#fb923c; }
     .cs-bullets-ai  .cs-bullet { color:#2dd4bf; }
-    .cs-handle { position:absolute; top:0; bottom:40px; left:50%; transform:translateX(-50%); width:48px; display:flex; flex-direction:column; align-items:center; z-index:10; cursor:ew-resize; pointer-events:none; }
+    .cs-handle { position:absolute; top:0; bottom:40px; left:50%; transform:translateX(-50%); width:48px; display:flex; flex-direction:column; align-items:center; z-index:10; cursor:ew-resize; pointer-events:none; will-change:transform; }
     .cs-handle-line { flex:1; width:2px; background:rgba(255,255,255,.65); }
     .cs-handle-btn { width:42px; height:42px; border-radius:50%; background:#fff; color:#111; border:none; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:.55rem; letter-spacing:.04em; gap:1px; flex-shrink:0; box-shadow:0 4px 20px rgba(0,0,0,.5); }
     .cs-bottom { position:absolute; bottom:0; left:0; right:0; height:40px; background:var(--surface); border-top:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:.72rem; color:var(--text-dim); z-index:5; }
@@ -1767,13 +1767,13 @@
         </div>
       </div>
 
-      <!-- Daniel Kráľ -->
+      <!-- Daniel Král -->
       <div class="team-member fi d1">
         <div class="team-photo">
-          <img src="https://i.imgur.com/RO5Tbvh.png" alt="Daniel Kráľ" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+          <img src="https://i.imgur.com/RO5Tbvh.png" alt="Daniel Král" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
         </div>
         <div>
-          <div class="team-name">Daniel Kráľ</div>
+          <div class="team-name">Daniel Král</div>
           <div class="team-role-badge">Vedoucí obchodu & procesů</div>
         </div>
         <p class="team-bio">Expert na digitální marketing, e-commerce a online reklamu. Jako ředitel e-commerce ve společnosti Dermacol získal hluboké zkušenosti v oblasti výkonnostního marketingu, Amazon Marketplace a škálování online prodeje. Ve Scrollers zajišťuje komunikaci s klienty a strategický rozvoj agentury.</p>
@@ -1981,6 +1981,11 @@
     wwdCurrent = (idx + wwdSlides.length) % wwdSlides.length;
     wwdSlides[wwdCurrent].classList.add('active');
     wwdDots[wwdCurrent].classList.add('active');
+    // Restart new slide from beginning
+    if (players && players[wwdCurrent]) {
+      players[wwdCurrent].setCurrentTime(0).catch(() => {});
+      players[wwdCurrent].play().catch(() => {});
+    }
   }
 
   // Sound toggle buttons
@@ -2094,14 +2099,17 @@
     const real   = document.getElementById('csReal');
     const handle = document.getElementById('csHandle');
     const hintL  = document.getElementById('csHintL');
-    const hintR    = document.getElementById('csHintR');
+    const hintR  = document.getElementById('csHintR');
     if (!wrap || !real || !handle) return;
 
-    let dragging  = false;
-    let rafId     = null;
-    let lastX     = 0;
-    let wrapRect  = null;
-    let hintDone  = false;
+    let dragging = false;
+    let rafId    = null;
+    let lastX    = 0;
+    let wrapRect = null;
+    let hintDone = false;
+    let startX   = 0;
+    let startY   = 0;
+    let isHoriz  = null; // null = undecided, true = horizontal drag, false = vertical scroll
 
     function hideHints() {
       if (hintDone) return;
@@ -2114,8 +2122,8 @@
       const r = wrapRect;
       let p = (clientX - r.left) / r.width;
       p = Math.max(0.04, Math.min(0.96, p));
-      real.style.clipPath = `inset(0 ${(1-p)*100}% 0 0)`;
-      handle.style.left   = `${p*100}%`;
+      real.style.clipPath    = `inset(0 ${(1-p)*100}% 0 0)`;
+      handle.style.left      = `${p * 100}%`;
     }
 
     function scheduleDrag(clientX) {
@@ -2125,6 +2133,7 @@
       }
     }
 
+    // ── Mouse (desktop) ──
     wrap.addEventListener('mousedown', e => {
       dragging = true;
       wrapRect = wrap.getBoundingClientRect();
@@ -2135,16 +2144,37 @@
     window.addEventListener('mousemove', e => { if (dragging) scheduleDrag(e.clientX); });
     window.addEventListener('mouseup',   () => { dragging = false; });
 
+    // ── Touch (mobile) — direction-aware for smooth coexistence with page scroll ──
     wrap.addEventListener('touchstart', e => {
+      startX   = e.touches[0].clientX;
+      startY   = e.touches[0].clientY;
+      isHoriz  = null;
       dragging = true;
       wrapRect = wrap.getBoundingClientRect();
-      applyPos(e.touches[0].clientX);
       hideHints();
     }, {passive: true});
-    window.addEventListener('touchmove', e => {
-      if (dragging) scheduleDrag(e.touches[0].clientX);
-    }, {passive: true});
-    window.addEventListener('touchend', () => { dragging = false; });
+
+    // Non-passive so we can preventDefault for horizontal drag only
+    wrap.addEventListener('touchmove', e => {
+      if (!dragging) return;
+      const cx = e.touches[0].clientX;
+      const cy = e.touches[0].clientY;
+
+      // Decide direction on first significant movement
+      if (isHoriz === null) {
+        const dx = Math.abs(cx - startX);
+        const dy = Math.abs(cy - startY);
+        if (dx > 3 || dy > 3) isHoriz = dx >= dy;
+      }
+
+      if (isHoriz) {
+        e.preventDefault();   // block page scroll during horizontal drag
+        scheduleDrag(cx);
+      }
+    }, {passive: false});
+
+    window.addEventListener('touchend',    () => { dragging = false; isHoriz = null; });
+    window.addEventListener('touchcancel', () => { dragging = false; isHoriz = null; });
   })();
 
   // ── Language switcher ──
