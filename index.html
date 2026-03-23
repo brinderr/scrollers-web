@@ -815,6 +815,22 @@
     .slide-sound:hover { background: rgba(0,0,0,.88); }
     .pf-slide.active:hover .slide-sound { opacity: 1; pointer-events: auto; }
 
+    /* play/pause overlay button */
+    .slide-playpause {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px; height: 60px;
+      background: rgba(0,0,0,.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border: 2px solid rgba(255,255,255,.28); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 4; color: #fff;
+      transition: opacity .3s, background .15s; padding: 0;
+    }
+    .slide-playpause svg { margin-left: 3px; } /* optical offset for play triangle */
+    .slide-playpause:hover { background: rgba(0,0,0,.82); }
+    .slide-playpause.playing { opacity: 0; pointer-events: none; }
+    .pf-slide.active:hover .slide-playpause.playing { opacity: 1; pointer-events: auto; }
+    .pf-slide.active:hover .slide-playpause.playing svg polygon { display: none; }
     /* ── showcase phones: background=1 fills automatically ── */
 
     /* wwd showcase slider */
@@ -1121,12 +1137,32 @@
           <div class="pf-notch"></div>
           <div class="pf-screen" id="wwdScreen">
 
-            <!-- Slide 1: Kulina miska -->
+            <!-- Slide 1: Freylish UGC -->
             <div class="pf-slide active">
-              <iframe src="https://player.vimeo.com/video/1173981601?badge=0&autopause=0&player_id=vwwd1&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <iframe src="https://player.vimeo.com/video/1176222721?badge=0&autopause=0&player_id=vwwd1&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
               <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
                 <span>Zapnout zvuk</span>
+              </button>
+              <button class="slide-playpause" aria-label="Přehrát">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <div class="slide-info">
+                <div class="si-type">AI UGC Video</div>
+                <div class="si-title">UGC reklama</div>
+                <div class="si-brand">Freylish</div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Kulina miska -->
+            <div class="pf-slide">
+              <iframe src="https://player.vimeo.com/video/1173981601?badge=0&autopause=0&player_id=vwwd2&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <span>Zapnout zvuk</span>
+              </button>
+              <button class="slide-playpause" aria-label="Přehrát">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </button>
               <div class="slide-info">
                 <div class="si-type">AI UGC Video</div>
@@ -1135,12 +1171,15 @@
               </div>
             </div>
 
-            <!-- Slide 2: Dermacol -->
+            <!-- Slide 3: Dermacol -->
             <div class="pf-slide">
-              <iframe src="https://player.vimeo.com/video/1173981367?badge=0&autopause=0&player_id=vwwd2&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <iframe src="https://player.vimeo.com/video/1173981367?badge=0&autopause=0&player_id=vwwd3&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
               <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
                 <span>Zapnout zvuk</span>
+              </button>
+              <button class="slide-playpause" aria-label="Přehrát">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </button>
               <div class="slide-info">
                 <div class="si-type">AI UGC Video</div>
@@ -1149,17 +1188,54 @@
               </div>
             </div>
 
-            <!-- Slide 3: Kulina panvica -->
+            <!-- Slide 4: Kulina panvica -->
             <div class="pf-slide">
-              <iframe src="https://player.vimeo.com/video/1173986088?badge=0&autopause=0&player_id=vwwd3&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <iframe src="https://player.vimeo.com/video/1173986088?badge=0&autopause=0&player_id=vwwd4&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
               <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
                 <span>Zapnout zvuk</span>
+              </button>
+              <button class="slide-playpause" aria-label="Přehrát">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </button>
               <div class="slide-info">
                 <div class="si-type">Produktová reklama</div>
                 <div class="si-title">Recenze pánve</div>
                 <div class="si-brand">kulina.cz</div>
+              </div>
+            </div>
+
+            <!-- Slide 5: Freylish verze -->
+            <div class="pf-slide">
+              <iframe src="https://player.vimeo.com/video/1176221597?badge=0&autopause=0&player_id=vwwd5&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <span>Zapnout zvuk</span>
+              </button>
+              <button class="slide-playpause" aria-label="Přehrát">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <div class="slide-info">
+                <div class="si-type">AI UGC Video</div>
+                <div class="si-title">Produktová reklama</div>
+                <div class="si-brand">Freylish</div>
+              </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="pf-slide">
+              <iframe src="https://player.vimeo.com/video/1176223949?badge=0&autopause=0&player_id=vwwd6&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <span>Zapnout zvuk</span>
+              </button>
+              <button class="slide-playpause" aria-label="Přehrát">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </button>
+              <div class="slide-info">
+                <div class="si-type">AI UGC Video</div>
+                <div class="si-title">Produktová reklama</div>
+                <div class="si-brand">Scrollers</div>
               </div>
             </div>
 
@@ -1169,6 +1245,9 @@
           <button class="slider-arrow" id="wwdPrev" aria-label="Předchozí">&#8592;</button>
           <div class="slider-dots" id="wwdDots">
             <div class="sdot active"></div>
+            <div class="sdot"></div>
+            <div class="sdot"></div>
+            <div class="sdot"></div>
             <div class="sdot"></div>
             <div class="sdot"></div>
           </div>
@@ -1946,64 +2025,102 @@
   document.querySelectorAll('.fi').forEach(el => fiObs.observe(el));
 
   // ── WhatWeDo Showcase Slider ──
-  const wwdSlides  = document.querySelectorAll('#wwdScreen .pf-slide');
-  const wwdDots    = document.querySelectorAll('#wwdDots .sdot');
-  let wwdCurrent   = 0;
-  let wwdTimer;
-  let wwdPlayers   = null;
+  const wwdSlides    = document.querySelectorAll('#wwdScreen .pf-slide');
+  const wwdDots      = document.querySelectorAll('#wwdDots .sdot');
+  let wwdCurrent     = 0;
+  let wwdPlayers     = null;
 
-  function getWwdPlayers() {
-    if (!wwdPlayers && typeof Vimeo !== 'undefined') {
-      wwdPlayers = Array.from(document.querySelectorAll('#wwdScreen iframe')).map(iframe => {
-        try { return new Vimeo.Player(iframe); } catch(e) { return null; }
-      });
-    }
-    return wwdPlayers;
+  function initWwdPlayers() {
+    if (wwdPlayers || typeof Vimeo === 'undefined') return;
+    wwdPlayers = Array.from(document.querySelectorAll('#wwdScreen iframe')).map(iframe => {
+      try {
+        const p = new Vimeo.Player(iframe);
+        // Pause on ready — background=1 autoplays, we want paused start
+        p.ready().then(() => { p.pause().catch(() => {}); }).catch(() => {});
+        return p;
+      } catch(e) { return null; }
+    });
   }
 
-  const wwdSoundBtns = document.querySelectorAll('#wwdScreen .slide-sound');
+  // Init players when section scrolls into view
+  const wwdObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) { initWwdPlayers(); wwdObserver.disconnect(); }
+  }, { threshold: 0.1 });
+  const wwdSection = document.getElementById('whatwedo');
+  if (wwdSection) wwdObserver.observe(wwdSection);
+
+  const wwdSoundBtns    = document.querySelectorAll('#wwdScreen .slide-sound');
+  const wwdPlayBtns     = document.querySelectorAll('#wwdScreen .slide-playpause');
+
+  const SVG_PLAY  = '<polygon points="5 3 19 12 5 21 5 3"/>';
+  const SVG_PAUSE = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
 
   function resetSoundBtn(btn) {
+    if (!btn) return;
     btn.dataset.muted = 'true';
     btn.querySelector('svg').innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
     btn.querySelector('span').textContent = (typeof LANGS !== 'undefined' && LANGS[currentLang]) ? LANGS[currentLang]['wwd-sound-on'] : 'Zapnout zvuk';
   }
 
+  function resetPlayBtn(btn) {
+    if (!btn) return;
+    btn.classList.remove('playing');
+    btn.querySelector('svg').innerHTML = SVG_PLAY;
+  }
+
   function wwdGoTo(idx) {
-    const players = getWwdPlayers();
-    // Mute previous + reset its button
-    if (players && players[wwdCurrent]) {
-      players[wwdCurrent].setMuted(true).catch(() => {});
+    // Reset previous slide
+    if (wwdPlayers && wwdPlayers[wwdCurrent]) {
+      wwdPlayers[wwdCurrent].setMuted(true).catch(() => {});
+      wwdPlayers[wwdCurrent].pause().catch(() => {});
+      wwdPlayers[wwdCurrent].setCurrentTime(0).catch(() => {});
     }
     resetSoundBtn(wwdSoundBtns[wwdCurrent]);
+    resetPlayBtn(wwdPlayBtns[wwdCurrent]);
     wwdSlides[wwdCurrent].classList.remove('active');
     wwdDots[wwdCurrent].classList.remove('active');
     wwdCurrent = (idx + wwdSlides.length) % wwdSlides.length;
     wwdSlides[wwdCurrent].classList.add('active');
     wwdDots[wwdCurrent].classList.add('active');
-    // Restart new slide from beginning
-    if (players && players[wwdCurrent]) {
-      players[wwdCurrent].setCurrentTime(0).catch(() => {});
-      players[wwdCurrent].play().catch(() => {});
+    // New slide starts paused at 0
+    if (wwdPlayers && wwdPlayers[wwdCurrent]) {
+      wwdPlayers[wwdCurrent].setCurrentTime(0).catch(() => {});
+      wwdPlayers[wwdCurrent].pause().catch(() => {});
     }
   }
+
+  // Play/pause buttons
+  wwdPlayBtns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      initWwdPlayers();
+      const player = wwdPlayers && wwdPlayers[i];
+      if (!player) return;
+      if (btn.classList.contains('playing')) {
+        player.pause().catch(() => {});
+        btn.classList.remove('playing');
+        btn.querySelector('svg').innerHTML = SVG_PLAY;
+      } else {
+        player.play().catch(() => {});
+        btn.classList.add('playing');
+        btn.querySelector('svg').innerHTML = SVG_PAUSE;
+      }
+    });
+  });
 
   // Sound toggle buttons
   wwdSoundBtns.forEach((btn, i) => {
     btn.addEventListener('click', () => {
-      const players = getWwdPlayers();
-      const player  = players && players[i];
+      initWwdPlayers();
+      const player = wwdPlayers && wwdPlayers[i];
       if (!player) return;
       const muted = btn.dataset.muted === 'true';
       player.setMuted(!muted).catch(() => {});
       btn.dataset.muted = String(!muted);
       const tSound = (typeof LANGS !== 'undefined' && LANGS[currentLang]) ? LANGS[currentLang] : {};
       if (!muted) {
-        // switching to muted
         btn.querySelector('svg').innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
         btn.querySelector('span').textContent = tSound['wwd-sound-on'] || 'Zapnout zvuk';
       } else {
-        // switching to unmuted
         btn.querySelector('svg').innerHTML = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>';
         btn.querySelector('span').textContent = tSound['wwd-sound-off'] || 'Ztlumit';
       }
