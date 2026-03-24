@@ -815,6 +815,9 @@
     .slide-sound:hover { background: rgba(0,0,0,.88); }
     .pf-slide.active:hover .slide-sound { opacity: 1; pointer-events: auto; }
 
+    /* slide poster — shows while video loads */
+    .slide-poster { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; pointer-events:none; }
+
     /* play/pause overlay button */
     .slide-playpause {
       position: absolute; top: 50%; left: 50%;
@@ -964,6 +967,7 @@
         <li><a href="#services">Balíčky</a></li>
         <li><a href="#calculator">Kalkulačka</a></li>
         <li><a href="#about">O nás</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact" class="nc">Domluvit call</a></li>
       </ul>
@@ -980,6 +984,7 @@
   <a href="#services">Balíčky</a>
   <a href="#calculator">Kalkulačka</a>
   <a href="#about">O nás</a>
+  <a href="portfolio.html">Portfolio</a>
   <a href="#faq">FAQ</a>
   <a href="#contact">Kontakt</a>
 </div>
@@ -1139,7 +1144,8 @@
 
             <!-- Slide 1: Freylish UGC -->
             <div class="pf-slide active">
-              <iframe src="https://player.vimeo.com/video/1176222721?badge=0&autopause=0&player_id=vwwd1&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
+              <img class="slide-poster" src="https://i.vimeocdn.com/video/2137287842-ac5bbfa384b960bb98a442aa733644c55b7ee7a4b3a1ef9de71265c1e4976ad1-d_640x1138" alt="" aria-hidden="true">
+              <iframe src="https://player.vimeo.com/video/1176259250?badge=0&autopause=0&player_id=vwwd1&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
               <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
                 <span>Zapnout zvuk</span>
@@ -1949,6 +1955,10 @@
         <button class="faq-q">Jak začít, pokud jsme nikdy AI video nepoužívali?<div class="faq-chev">▾</div></button>
         <div class="faq-ans"><div class="faq-ans-inner">Začínáme krátkým discovery callem — pochopíme váš brand a cíle. Pak připravíme první ukázkové kreativy, na nichž vidíte, jak naše práce vypadá v praxi. Teprve poté se rozhodujete o pokračování. Žádný závazek předem.</div></div>
       </div>
+      <div class="faq-item fi d2">
+        <button class="faq-q">Kolik stojí videa? Jaký máte ceník?<div class="faq-chev">▾</div></button>
+        <div class="faq-ans"><div class="faq-ans-inner">Cena je vždy individuální — záleží na složitosti, délce a počtu videí měsíčně. Pracujeme na měsíční bázi, kde rozsah spolupráce určuje výslednou cenu. Pro orientaci: jednoduchá UGC videa se pohybují od 2 500 do 20 000 Kč za video, složitější produkce v rozmezí 10 000–25 000 Kč a větší projekty, reklamní videa nebo profesionální záběry 50 000 Kč+. Přesnou nabídku vždy připravíme na míru po prvním callu.</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1964,6 +1974,7 @@
         <a href="#calculator">Kalkulačka</a>
         <a href="#showcase">Ukázky</a>
         <a href="#about">O nás</a>
+        <a href="portfolio.html">Portfolio</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Kontakt</a>
       </div>
