@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scrollers – AI reklamní videa pro e-commerce značky</title>
-  <meta name="description" content="AI kreativní studio. Pomáháme e-commerce značkám tvořit video kreativy rychleji, levněji a bez natáčení." />
+  <title>Upgraide – AI video tvorba, která upgraduje váš marketing</title>
+  <meta name="description" content="AI kreativní studio. Upgradujeme váš marketing pomocí AI videí — rychleji, levněji a bez natáčení." />
 
   <!-- Open Graph / Social sharing -->
   <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://scrollers.ai/" />
-  <meta property="og:title"       content="Scrollers – AI reklamní videa pro e-commerce značky" />
-  <meta property="og:description" content="AI kreativní studio. Pomáháme e-commerce značkám tvořit video kreativy rychleji, levněji a bez natáčení." />
-  <meta property="og:image"       content="https://scrollers.ai/og-image.jpg" />
+  <meta property="og:url"         content="https://upgraide.cz/" />
+  <meta property="og:title"       content="Upgraide – AI video tvorba, která upgraduje váš marketing" />
+  <meta property="og:description" content="AI kreativní studio. Upgradujeme váš marketing pomocí AI videí — rychleji, levněji a bez natáčení." />
+  <meta property="og:image"       content="https://upgraide.cz/og-image.jpg" />
   <meta property="og:locale"      content="cs_CZ" />
-  <meta property="og:site_name"   content="Scrollers" />
+  <meta property="og:site_name"   content="Upgraide" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Scrollers – AI reklamní videa pro e-commerce značky" />
-  <meta name="twitter:description" content="AI kreativní studio. Pomáháme e-commerce značkám tvořit video kreativy rychleji, levněji a bez natáčení." />
-  <meta name="twitter:image"       content="https://scrollers.ai/og-image.jpg" />
+  <meta name="twitter:title"       content="Upgraide – AI video tvorba, která upgraduje váš marketing" />
+  <meta name="twitter:description" content="AI kreativní studio. Upgradujeme váš marketing pomocí AI videí — rychleji, levněji a bez natáčení." />
+  <meta name="twitter:image"       content="https://upgraide.cz/og-image.jpg" />
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://scrollers.ai/" />
+  <link rel="canonical" href="https://upgraide.cz/" />
 
   <!-- Favicon placeholder -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 110'><rect width='110' height='110' rx='28' fill='%230c0c20'/><path d='M73 27C73 14,37 14,37 35C37 51,75 51,75 67C75 88,39 88,39 75' stroke='url(%23g)' stroke-width='10' stroke-linecap='round' fill='none'/><defs><linearGradient id='g' x1='5' y1='5' x2='105' y2='105' gradientUnits='userSpaceOnUse'><stop stop-color='%237c6dfa'/><stop offset='1' stop-color='%232dd4bf'/></linearGradient></defs></svg>" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 110'><rect width='110' height='110' rx='22' fill='%230c0c20'/><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='0'><stop stop-color='%23a78bfa'/><stop offset='.5' stop-color='%232dd4bf'/><stop offset='1' stop-color='%23f472b6'/></linearGradient></defs><text x='55' y='76' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='54' text-anchor='middle' fill='url(%23g)'>ai</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -79,6 +79,8 @@
       background: linear-gradient(120deg, #d8b4fe 0%, var(--accent-2) 40%, var(--cyan) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
+    .logo-ai { background: linear-gradient(90deg, #a78bfa, #7c6dfa, #2dd4bf, #f472b6, #fbbf24, #a78bfa); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: rainbowShift 3s linear infinite; }
+    @keyframes rainbowShift { 0%{background-position:0%} 100%{background-position:200%} }
     .section-header { text-align: center; max-width: 660px; margin: 0 auto clamp(44px,6vw,72px); }
     .section-header .tag { margin-bottom: 18px; }
     .sh-title { font-size: clamp(28px,4vw,48px); font-weight: 800; letter-spacing: -.025em; line-height: 1.1; margin-bottom: 14px; }
@@ -112,7 +114,7 @@
     .ni { display: flex; align-items: center; justify-content: space-between; }
     .logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
     .logo-mark { flex-shrink: 0; width: 34px; height: 34px; }
-    .logo-text { font-size: clamp(18px,1.5vw,22px); font-weight: 900; letter-spacing: -.03em; background: linear-gradient(130deg,#fff 30%,var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .logo-text { font-size: clamp(18px,1.5vw,22px); font-weight: 900; letter-spacing: -.03em; color: #fff; display: inline-block !important; }
     .nl { display: flex; align-items: center; gap: 28px; list-style: none; }
     .nl a { color: var(--text-muted); text-decoration: none; font-size: clamp(13px,.95vw,15px); font-weight: 500; transition: color .2s; }
     .nl a:hover { color: var(--text); }
@@ -161,7 +163,7 @@
     .hero-text { padding-top: clamp(8px,2vw,24px); }
 
     .hero-text .tag { margin-bottom: 24px; }
-    .hero-h1 { font-size: clamp(36px,5vw,68px); font-weight: 900; letter-spacing: -.035em; line-height: 1.04; margin-bottom: 20px; }
+    .hero-h1 { font-size: clamp(36px,5vw,68px); font-weight: 900; letter-spacing: -.035em; line-height: 1.1; margin-bottom: 20px; }
     .hero-sub { font-size: clamp(15px,1.2vw,18px); color: var(--text-muted); line-height: 1.72; max-width: 500px; margin-bottom: 34px; }
     .hero-acts { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 
@@ -358,6 +360,65 @@
     .ctl-bar    { height: 100%; border-radius: 4px; }
     .bad  .ctl-bar { background: rgba(244,114,182,.55); }
     .good .ctl-bar { background: linear-gradient(90deg, var(--accent), var(--cyan)); }
+
+    /* ── Interactive Comparison Slider ── */
+    #compare-tool { background: var(--bg-2); }
+    .ctabs { display:flex; gap:8px; justify-content:center; margin:32px 0 48px; flex-wrap:wrap; }
+    .ctab { padding:10px 28px; border-radius:100px; border:1px solid var(--border-hi); background:transparent; color:var(--text-muted); font-family:inherit; font-size:.88rem; font-weight:700; cursor:pointer; transition:all .2s; }
+    .ctab.active { background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 0 20px var(--accent-glow); }
+    .cslider-wrap { position:relative; max-width:960px; margin:0 auto; padding:0 64px; }
+    .cslider { min-height:340px; position:relative; }
+    .cslide { display:none; flex-direction:column; align-items:center; gap:28px; animation:csFadeIn .35s ease; }
+    .cslide.active { display:flex; }
+    @keyframes csFadeIn { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+    .cslide-icon { font-size:3.2rem; line-height:1; filter:drop-shadow(0 0 18px rgba(124,109,250,.4)); }
+    .cslide-topic { font-size:.72rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-2); }
+    .cslide-cols { display:grid; grid-template-columns:1fr 48px 1fr; gap:12px; align-items:stretch; width:100%; }
+    .cslide-bad, .cslide-good { border-radius:18px; padding:28px 22px; text-align:center; display:flex; flex-direction:column; gap:8px; }
+    .cslide-bad { background:rgba(239,68,68,.07); border:1px solid rgba(239,68,68,.18); }
+    .cslide-good { background:rgba(45,212,191,.07); border:1px solid rgba(45,212,191,.2); }
+    .cslide-who { font-size:.68rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+    .cslide-bad .cslide-who { color:rgba(248,113,113,.7); }
+    .cslide-good .cslide-who { color:rgba(45,212,191,.7); }
+    .cslide-val { font-size:clamp(1.3rem,2.4vw,1.9rem); font-weight:900; line-height:1.1; white-space:nowrap; }
+    .cslide-bad .cslide-val { color:#f87171; }
+    .cslide-good .cslide-val { color:#2dd4bf; }
+    .cslide-desc { font-size:.82rem; color:var(--text-muted); line-height:1.55; }
+    .cslide-vs { display:flex; align-items:center; justify-content:center; font-size:.75rem; font-weight:900; color:var(--text-dim); letter-spacing:.06em; }
+    .cs-nav-btn { position:absolute; top:50%; transform:translateY(-50%); z-index:5; background:var(--surface); border:1px solid var(--border-hi); border-radius:50%; width:46px; height:46px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--text); font-size:1.1rem; transition:background .2s, opacity .3s; padding:0; font-family:inherit; }
+    .cs-nav-btn:hover { background:var(--surface-2); }
+    .cs-nav-btn.cs-prev { left:0; }
+    .cs-nav-btn.cs-next { right:0; }
+    .cs-nav-btn:disabled { opacity:.25; cursor:default; }
+    .cdots { display:flex; justify-content:center; gap:8px; margin-top:28px; }
+    .cdot { width:8px; height:8px; border-radius:50%; background:var(--border-hi); cursor:pointer; transition:background .2s, transform .2s; border:none; padding:0; }
+    .cdot.active { background:var(--accent); transform:scale(1.4); }
+    .cs-jump-wrap { display:flex; justify-content:center; margin-top:20px; }
+    .cs-jump-btn { font-family:inherit; font-size:.8rem; font-weight:700; padding:8px 20px; border-radius:100px; cursor:pointer; transition:all .2s; border:1px solid; }
+    .cs-skip-btn { background:transparent; color:var(--accent-2); border-color:rgba(167,139,250,.3); }
+    .cs-skip-btn:hover { background:rgba(124,109,250,.12); border-color:var(--accent-2); }
+    .cs-back-btn { background:transparent; color:var(--text-dim); border-color:var(--border-hi); }
+    .cs-back-btn:hover { background:var(--surface); color:var(--text-muted); }
+    /* Summary slide */
+    .cslide-summary { display:none; }
+    .cslide-summary.active { display:flex; flex-direction:column; align-items:center; gap:20px; width:100%; }
+    .cslide-summary .csum-cols { display:grid; grid-template-columns:1fr 56px 1fr; gap:16px; align-items:center; width:100%; }
+    .csum-col { border-radius:18px; padding:24px 20px; }
+    .csum-col.bad { background:rgba(239,68,68,.07); border:1px solid rgba(239,68,68,.18); }
+    .csum-col.good { background:rgba(45,212,191,.07); border:1px solid rgba(45,212,191,.2); }
+    .csum-title { font-size:.72rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; margin-bottom:14px; }
+    .csum-col.bad .csum-title { color:#f87171; }
+    .csum-col.good .csum-title { color:#2dd4bf; }
+    .csum-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .csum-list li { font-size:.83rem; color:var(--text-muted); display:flex; align-items:flex-start; gap:8px; line-height:1.45; }
+    .csum-arrow { display:flex; align-items:center; justify-content:center; font-size:1.8rem; color:var(--accent); }
+    @media (max-width:700px) {
+      .cslider-wrap { padding:0 48px; }
+      .cslide-cols { grid-template-columns:1fr; }
+      .cslide-vs { display:none; }
+      .cslide-summary .csum-cols { grid-template-columns:1fr; }
+      .csum-arrow { transform:rotate(90deg); font-size:1.4rem; }
+    }
 
     /* ══════════════════════════════
        CALCULATOR — simplified
@@ -646,6 +707,13 @@
     }
     .wwd-note strong { color: var(--text); }
 
+    /* ══ WWD centered layout ══ */
+    .wwd-centered { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+    .wwd-centered h2 { font-size: clamp(28px,3.5vw,48px); font-weight: 800; letter-spacing: -.025em; line-height: 1.1; margin: 14px 0 16px; }
+    .wwd-lead { font-size: clamp(15px,1.2vw,18px); color: var(--text-muted); line-height: 1.7; }
+    .ukázky-header { text-align: center; margin-bottom: 24px; }
+    .ukázky-label { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-dim); }
+
     /* ══════════════════════════════
        PACKAGES
     ══════════════════════════════ */
@@ -878,7 +946,7 @@
        RESPONSIVE
     ══════════════════════════════ */
     @media (max-width: 980px) {
-      .logo-text { display: none; }
+      /* logo-text always visible */
       .wwd-inner { grid-template-columns: 1fr; }
       .wwd-text { order: 1; }
       .split-visual { order: 2; }
@@ -890,6 +958,7 @@
       .pillars-grid { grid-template-columns: 1fr 1fr; }
       .cmp-grid { grid-template-columns: 1fr; }
       .svc-grid { grid-template-columns: 1fr; }
+      .svc-cards-grid { grid-template-columns: 1fr; }
       .pkg-grid { grid-template-columns: repeat(2,1fr); }
       .sc-inner { grid-template-columns: 1fr; }
       .phones-big { order: -1; }
@@ -897,6 +966,7 @@
       .steps-line { display: none; }
       .step { text-align: left; }
       .step-ball { margin: 0 0 18px; }
+      .cmp-two-cols { grid-template-columns: 1fr; }
       .testi-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; }
       .team-grid { grid-template-columns: 1fr; }
@@ -905,6 +975,124 @@
       .sticky-cta { display: block; }
       footer { padding-bottom: 88px; }
     }
+    /* ══════════════════════════════
+       RESULTS GRID (YouTube Shorts)
+    ══════════════════════════════ */
+    #results { background: var(--bg-2); }
+    .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 0 auto; }
+    .results-video { aspect-ratio: 9/16; border-radius: 18px; overflow: hidden; background: #14142c; position: relative; cursor: pointer; }
+    .results-video iframe { width: 100%; height: 100%; border: none; position: absolute; inset: 0; }
+    .yt-facade { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .yt-facade img { width: 100%; height: 100%; object-fit: cover; }
+    .yt-facade .yt-play { position: absolute; width: 56px; height: 56px; background: rgba(255,0,0,.9); border-radius: 14px; display: flex; align-items: center; justify-content: center; transition: transform .2s, background .2s; }
+    .yt-facade .yt-play svg { margin-left: 3px; }
+    .results-video:hover .yt-play { background: #ff0000; transform: scale(1.1); }
+    .yt-facade.hidden { display: none; }
+
+    /* ══════════════════════════════
+       SERVICES CARDS + MODAL
+    ══════════════════════════════ */
+    .svc-cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(12px,1.8vw,20px); }
+    .svc-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: clamp(24px,3vw,36px) clamp(20px,2.5vw,28px);
+      position: relative; overflow: hidden; transition: background .25s, border-color .3s, transform .2s, box-shadow .3s;
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .svc-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+    .svc-card:nth-child(1)::before { background: linear-gradient(90deg,#a78bfa,#7c6dfa); }
+    .svc-card:nth-child(2)::before { background: linear-gradient(90deg,#3b82f6,#60a5fa); }
+    .svc-card:nth-child(3)::before { background: linear-gradient(90deg,#2dd4bf,#38bdf8); }
+    .svc-card:nth-child(4)::before { background: linear-gradient(90deg,#f59e0b,#fb923c); }
+    .svc-card:hover { background: var(--surface-2); transform: translateY(-4px); }
+    .svc-card:nth-child(1):hover { border-color: rgba(124,109,250,.4); box-shadow: 0 20px 60px rgba(124,109,250,.1); }
+    .svc-card:nth-child(2):hover { border-color: rgba(59,130,246,.4); box-shadow: 0 20px 60px rgba(59,130,246,.1); }
+    .svc-card:nth-child(3):hover { border-color: rgba(45,212,191,.4); box-shadow: 0 20px 60px rgba(45,212,191,.1); }
+    .svc-card:nth-child(4):hover { border-color: rgba(245,158,11,.4); box-shadow: 0 20px 60px rgba(245,158,11,.1); }
+    .svc-card-emoji { font-size: 2.4rem; margin-bottom: 14px; display: block; }
+    .svc-card-title { font-size: clamp(16px,1.4vw,20px); font-weight: 800; margin-bottom: 6px; }
+    .svc-card-subtitle { font-size: clamp(12px,.9vw,14px); color: var(--text-dim); margin-bottom: 18px; }
+    .svc-card-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; flex: 1; }
+    .svc-card-bullets li { font-size: clamp(13px,1vw,15px); color: var(--text-muted); display: flex; align-items: flex-start; gap: 8px; }
+    .svc-card-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      font-size: .82rem; font-weight: 700; border-radius: 100px; padding: 10px 20px;
+      border: 1px solid var(--border-hi); background: transparent; color: var(--text-muted);
+      cursor: pointer; font-family: inherit; transition: background .2s, color .2s, border-color .2s, transform .15s;
+      margin-top: auto;
+    }
+    .svc-card-btn:hover { background: rgba(124,109,250,.12); color: var(--text); border-color: rgba(124,109,250,.4); transform: translateY(-1px); }
+
+    /* Modal */
+    .svc-modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 500;
+      background: rgba(0,0,0,.78); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .svc-modal-overlay.open { display: flex; }
+    .svc-modal {
+      background: var(--surface); border: 1px solid var(--border-hi); border-radius: var(--radius);
+      max-width: 560px; width: 100%; padding: clamp(28px,4vw,48px); position: relative;
+      max-height: 90vh; overflow-y: auto;
+      box-shadow: 0 40px 100px rgba(0,0,0,.7);
+    }
+    .svc-modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--surface-2); border: 1px solid var(--border-hi);
+      color: var(--text-muted); font-size: 1.1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-family: inherit; transition: background .15s, color .15s;
+    }
+    .svc-modal-close:hover { background: rgba(244,114,182,.15); color: var(--text); }
+    .svc-modal-emoji { font-size: 2.5rem; margin-bottom: 14px; display: block; }
+    .svc-modal-title { font-size: clamp(20px,2.2vw,28px); font-weight: 800; margin-bottom: 16px; }
+    .svc-modal-body { font-size: clamp(14px,1.1vw,16px); color: var(--text-muted); line-height: 1.75; }
+    .svc-modal-body p { margin: 0 0 16px; }
+    .svc-modal-body ul { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+    .svc-modal-body ul li { display: flex; align-items: flex-start; gap: 10px; }
+    .svc-modal-body ul li::before { content: '✓'; color: var(--cyan); font-weight: 800; flex-shrink: 0; margin-top: 2px; }
+    .svc-modal-cta { margin-top: 28px; }
+    .svc-modal-cta a { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; padding: 13px 26px; border-radius: 100px; font-weight: 700; font-size: .9rem; text-decoration: none; transition: box-shadow .2s, transform .2s; }
+    .svc-modal-cta a:hover { box-shadow: 0 0 32px var(--accent-glow); transform: translateY(-2px); }
+
+    /* ══════════════════════════════
+       INTERACTIVE COMPARISON TABS
+    ══════════════════════════════ */
+    #comparison-tool { background: var(--bg); }
+    .cmp-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: 36px; flex-wrap: wrap; }
+    .cmp-tab {
+      padding: 10px 24px; border-radius: 100px; font-weight: 700; font-size: clamp(13px,1vw,15px);
+      cursor: pointer; border: 1px solid var(--border-hi); background: transparent; color: var(--text-muted);
+      font-family: inherit; transition: background .2s, color .2s, border-color .2s;
+    }
+    .cmp-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 0 24px var(--accent-glow); }
+    .cmp-tab:not(.active):hover { border-color: rgba(124,109,250,.4); color: var(--text); background: rgba(124,109,250,.08); }
+
+    .cmp-panel { display: none; }
+    .cmp-panel.active { display: block; }
+
+    .cmp-two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .cmp-col-new {
+      border-radius: var(--radius); padding: clamp(20px,2.8vw,32px); border: 1px solid;
+    }
+    .cmp-col-new.bad-col { background: rgba(244,114,182,.03); border-color: rgba(244,114,182,.2); }
+    .cmp-col-new.good-col { background: rgba(45,212,191,.04); border-color: rgba(45,212,191,.25); box-shadow: 0 0 40px rgba(45,212,191,.05); }
+    .cmp-col-head { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .cmp-col-head-title { font-size: clamp(14px,1.2vw,17px); font-weight: 800; margin-bottom: 4px; }
+    .cmp-col-new.bad-col .cmp-col-head-title { color: var(--pink); }
+    .cmp-col-new.good-col .cmp-col-head-title { color: var(--cyan); }
+    .cmp-col-head-sub { font-size: .72rem; color: var(--text-dim); }
+    .cmp-rows { display: flex; flex-direction: column; gap: 10px; }
+    .cmp-row { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,.02); }
+    .cmp-row:nth-child(even) { background: rgba(255,255,255,.035); }
+    .cmp-row-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+    .cmp-row-content {}
+    .cmp-row-label { font-size: .72rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: .06em; }
+    .cmp-row-val { font-size: clamp(13px,1vw,15px); font-weight: 600; margin-top: 2px; }
+    .bad-col .cmp-row-val { color: var(--text-muted); }
+    .good-col .cmp-row-val { color: var(--cyan); }
+
     @media (max-width: 640px) {
       .pillars-grid { grid-template-columns: 1fr; }
       .pkg-grid { grid-template-columns: 1fr; }
@@ -916,6 +1104,7 @@
       .split-label { font-size: .6rem; padding: 4px 9px; }
       .cs-bullet { font-size: .58rem; }
 
+      .results-grid { grid-template-columns: repeat(2, 1fr); max-width: 480px; }
       /* ── Boost smallest text sizes on mobile ── */
       .tag { font-size: .72rem; }
       .cl-label, .cl-type, .mq-item { font-size: .75rem; }
@@ -940,34 +1129,14 @@
   <div class="container">
     <div class="ni">
       <a href="#hero" class="logo">
-        <svg class="logo-mark" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="nlg" x1="5" y1="5" x2="105" y2="105" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#d8b4fe"/>
-              <stop offset="0.48" stop-color="#7c6dfa"/>
-              <stop offset="1" stop-color="#2dd4bf"/>
-            </linearGradient>
-            <filter id="nGlow" x="-40%" y="-40%" width="180%" height="180%">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <rect width="110" height="110" rx="28" fill="#0c0c20"/>
-          <rect width="110" height="110" rx="28" fill="url(#nlg)" fill-opacity="0.09"/>
-          <rect x="0.5" y="0.5" width="109" height="109" rx="27.5" stroke="url(#nlg)" stroke-opacity="0.3" stroke-width="1"/>
-          <path d="M73 27C73 14,37 14,37 35C37 51,75 51,75 67C75 88,39 88,39 75"
-            stroke="url(#nlg)" stroke-width="10" stroke-linecap="round" fill="none" filter="url(#nGlow)"/>
-          <circle cx="82" cy="82" r="6" fill="url(#nlg)" fill-opacity="0.22"/>
-          <path d="M79.5 82 l5 -3 l0 6z" fill="url(#nlg)"/>
-        </svg>
-        <span class="logo-text">Scrollers</span>
+        <span class="logo-text">Upgr<span class="logo-ai">ai</span>de</span>
       </a>
       <ul class="nl">
-        <li><a href="#compare">Proč AI</a></li>
+        <li><a href="#compare-tool">Proč AI</a></li>
         <li><a href="#services">Balíčky</a></li>
         <li><a href="#calculator">Kalkulačka</a></li>
         <li><a href="#about">O nás</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="portfolio/">Portfolio</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact" class="nc">Domluvit call</a></li>
       </ul>
@@ -980,11 +1149,11 @@
 
 <div class="mob-menu" id="mobMenu">
   <button class="mob-x" id="mobX">✕</button>
-  <a href="#compare">Proč AI</a>
+  <a href="#compare-tool">Proč AI</a>
   <a href="#services">Balíčky</a>
   <a href="#calculator">Kalkulačka</a>
   <a href="#about">O nás</a>
-  <a href="portfolio.html">Portfolio</a>
+  <a href="portfolio/">Portfolio</a>
   <a href="#faq">FAQ</a>
   <a href="#contact">Kontakt</a>
 </div>
@@ -1000,11 +1169,12 @@
       <div class="hero-text">
         <div class="tag fi"><span class="dot"></span>AI Creative Studio</div>
         <h1 class="hero-h1 fi d1">
-          Realistické AI videa,<br />která <span class="gt">nahrazují skutečné herce.</span>
+          Upgradujte svůj marketing<br />pomocí <span class="gt">AI video tvorby.</span>
         </h1>
         <p class="hero-sub fi d2">
-          Vytváříme AI obsah, který je k nerozeznání od skutečně natočeného videa —
-          <strong>bez influencerů, bez natáčení.</strong> Ušetřete čas i náklady, aniž by zákazník poznal rozdíl.
+          Vytváříme AI videa, která vypadají jako skutečná — bez influencerů, bez natáčení.<br />
+          Přinášíme kvalitní AI obsah, který prodává vaše produkty.<br /><br />
+          <span style="color:var(--accent-2);">👀 Psst:</span> 99,9 % lidí nerozezná naše AI videa od skutečnosti.
         </p>
         <div class="hero-acts fi d3">
           <a href="#contact" class="btn btn-primary">
@@ -1021,10 +1191,10 @@
 
           <!-- AI side (behind) — info lives here so real photo slides over it -->
           <div class="cs-side cs-ai">
-            <img src="https://i.imgur.com/JeLALv7.jpeg" alt="AI video · Scrollers" loading="lazy">
+            <img src="https://i.imgur.com/JeLALv7.jpeg" alt="AI video · Upgraide" loading="lazy">
             <div class="cs-shade"></div>
             <div class="cs-info cs-info-ai">
-              <span class="split-label ai-lbl"><span class="lbl-dot"></span>AI video · Scrollers</span>
+              <span class="split-label ai-lbl"><span class="lbl-dot"></span>AI video · Upgraide</span>
               <div class="cs-bullets cs-bullets-ai">
                 <div class="cs-bullet">✓ Rychlé dodání</div>
                 <div class="cs-bullet">✓ Bez castingu a natáčení</div>
@@ -1134,348 +1304,313 @@
 <!-- ══ WHAT WE DO ══ -->
 <section id="whatwedo" class="section-pad">
   <div class="container">
-    <div class="wwd-inner">
-
-      <!-- Video showcase slider -->
-      <div class="wwd-showcase fi">
-        <div class="phone-frame wwd-showcase-phone">
-          <div class="pf-notch"></div>
-          <div class="pf-screen" id="wwdScreen">
-
-            <!-- Slide 1: Freylish UGC -->
-            <div class="pf-slide active">
-              <img class="slide-poster" src="https://i.vimeocdn.com/video/2137287842-ac5bbfa384b960bb98a442aa733644c55b7ee7a4b3a1ef9de71265c1e4976ad1-d_640x1138" alt="" aria-hidden="true">
-              <iframe src="https://player.vimeo.com/video/1176259250?badge=0&autopause=0&player_id=vwwd1&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
-              <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                <span>Zapnout zvuk</span>
-              </button>
-              <button class="slide-playpause" aria-label="Přehrát">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </button>
-              <div class="slide-info">
-                <div class="si-type">AI UGC Video</div>
-                <div class="si-title">UGC reklama</div>
-                <div class="si-brand">Freylish</div>
-              </div>
-            </div>
-
-            <!-- Slide 2: Kulina miska -->
-            <div class="pf-slide">
-              <iframe src="https://player.vimeo.com/video/1173981601?badge=0&autopause=0&player_id=vwwd2&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
-              <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                <span>Zapnout zvuk</span>
-              </button>
-              <button class="slide-playpause" aria-label="Přehrát">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </button>
-              <div class="slide-info">
-                <div class="si-type">AI UGC Video</div>
-                <div class="si-title">Recenze misky</div>
-                <div class="si-brand">kulina.cz</div>
-              </div>
-            </div>
-
-            <!-- Slide 3: Dermacol -->
-            <div class="pf-slide">
-              <iframe src="https://player.vimeo.com/video/1173981367?badge=0&autopause=0&player_id=vwwd3&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
-              <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                <span>Zapnout zvuk</span>
-              </button>
-              <button class="slide-playpause" aria-label="Přehrát">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </button>
-              <div class="slide-info">
-                <div class="si-type">AI UGC Video</div>
-                <div class="si-title">Recenze produktu</div>
-                <div class="si-brand">Dermacol.cz</div>
-              </div>
-            </div>
-
-            <!-- Slide 4: Kulina panvica -->
-            <div class="pf-slide">
-              <iframe src="https://player.vimeo.com/video/1173986088?badge=0&autopause=0&player_id=vwwd4&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
-              <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                <span>Zapnout zvuk</span>
-              </button>
-              <button class="slide-playpause" aria-label="Přehrát">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </button>
-              <div class="slide-info">
-                <div class="si-type">Produktová reklama</div>
-                <div class="si-title">Recenze pánve</div>
-                <div class="si-brand">kulina.cz</div>
-              </div>
-            </div>
-
-            <!-- Slide 5: Freylish verze -->
-            <div class="pf-slide">
-              <iframe src="https://player.vimeo.com/video/1176221597?badge=0&autopause=0&player_id=vwwd5&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
-              <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                <span>Zapnout zvuk</span>
-              </button>
-              <button class="slide-playpause" aria-label="Přehrát">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </button>
-              <div class="slide-info">
-                <div class="si-type">AI UGC Video</div>
-                <div class="si-title">Produktová reklama</div>
-                <div class="si-brand">Freylish</div>
-              </div>
-            </div>
-
-            <!-- Slide 6 -->
-            <div class="pf-slide">
-              <iframe src="https://player.vimeo.com/video/1176223949?badge=0&autopause=0&player_id=vwwd6&app_id=58479&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;" allowfullscreen></iframe>
-              <button class="slide-sound" data-muted="true" aria-label="Zapnout zvuk">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                <span>Zapnout zvuk</span>
-              </button>
-              <button class="slide-playpause" aria-label="Přehrát">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </button>
-              <div class="slide-info">
-                <div class="si-type">AI UGC Video</div>
-                <div class="si-title">Produktová reklama</div>
-                <div class="si-brand">Scrollers</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div class="slider-controls">
-          <button class="slider-arrow" id="wwdPrev" aria-label="Předchozí">&#8592;</button>
-          <div class="slider-dots" id="wwdDots">
-            <div class="sdot active"></div>
-            <div class="sdot"></div>
-            <div class="sdot"></div>
-            <div class="sdot"></div>
-            <div class="sdot"></div>
-            <div class="sdot"></div>
-          </div>
-          <button class="slider-arrow" id="wwdNext" aria-label="Další">&#8594;</button>
-        </div>
-      </div>
-
-      <!-- Explanation text -->
-      <div class="wwd-text">
-        <div class="tag fi d1"><span class="dot"></span>Co děláme</div>
-        <h2 class="fi d2">AI videa, která vypadají <span class="gt">jako skutečná</span></h2>
-        <p class="lead fi d3">Vytváříme video obsah pomocí AI, který je k nerozeznání od tradičně natočeného. Výsledek je stejně kvalitní jako práce skutečného influencera — ale rychlejší, levnější a plně pod vaší kontrolou.</p>
-        <div class="wwd-uses fi d3">
-          <div class="wwd-use">
-            <div class="wwd-use-ico">📱</div>
-            <div class="wwd-use-text">
-              <strong>Sociální sítě — organický i placený obsah</strong>
-              <span>UGC videa, Reels, TikTok, Facebook Ads — krátký obsah pro všechny formáty a platformy, který zastaví scroll.</span>
-            </div>
-          </div>
-          <div class="wwd-use">
-            <div class="wwd-use-ico">🎬</div>
-            <div class="wwd-use-text">
-              <strong>Delší reklamní videa a storytelling</strong>
-              <span>Produktové rozborové videa, brand storytelling, YouTube reklamy — propracovanější formáty, které prodávají.</span>
-            </div>
-          </div>
-          <div class="wwd-use">
-            <div class="wwd-use-ico">📺</div>
-            <div class="wwd-use-text">
-              <strong>TV reklamy, brand filmy a komplexní projekty</strong>
-              <span>Profesionálně vypadající video obsah pro TV, větší kampaně nebo náročnější brand projekty — bez drahé produkce.</span>
-            </div>
-          </div>
-          <div class="wwd-use">
-            <div class="wwd-use-ico">🤖</div>
-            <div class="wwd-use-text">
-              <strong>Edukační videa, AI klony a firemní obsah</strong>
-              <span>Tréninkové a onboardingové videa s AI klonem konkrétní osoby, kurzy, interní školení nebo vzdělávací platformy.</span>
-            </div>
-          </div>
-        </div>
-        <div class="wwd-note fi d4">
-          <strong>Proč je to lepší než skutečný influencer?</strong><br />
-          AI je předvídatelná, rychlá a nikdy nedodá něco jiného, než jste chtěli. Žádná domluva, žádné zpoždění, výsledek přesně podle briefu.
-        </div>
-      </div>
-
+    <div class="wwd-centered">
+      <div class="tag fi"><span class="dot"></span>Co děláme</div>
+      <h2 class="fi d1">AI videa, která vypadají <span class="gt">jako skutečná</span></h2>
+      <p class="wwd-lead fi d2">Vytváříme AI video obsah k nerozeznání od tradičně natočeného — rychleji, levněji a přesně podle vašeho briefu.</p>
     </div>
-  </div>
-</section>
-
-<!-- ══ PILLARS — 4 ══ -->
-<section id="pillars" class="section-pad">
-  <div class="container">
-    <h2 class="pillars-title fi">Proč to dává smysl — <span class="gt">na první pohled</span></h2>
-    <div class="pillars-grid">
-      <div class="pillar p1 fi">
-        <div class="pillar-glow"></div>
-        <span class="pillar-emoji">📵</span>
-        <div class="pillar-num">0</div>
-        <div class="pillar-title">Bez natáčení</div>
-        <div class="pillar-sub">Stačí fotografie produktu. Žádný kameraman, studio ani herci. AI udělá zbytek.</div>
+    <div class="ukázky-header fi d3"><span class="ukázky-label">Ukázky naší tvorby</span></div>
+    <div class="results-grid fi d4">
+      <div class="results-video" data-ytid="VB2O3sWWdOE">
+        <div class="yt-facade"><img src="https://i.ytimg.com/vi/VB2O3sWWdOE/hqdefault.jpg" loading="lazy" alt="AI video ukázka"><div class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
-      <div class="pillar p2 fi d1">
-        <div class="pillar-glow"></div>
-        <span class="pillar-emoji">💰</span>
-        <div class="pillar-num">Méně</div>
-        <div class="pillar-title">Výrazně levněji</div>
-        <div class="pillar-sub">Zlomek ceny oproti tradičnímu natáčení nebo spolupráci s influencery.</div>
+      <div class="results-video" data-ytid="FBmJIPyORVU">
+        <div class="yt-facade"><img src="https://i.ytimg.com/vi/FBmJIPyORVU/hqdefault.jpg" loading="lazy" alt="AI video ukázka"><div class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
-      <div class="pillar p3 fi d2">
-        <div class="pillar-glow"></div>
-        <span class="pillar-emoji">⚡</span>
-        <div class="pillar-num">Dny</div>
-        <div class="pillar-title">3× rychleji</div>
-        <div class="pillar-sub">Hotové za 3–5 pracovních dní. Tradiční produkce trvá týdny.</div>
+      <div class="results-video" data-ytid="_yTxBg_R0OA">
+        <div class="yt-facade"><img src="https://i.ytimg.com/vi/_yTxBg_R0OA/hqdefault.jpg" loading="lazy" alt="AI video ukázka"><div class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
-      <div class="pillar p4 fi d3">
-        <div class="pillar-glow"></div>
-        <span class="pillar-emoji">🎛️</span>
-        <div class="pillar-num">100%</div>
-        <div class="pillar-title">Plná kontrola</div>
-        <div class="pillar-sub">Influenceři jsou nepředvídatelní. Výsledek od nás odpovídá přesně vašemu briefu.</div>
+      <div class="results-video" data-ytid="h41HQFcmv00">
+        <div class="yt-facade"><img src="https://i.ytimg.com/vi/h41HQFcmv00/hqdefault.jpg" loading="lazy" alt="AI video ukázka"><div class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></div>
+      </div>
+      <div class="results-video" data-ytid="v-YGmUVSQow">
+        <div class="yt-facade"><img src="https://i.ytimg.com/vi/v-YGmUVSQow/hqdefault.jpg" loading="lazy" alt="AI video ukázka"><div class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></div>
+      </div>
+      <div class="results-video" data-ytid="0tT1y-pJ2A0">
+        <div class="yt-facade"><img src="https://i.ytimg.com/vi/0tT1y-pJ2A0/hqdefault.jpg" loading="lazy" alt="AI video ukázka"><div class="yt-play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ COMPARE ══ -->
-<section id="compare" class="section-pad">
-  <div class="container">
-    <div class="section-header">
-      <div class="tag"><span class="dot"></span>Porovnání</div>
-      <h2 class="sh-title fi">Jak to vypadá <span class="gt">v praxi</span></h2>
-      <p class="sh-sub fi d1">Jeden produkt, dva způsoby výroby videa. Podívejte se na rozdíl.</p>
-    </div>
-    <div class="cmp-grid">
-      <div class="cmp-col bad fi">
-        <div class="cmp-head">
-          <span class="cmp-head-icon">😮‍💨</span>
-          <div>
-            <div class="cmp-head-title">Tradiční postup</div>
-            <div class="cmp-head-sub">Influencer nebo produkce</div>
-          </div>
-        </div>
-        <div class="cmp-item">
-          <div class="cmp-chk">✕</div>
-          <div class="cmp-txt">
-            <strong>Hledání influencera</strong>
-            <span>Oslovení, domluva, smlouva, čekání na dostupnost — týden nebo víc.</span>
-          </div>
-        </div>
-        <div class="cmp-item">
-          <div class="cmp-chk">✕</div>
-          <div class="cmp-txt">
-            <strong>Organizace natáčení</strong>
-            <span>Kameraman, lokace, cestování. Logistika stojí čas i peníze.</span>
-          </div>
-        </div>
-        <div class="cmp-item">
-          <div class="cmp-chk">✕</div>
-          <div class="cmp-txt">
-            <strong>Výsledek je nejistý</strong>
-            <span>Influencer natočí to, co on chce. Ne vždy to odpovídá vašemu brandu.</span>
-          </div>
-        </div>
-        <div class="cmp-item">
-          <div class="cmp-chk">✕</div>
-          <div class="cmp-txt">
-            <strong>Jedno video = velké peníze</strong>
-            <span>Na A/B testování a více kreativ jednoduše nemáte budget.</span>
-          </div>
-        </div>
-        <div class="cmp-timeline">
-          <div class="ctl-heading">Jak dlouho to trvá</div>
-          <div class="ctl-row">
-            <div class="ctl-meta">
-              <span class="ctl-step">Domluva a brief</span>
-              <span class="ctl-time">3–5 dní</span>
-            </div>
-            <div class="ctl-bar-bg"><div class="ctl-bar" style="width:28%"></div></div>
-          </div>
-          <div class="ctl-row">
-            <div class="ctl-meta">
-              <span class="ctl-step">Natáčení</span>
-              <span class="ctl-time">1–2 týdny</span>
-            </div>
-            <div class="ctl-bar-bg"><div class="ctl-bar" style="width:60%"></div></div>
-          </div>
-          <div class="ctl-row">
-            <div class="ctl-meta">
-              <span class="ctl-step">Střih a schválení</span>
-              <span class="ctl-time">3–4 týdny celkem</span>
-            </div>
-            <div class="ctl-bar-bg"><div class="ctl-bar" style="width:100%"></div></div>
-          </div>
-        </div>
-      </div>
 
-      <div class="cmp-col good fi d1">
-        <div class="cmp-head">
-          <span class="cmp-head-icon">🚀</span>
-          <div>
-            <div class="cmp-head-title">Scrollers AI</div>
-            <div class="cmp-head-sub">Moderní přístup</div>
-          </div>
-        </div>
-        <div class="cmp-item">
-          <div class="cmp-chk">✓</div>
-          <div class="cmp-txt">
-            <strong>Pošlete fotku produktu</strong>
-            <span>Žádné natáčení, žádné fyzické zasílání. Stačí fotografie a brief.</span>
-          </div>
-        </div>
-        <div class="cmp-item">
-          <div class="cmp-chk">✓</div>
-          <div class="cmp-txt">
-            <strong>My vytvoříme video</strong>
-            <span>AI generuje kreativy přesně podle vašeho brandu. Plná kontrola.</span>
-          </div>
-        </div>
-        <div class="cmp-item">
-          <div class="cmp-chk">✓</div>
-          <div class="cmp-txt">
-            <strong>Výsledek přesně podle briefu</strong>
-            <span>Žádná překvapení. Video vypadá přesně jak chcete — a jako skutečné.</span>
-          </div>
-        </div>
-        <div class="cmp-item">
-          <div class="cmp-chk">✓</div>
-          <div class="cmp-txt">
-            <strong>Více kreativ za stejné peníze</strong>
-            <span>Testujte více variant najednou. Algoritmy vám najdou vítěze rychleji.</span>
-          </div>
-        </div>
-        <div class="cmp-timeline">
-          <div class="ctl-heading">Jak dlouho to trvá</div>
-          <div class="ctl-row">
-            <div class="ctl-meta">
-              <span class="ctl-step">Brief</span>
-              <span class="ctl-time">1 den</span>
-            </div>
-            <div class="ctl-bar-bg"><div class="ctl-bar" style="width:18%"></div></div>
-          </div>
-          <div class="ctl-row">
-            <div class="ctl-meta">
-              <span class="ctl-step">AI produkce</span>
-              <span class="ctl-time">2–3 dny</span>
-            </div>
-            <div class="ctl-bar-bg"><div class="ctl-bar" style="width:40%"></div></div>
-          </div>
-          <div class="ctl-row">
-            <div class="ctl-meta">
-              <span class="ctl-step">Hotové kreativy</span>
-              <span class="ctl-time">3–5 dní celkem</span>
-            </div>
-            <div class="ctl-bar-bg"><div class="ctl-bar" style="width:55%"></div></div>
-          </div>
-        </div>
-      </div>
+<!-- ══ INTERACTIVE COMPARISON TOOL ══ -->
+<section id="compare-tool" class="section-pad">
+  <div class="container">
+    <div style="text-align:center;"><div class="tag fi" style="display:inline-flex;"><span class="dot"></span>Porovnání</div></div>
+    <h2 class="fi d1" style="text-align:center;font-size:clamp(28px,3.5vw,48px);font-weight:800;letter-spacing:-.025em;margin:14px 0 0;">Porovnejte sami — <span class="gt">výhoda za výhodou</span></h2>
+
+    <!-- Tabs -->
+    <div class="ctabs fi d2">
+      <button class="ctab active" data-tab="ugc">AI UGC Video</button>
+      <button class="ctab" data-tab="ads">AI Reklamní video</button>
     </div>
+
+    <!-- Slide comparison -->
+    <div class="cslider-wrap fi d3">
+      <button class="cs-nav-btn cs-prev" id="cPrev" disabled>
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="cs-nav-btn cs-next" id="cNext">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <div class="cslider" id="cSlider">
+
+        <!-- UGC Slide 1: Cost -->
+        <div class="cslide active" data-group="ugc">
+          <div class="cslide-icon">💰</div>
+          <div class="cslide-topic">CENA</div>
+          <div class="cslide-cols">
+            <div class="cslide-bad">
+              <div class="cslide-who">Klasický influencer</div>
+              <div class="cslide-val">10 000 – 20 000+ Kč</div>
+              <div class="cslide-desc">Za jedno video bez záruky výsledku. K tomu casting, smlouvy, domluva.</div>
+            </div>
+            <div class="cslide-vs">VS</div>
+            <div class="cslide-good">
+              <div class="cslide-who">Upgraide</div>
+              <div class="cslide-val">od 6 000 Kč</div>
+              <div class="cslide-desc">Při dlouhodobé spolupráci — garantovaná kvalita, 4 varianty hooků v ceně.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UGC Slide 2: Delivery -->
+        <div class="cslide" data-group="ugc">
+          <div class="cslide-icon">⏱️</div>
+          <div class="cslide-topic">DOBA DODÁNÍ</div>
+          <div class="cslide-cols">
+            <div class="cslide-bad">
+              <div class="cslide-who">Klasický influencer</div>
+              <div class="cslide-val">10+ dní</div>
+              <div class="cslide-desc">Koordinace, cestování, čekání na herce. Každý krok zdržuje.</div>
+            </div>
+            <div class="cslide-vs">VS</div>
+            <div class="cslide-good">
+              <div class="cslide-who">Upgraide</div>
+              <div class="cslide-val">do 5 dní</div>
+              <div class="cslide-desc">Od dodání briefu po hotové video — max 5 pracovních dní, vždy.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UGC Slide 3: Quantity -->
+        <div class="cslide" data-group="ugc">
+          <div class="cslide-icon">🎬</div>
+          <div class="cslide-topic">CO DOSTANETE</div>
+          <div class="cslide-cols">
+            <div class="cslide-bad">
+              <div class="cslide-who">Klasický influencer</div>
+              <div class="cslide-val">1 video</div>
+              <div class="cslide-desc">Jeden výsledek, bez variant. Testování? Jen s dalším výdajem.</div>
+            </div>
+            <div class="cslide-vs">VS</div>
+            <div class="cslide-good">
+              <div class="cslide-who">Upgraide</div>
+              <div class="cslide-val">1 video = 4 hooky</div>
+              <div class="cslide-desc">Čtyři varianty v ceně — testujte co funguje a škálujte vítěze.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UGC Slide 4: Product -->
+        <div class="cslide" data-group="ugc">
+          <div class="cslide-icon">📦</div>
+          <div class="cslide-topic">LOGISTIKA</div>
+          <div class="cslide-cols">
+            <div class="cslide-bad">
+              <div class="cslide-who">Klasický influencer</div>
+              <div class="cslide-val">Fyzické zaslání</div>
+              <div class="cslide-desc">Musíte zabalit a odeslat produkt. Čekáte na doručení, zboží může být poškozeno.</div>
+            </div>
+            <div class="cslide-vs">VS</div>
+            <div class="cslide-good">
+              <div class="cslide-who">Upgraide</div>
+              <div class="cslide-val">Stačí fotografie</div>
+              <div class="cslide-desc">Žádné balení, žádné zasílání. Pošlete fotku a brief — to je vše.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UGC Slide 5: Language -->
+        <div class="cslide" data-group="ugc">
+          <div class="cslide-icon">🌍</div>
+          <div class="cslide-topic">JAZYKY</div>
+          <div class="cslide-cols">
+            <div class="cslide-bad">
+              <div class="cslide-who">Klasický influencer</div>
+              <div class="cslide-val">1 jazyk</div>
+              <div class="cslide-desc">Každý překlad = nový influencer, nová smlouva, nové náklady.</div>
+            </div>
+            <div class="cslide-vs">VS</div>
+            <div class="cslide-good">
+              <div class="cslide-who">Upgraide</div>
+              <div class="cslide-val">Libovolný jazyk</div>
+              <div class="cslide-desc">Čeština, angličtina, němčina — stejné video v libovolném jazyce.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UGC Slide 6: Quality -->
+        <div class="cslide" data-group="ugc">
+          <div class="cslide-icon">⭐</div>
+          <div class="cslide-topic">KVALITA</div>
+          <div class="cslide-cols">
+            <div class="cslide-bad">
+              <div class="cslide-who">Klasický influencer</div>
+              <div class="cslide-val">Nepředvídatelná</div>
+              <div class="cslide-desc">Výsledek závisí na herci — jeho náladě, schopnostech a interpretaci.</div>
+            </div>
+            <div class="cslide-vs">VS</div>
+            <div class="cslide-good">
+              <div class="cslide-who">Upgraide</div>
+              <div class="cslide-val">99,9 % reálné</div>
+              <div class="cslide-desc">Lidé nerozpoznají AI video od natočeného. Výsledek přesně podle briefu.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UGC Slide 7: SUMMARY -->
+        <div class="cslide cslide-summary" data-group="ugc">
+          <div class="cslide-icon">🏆</div>
+          <div class="csum-cols">
+            <div class="csum-col bad">
+              <div class="csum-title">Klasický influencer</div>
+              <ul class="csum-list">
+                <li><span style="color:#f87171;flex-shrink:0">✕</span> Vysoká cena za video</li>
+                <li><span style="color:#f87171;flex-shrink:0">✕</span> 10+ dní dodání</li>
+                <li><span style="color:#f87171;flex-shrink:0">✕</span> 1 video bez variant</li>
+                <li><span style="color:#f87171;flex-shrink:0">✕</span> Fyzické zasílání produktu</li>
+                <li><span style="color:#f87171;flex-shrink:0">✕</span> Pouze 1 jazyk</li>
+                <li><span style="color:#f87171;flex-shrink:0">✕</span> Nestálá, nepředvídatelná kvalita</li>
+              </ul>
+            </div>
+            <div class="csum-arrow">→</div>
+            <div class="csum-col good">
+              <div class="csum-title">Upgr<span class="logo-ai">ai</span>de</div>
+              <ul class="csum-list">
+                <li><span style="color:#2dd4bf;flex-shrink:0">✓</span> Zlomek ceny tradičních influencerů</li>
+                <li><span style="color:#2dd4bf;flex-shrink:0">✓</span> Max 5 dní od briefu</li>
+                <li><span style="color:#2dd4bf;flex-shrink:0">✓</span> 4 hooky v ceně</li>
+                <li><span style="color:#2dd4bf;flex-shrink:0">✓</span> Stačí fotografie produktu</li>
+                <li><span style="color:#2dd4bf;flex-shrink:0">✓</span> Libovolný jazyk</li>
+                <li><span style="color:#2dd4bf;flex-shrink:0">✓</span> 99,9 % reálné — k nerozeznání</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ads Slide 1: Cost -->
+        <div class="cslide" data-group="ads">
+          <div class="cslide-icon">💰</div>
+          <div class="cslide-topic">CENA</div>
+          <div class="cslide-cols">
+            <div class="cslide-bad">
+              <div class="cslide-who">Tradiční produkce</div>
+              <div class="cslide-val">50 000 – 200 000+ Kč</div>
+              <div class="cslide-desc">Kameraman, lokace, herci, střih, postprodukce. Každá položka přičítá.</div>
+            </div>
+            <div class="cslide-vs">VS</div>
+            <div class="cslide-good">
+              <div class="cslide-who">Upgraide</div>
+              <div class="cslide-val">Zlomek ceny</div>
+              <div class="cslide-desc">Profesionální výsledek bez fyzické produkce. Ušetříte desítky tisíc.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ads Slide 2: Timeline -->
+        <div class="cslide" data-group="ads">
+          <div class="cslide-icon">📅</div>
+          <div class="cslide-topic">ČASOVÁ NÁROČNOST</div>
+          <div class="cslide-cols">
+            <div class="cslide-bad">
+              <div class="cslide-who">Tradiční produkce</div>
+              <div class="cslide-val">4–8 týdnů</div>
+              <div class="cslide-desc">Příprava, casting, natáčení, postprodukce. Každá fáze zdržuje.</div>
+            </div>
+            <div class="cslide-vs">VS</div>
+            <div class="cslide-good">
+              <div class="cslide-who">Upgraide</div>
+              <div class="cslide-val">Zlomek doby</div>
+              <div class="cslide-desc">Celá produkce hotová za čas, kdy klasické natáčení teprve začíná.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ads Slide 3: Flexibility -->
+        <div class="cslide" data-group="ads">
+          <div class="cslide-icon">🔄</div>
+          <div class="cslide-topic">FLEXIBILITA</div>
+          <div class="cslide-cols">
+            <div class="cslide-bad">
+              <div class="cslide-who">Tradiční produkce</div>
+              <div class="cslide-val">Nulová</div>
+              <div class="cslide-desc">Každá změna = přetáčení a nové náklady. Chyba v textu? Nové natáčení.</div>
+            </div>
+            <div class="cslide-vs">VS</div>
+            <div class="cslide-good">
+              <div class="cslide-who">Upgraide</div>
+              <div class="cslide-val">Plná kontrola</div>
+              <div class="cslide-desc">Úpravy bez přetáčení — varianty, jazykové verze i změny scénáře v ceně.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ads Slide 4: Script -->
+        <div class="cslide" data-group="ads">
+          <div class="cslide-icon">✍️</div>
+          <div class="cslide-topic">SCÉNÁŘ</div>
+          <div class="cslide-cols">
+            <div class="cslide-bad">
+              <div class="cslide-who">Tradiční produkce</div>
+              <div class="cslide-val">Extra náklad</div>
+              <div class="cslide-desc">Copywriter, schvalovací kola, čas navíc. Scénář nikdy nebývá zahrnut.</div>
+            </div>
+            <div class="cslide-vs">VS</div>
+            <div class="cslide-good">
+              <div class="cslide-who">Upgraide</div>
+              <div class="cslide-val">Zahrnuto v ceně</div>
+              <div class="cslide-desc">Píšeme scénáře i briefy — vy jen schválíte. Žádné skryté náklady.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ads Slide 5: SUMMARY -->
+        <div class="cslide cslide-summary" data-group="ads">
+          <div class="cslide-icon">🏆</div>
+          <div class="csum-cols">
+            <div class="csum-col bad">
+              <div class="csum-title">Tradiční produkce</div>
+              <ul class="csum-list">
+                <li><span style="color:#f87171;flex-shrink:0">✕</span> 50 000–200 000+ Kč za video</li>
+                <li><span style="color:#f87171;flex-shrink:0">✕</span> 4–8 týdnů přípravy</li>
+                <li><span style="color:#f87171;flex-shrink:0">✕</span> Nulová flexibilita</li>
+                <li><span style="color:#f87171;flex-shrink:0">✕</span> Scénář = extra náklad</li>
+              </ul>
+            </div>
+            <div class="csum-arrow">→</div>
+            <div class="csum-col good">
+              <div class="csum-title">Upgr<span class="logo-ai">ai</span>de</div>
+              <ul class="csum-list">
+                <li><span style="color:#2dd4bf;flex-shrink:0">✓</span> Zlomek ceny tradičních produkcí</li>
+                <li><span style="color:#2dd4bf;flex-shrink:0">✓</span> Zlomek doby tradičních produkcí</li>
+                <li><span style="color:#2dd4bf;flex-shrink:0">✓</span> Plná kontrola a varianty</li>
+                <li><span style="color:#2dd4bf;flex-shrink:0">✓</span> Scénář v ceně</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /cslider -->
+
+      <div class="cdots" id="cDots"></div>
+      <div class="cs-jump-wrap">
+        <button class="cs-jump-btn cs-skip-btn" id="cSkip">Přeskočit na souhrn →→</button>
+        <button class="cs-jump-btn cs-back-btn" id="cBack" style="display:none">← Zpět na začátek</button>
+      </div>
+    </div><!-- /cslider-wrap -->
   </div>
 </section>
 
@@ -1483,83 +1618,84 @@
 <section id="services" class="section-pad">
   <div class="container">
     <div class="section-header">
-      <div class="tag"><span class="dot"></span>Naše balíčky</div>
-      <h2 class="sh-title fi">Co pro vás <span class="gt">vytvoříme</span></h2>
-      <p class="sh-sub fi d1">Vyberte balíček, který odpovídá vašim potřebám — nebo se ozvěte pro individuální řešení.</p>
+      <div class="tag"><span class="dot"></span>Naše služby</div>
+      <h2 class="sh-title fi">Co pro vás <span class="gt">uděláme</span></h2>
+      <p class="sh-sub fi d1">Čtyři jasné služby. Žádné zbytečné balíčky — jen to, co přináší výsledky.</p>
     </div>
-    <div class="pkg-grid">
+    <div class="svc-cards-grid">
 
-      <!-- Balíček 1 -->
-      <div class="pkg featured fi">
-        <span class="pkg-icon">📱</span>
-        <div class="pkg-name">Social & Paid Ads</div>
-        <span class="pkg-badge">Nejpopulárnější</span>
-        <p class="pkg-desc">Krátké AI videa pro sociální sítě a reklamy. Realistický UGC formát — bez herců, bez natáčení.</p>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-feats">
-          <li>Realistické AI UGC videa</li>
-          <li>Meta Ads & TikTok Ads kreativy</li>
-          <li>Instagram Reels, Stories, TikTok</li>
-          <li>A/B testování hooků a CTA</li>
-          <li>Vertikální 9:16 formát</li>
+      <!-- Karta 1: AI UGC Videa -->
+      <div class="svc-card fi">
+        <span class="svc-card-emoji">📱</span>
+        <div class="svc-card-title">AI UGC Videa</div>
+        <div class="svc-card-subtitle">AI UGC obsah · Reels / TikTok / Meta</div>
+        <ul class="svc-card-bullets">
+          <li>✓ 4 varianty hooků v ceně</li>
+          <li>✓ Žádný casting ani natáčení</li>
+          <li>✓ Od 6 000 Kč / video</li>
+          <li>✓ Dodání do 5 dní</li>
         </ul>
-        <a href="#contact" class="pkg-cta">Nezávazná poptávka →</a>
+        <button class="svc-card-btn" onclick="openSvcModal('ugc')">Více info →</button>
       </div>
 
-      <!-- Balíček 2 -->
-      <div class="pkg fi d1">
-        <span class="pkg-icon">🖼️</span>
-        <div class="pkg-name">Marketingové vizuály & Reklamy</div>
-        <span class="pkg-badge">All-in-one marketing</span>
-        <p class="pkg-desc">Veškerý AI vizuální obsah mimo sociální sítě — produktové fotky, bannery, TV spoty a další marketingové materiály.</p>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-feats">
-          <li>Produktové fotky a vizuály</li>
-          <li>Bannery pro web, email & newsletter</li>
-          <li>Billboardy a tiskové materiály</li>
-          <li>TV spoty a YouTube videa</li>
-          <li>Display reklamy a Google Ads</li>
+      <!-- Karta 2: AI Reklamní Videa -->
+      <div class="svc-card fi d1">
+        <span class="svc-card-emoji">🎬</span>
+        <div class="svc-card-title">AI Reklamní Videa</div>
+        <div class="svc-card-subtitle">Profesionální ad kreativy · Brand storytelling</div>
+        <ul class="svc-card-bullets">
+          <li>✓ TV i social formáty</li>
+          <li>✓ Scénář v ceně</li>
+          <li>✓ YouTube & Meta Ads</li>
+          <li>✓ Brand storytelling</li>
         </ul>
-        <a href="#contact" class="pkg-cta">Nezávazná poptávka →</a>
+        <button class="svc-card-btn" onclick="openSvcModal('reklama')">Více info →</button>
       </div>
 
-      <!-- Balíček 3 -->
-      <div class="pkg fi d2">
-        <span class="pkg-icon">🤖</span>
-        <div class="pkg-name">AI obsah pro firmy</div>
-        <span class="pkg-badge">Enterprise</span>
-        <p class="pkg-desc">Interní firemní videa a e-learning s AI avatary. Škálovatelné řešení — prezentujte obsah tváří konkrétní osoby bez natáčení.</p>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-feats">
-          <li>Video kurzy a e-learning</li>
-          <li>Onboarding a interní školení</li>
-          <li>AI klon konkrétní osoby / mluvčího</li>
-          <li>Firemní prezentace a komunikace</li>
-          <li>Edukační platformy a LMS</li>
+      <!-- Karta 3: AI Školení -->
+      <div class="svc-card fi d2">
+        <span class="svc-card-emoji">🤖</span>
+        <div class="svc-card-title">AI Školení</div>
+        <div class="svc-card-subtitle">Naučíme váš tým AI video tvorbu</div>
+        <ul class="svc-card-bullets">
+          <li>✓ Interní školení on-site</li>
+          <li>✓ Onboarding AI nástrojů</li>
+          <li>✓ Individuální plán</li>
+          <li>✓ Follow-up podpora</li>
         </ul>
-        <a href="#contact" class="pkg-cta">Nezávazná poptávka →</a>
+        <button class="svc-card-btn" onclick="openSvcModal('skoleni')">Více info →</button>
       </div>
 
-      <!-- Balíček 4 -->
-      <div class="pkg fi d3">
-        <span class="pkg-icon">⚡</span>
-        <div class="pkg-name">Custom & Poradenství</div>
-        <span class="pkg-badge">Na míru</span>
-        <p class="pkg-desc">Poradenství, školení a vlastní řešení na míru. Naučíme váš tým pracovat s AI nebo vytvoříme cokoliv nestandardního.</p>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-feats">
-          <li>Online školení AI tvorby pro firmy</li>
-          <li>Konzultace a strategické poradenství</li>
-          <li>Coaching v oblasti AI obsahu</li>
-          <li>Individuální řešení na míru</li>
-          <li>Dlouhodobá spolupráce</li>
+      <!-- Karta 4: Na Míru -->
+      <div class="svc-card fi d3">
+        <span class="svc-card-emoji">⚡</span>
+        <div class="svc-card-title">Na Míru</div>
+        <div class="svc-card-subtitle">Komplexní video projekty na zakázku</div>
+        <ul class="svc-card-bullets">
+          <li>✓ Brand filmy & TV reklamy</li>
+          <li>✓ Větší kampaňové projekty</li>
+          <li>✓ AI klony & firemní obsah</li>
+          <li>✓ Cenová nabídka na míru</li>
         </ul>
-        <a href="#contact" class="pkg-cta">Nezávazná poptávka →</a>
+        <button class="svc-card-btn" onclick="openSvcModal('namiru')">Více info →</button>
       </div>
 
     </div>
   </div>
 </section>
+
+<!-- Service Modals -->
+<div class="svc-modal-overlay" id="svcModal" onclick="closeSvcModal(event)">
+  <div class="svc-modal">
+    <button class="svc-modal-close" onclick="closeSvcModal()">✕</button>
+    <span class="svc-modal-emoji" id="svcModalEmoji"></span>
+    <div class="svc-modal-title" id="svcModalTitle"></div>
+    <div class="svc-modal-body" id="svcModalBody"></div>
+    <div class="svc-modal-cta">
+      <a href="#contact" onclick="closeSvcModal()">Nezávazná poptávka →</a>
+    </div>
+  </div>
+</div>
 
 <!-- ══ CALCULATOR ══ -->
 <section id="calculator" class="section-pad">
@@ -1603,7 +1739,7 @@
             <span class="cr-bar-amt old" id="bOld">80 000 Kč</span>
           </div>
           <div class="cr-bar-row">
-            <span class="cr-bar-name">Se Scrollers</span>
+            <span class="cr-bar-name">Se Upgraide</span>
             <div class="cr-bar-bg"><div class="cr-fill new" id="barNew" style="width:35%"></div></div>
             <span class="cr-bar-amt new" id="bNew">28 000 Kč</span>
           </div>
@@ -1622,7 +1758,7 @@
           <div class="cr-card">
             <div class="cr-card-lbl">Cena za video</div>
             <div class="cr-card-val acc" id="rPerV">~7 000 Kč</div>
-            <div class="cr-card-sub">se Scrollers</div>
+            <div class="cr-card-sub">se Upgraide</div>
           </div>
           <div class="cr-card">
             <div class="cr-card-lbl">Videí za stejný budget</div>
@@ -1639,66 +1775,6 @@
             Chci přesnou nabídku
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ SHOWCASE — bigger phones ══ -->
-<section id="showcase" class="section-pad">
-  <div class="container">
-    <div class="sc-inner">
-      <div class="sc-text">
-        <div class="tag fi"><span class="dot"></span>Jak to vypadá</div>
-        <h2 class="fi d1">Výsledky, které <span class="gt">vidíte hned</span></h2>
-        <p class="fi d2">Naše AI videa vypadají jako profesionálně natočený obsah. Platformy jako Meta a TikTok tento formát odměňují — vypadá autenticky a zastavuje scroll.</p>
-        <div class="sc-chips fi d3">
-          <span class="sc-chip">📱 9:16 pro Reels a TikTok</span>
-          <span class="sc-chip">🎯 Optimalizováno pro konverze</span>
-          <span class="sc-chip">🔁 Neomezené varianty</span>
-          <span class="sc-chip">⚡ Do 5 pracovních dní</span>
-        </div>
-        <div class="fi d4">
-          <a href="#contact" class="btn btn-primary">
-            Chci ukázky pro svůj produkt
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="phones-big fi d1">
-        <div class="ph-big sm">
-          <div class="ph-notch-b"></div>
-          <div class="ph-scr">
-            <iframe src="https://player.vimeo.com/video/1173981601?badge=0&autopause=0&player_id=vsc1&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;" allowfullscreen></iframe>
-            <div class="ph-info-b">
-              <div class="ph-lbl">AI UGC video</div>
-              <div class="ph-name">Recenze misky</div>
-              <div class="ph-tag">kulina.cz</div>
-            </div>
-          </div>
-        </div>
-        <div class="ph-big md">
-          <div class="ph-notch-b"></div>
-          <div class="ph-scr">
-            <iframe src="https://player.vimeo.com/video/1173981367?badge=0&autopause=0&player_id=vsc2&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;" allowfullscreen></iframe>
-            <div class="ph-info-b">
-              <div class="ph-lbl">AI UGC video</div>
-              <div class="ph-name">Recenze produktu</div>
-              <div class="ph-tag">Dermacol.cz</div>
-            </div>
-          </div>
-        </div>
-        <div class="ph-big sm">
-          <div class="ph-notch-b"></div>
-          <div class="ph-scr">
-            <iframe src="https://player.vimeo.com/video/1173986088?badge=0&autopause=0&player_id=vsc3&app_id=58479&autoplay=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;" allowfullscreen></iframe>
-            <div class="ph-info-b">
-              <div class="ph-lbl">Produktová reklama</div>
-              <div class="ph-name">Recenze pánve</div>
-              <div class="ph-tag">kulina.cz</div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1746,7 +1822,7 @@
     <div class="testi-grid">
       <div class="testi-card fi">
         <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="testi-quote">„Se Scrollers jsme konečně dokázali zásobovat kampaně pravidelným proudem čerstvých kreativ. Příprava jednoho videa trvala dříve týdny — teď to máme do pěti dní a testujeme mnohem více variant najednou."</p>
+        <p class="testi-quote">„S Upgraide jsme konečně dokázali zásobovat kampaně pravidelným proudem čerstvých kreativ. Příprava jednoho videa trvala dříve týdny — teď to máme do pěti dní a testujeme mnohem více variant najednou."</p>
         <div class="testi-by">
           <div class="testi-av av1">D</div>
           <div>
@@ -1758,7 +1834,7 @@
       </div>
       <div class="testi-card fi d1">
         <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="testi-quote">„Jako e-shop s tisíci produkty jsme potřebovali škálovatelné řešení pro video obsah. AI kreativy od Scrollers nám umožnily pokrýt mnohem víc kategorií bez navyšování produkčního rozpočtu."</p>
+        <p class="testi-quote">„Jako e-shop s tisíci produkty jsme potřebovali škálovatelné řešení pro video obsah. AI kreativy od Upgraide nám umožnily pokrýt mnohem víc kategorií bez navyšování produkčního rozpočtu."</p>
         <div class="testi-by">
           <div class="testi-av av2">K</div>
           <div>
@@ -1781,41 +1857,15 @@
       <div class="about-vis fi">
         <div class="ab-glow"></div>
         <div style="text-align:center;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;">
-          <!-- Scrollers logomark -->
-          <svg width="148" height="148" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="sLg" x1="5" y1="5" x2="105" y2="105" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#d8b4fe"/>
-                <stop offset="0.48" stop-color="#7c6dfa"/>
-                <stop offset="1" stop-color="#2dd4bf"/>
-              </linearGradient>
-              <filter id="sGlow" x="-40%" y="-40%" width="180%" height="180%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
-                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-            <!-- BG -->
-            <rect width="110" height="110" rx="28" fill="#0c0c20"/>
-            <rect width="110" height="110" rx="28" fill="url(#sLg)" fill-opacity="0.09"/>
-            <rect x="0.5" y="0.5" width="109" height="109" rx="27.5" stroke="url(#sLg)" stroke-opacity="0.3" stroke-width="1"/>
-            <!-- Inner glow halo -->
-            <ellipse cx="55" cy="55" rx="34" ry="34" fill="url(#sLg)" fill-opacity="0.09"/>
-            <!-- S lettermark: two bezier arcs forming a clean bold S -->
-            <path d="M 73 27 C 73 14, 37 14, 37 35 C 37 51, 75 51, 75 67 C 75 88, 39 88, 39 75"
-              stroke="url(#sLg)" stroke-width="10" stroke-linecap="round" fill="none" filter="url(#sGlow)"/>
-            <!-- Small play-dot accent bottom right -->
-            <circle cx="82" cy="82" r="7" fill="url(#sLg)" fill-opacity="0.18"/>
-            <path d="M79.5 82 l5 -3 l0 6 z" fill="url(#sLg)"/>
-          </svg>
-          <!-- Wordmark -->
-          <div style="margin-top:14px;font-size:clamp(20px,2.2vw,26px);font-weight:900;letter-spacing:-.03em;background:linear-gradient(130deg,#fff 30%,var(--accent-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Scrollers</div>
-          <div style="font-size:clamp(11px,.82vw,13px);color:var(--text-dim);margin-top:5px;letter-spacing:.11em;text-transform:uppercase;font-weight:600;">AI Creative Studio</div>
+          <!-- Wordmark only -->
+          <div style="font-size:clamp(36px,5vw,64px);font-weight:900;letter-spacing:-.04em;line-height:1;">Upgr<span class="logo-ai">ai</span>de</div>
+          <div style="font-size:clamp(11px,.82vw,13px);color:var(--text-dim);margin-top:10px;letter-spacing:.11em;text-transform:uppercase;font-weight:600;">Váš AI partner pro marketing</div>
         </div>
       </div>
       <div class="about-txt">
         <div class="tag fi"><span class="dot"></span>O nás</div>
-        <h2 class="fi d1">Nejsme agentura.<br /><span class="gt">Jsme AI kreativní studio.</span></h2>
-        <p class="fi d2">Scrollers je studio zaměřené na tvorbu realistického video obsahu pomocí moderních AI nástrojů. Pomáháme firmám tvořit obsah rychle, škálovatelně a bez zbytečných nákladů — výsledek je k nerozeznání od tradičně natočeného videa.</p>
+        <h2 class="fi d1">Nejsme jen dodavatel.<br /><span class="gt">Jsme váš AI partner.</span></h2>
+        <p class="fi d2">Upgraide je váš AI partner pro marketing — specializujeme se na tvorbu realistického video obsahu pomocí moderních AI nástrojů. Upgradujeme marketing firem rychle, škálovatelně a bez zbytečných nákladů.</p>
         <p class="fi d3">Věříme, že dobrý obsah nemusí stát jmění ani trvat týdny. AI to změnila — a my vám to přinášíme.</p>
         <div class="ab-vals fi d4">
           <span class="ab-val">AI-first</span>
@@ -1830,7 +1880,7 @@
     <!-- Tím -->
     <div class="team-intro fi">
       <div class="tag" style="margin:0 auto;"><span class="dot"></span>Náš tím</div>
-      <h3>Lidé za <span class="gt">Scrollers</span></h3>
+      <h3>Lidé za <span class="gt">Upgraide</span></h3>
     </div>
     <div class="team-grid">
 
@@ -1861,7 +1911,7 @@
           <div class="team-name">Daniel Král</div>
           <div class="team-role-badge">Vedoucí obchodu & procesů</div>
         </div>
-        <p class="team-bio">Expert na digitální marketing, e-commerce a online reklamu. Jako ředitel e-commerce ve společnosti Dermacol získal hluboké zkušenosti v oblasti výkonnostního marketingu, Amazon Marketplace a škálování online prodeje. Ve Scrollers zajišťuje komunikaci s klienty a strategický rozvoj agentury.</p>
+        <p class="team-bio">Expert na digitální marketing, e-commerce a online reklamu. Jako ředitel e-commerce ve společnosti Dermacol získal hluboké zkušenosti v oblasti výkonnostního marketingu, Amazon Marketplace a škálování online prodeje. V Upgraide zajišťuje komunikaci s klienty a strategický rozvoj studia.</p>
         <div class="team-socials">
           <a href="https://cz.linkedin.com/in/kraldaniel" class="team-social" target="_blank">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -1883,7 +1933,7 @@
         <h2 class="fi d1">Chcete AI video<br /><span class="gt">pro vaši značku?</span></h2>
         <p class="fi d2">Domluvme si krátký 20minutový call. Ukážeme vám ukázky a probereme, jak AI kreativy mohou fungovat pro váš e-shop.</p>
         <div class="ct-list fi d3">
-          <div class="ct-item"><div class="ct-ico">✉️</div><a href="mailto:info@scrollers.ai" style="color:inherit;text-decoration:none;">info@scrollers.ai</a></div>
+          <div class="ct-item"><div class="ct-ico">✉️</div><a href="mailto:info@upgraide.cz" style="color:inherit;text-decoration:none;">info@upgraide.cz</a></div>
           <div class="ct-item"><div class="ct-ico">⚡</div><span>Odpovídáme do 24 hodin</span></div>
           <div class="ct-item"><div class="ct-ico">☎️</div><span>Call domluvíte přes formulář</span></div>
         </div>
@@ -1898,11 +1948,11 @@
           <div class="f-grp">
             <label>Co vás zajímá?</label>
             <select name="balicek">
-              <option value="">Vyberte balíček</option>
-              <option>Social & Paid Ads (UGC videa, Meta/TikTok Ads)</option>
-              <option>Marketingové vizuály & Reklamy</option>
-              <option>AI obsah pro firmy (kurzy, školení, onboarding)</option>
-              <option>Custom & Poradenství (konzultace, coaching)</option>
+              <option value="">Vyberte službu</option>
+              <option>UGC Videa (Reels, TikTok, Meta Ads)</option>
+              <option>Reklamní Videa (YouTube, TV, brand filmy)</option>
+              <option>AI Školení (interní tým, on-site workshop)</option>
+              <option>Na Míru (větší projekty, AI klony, brand)</option>
               <option>Chci se nejdřív poradit</option>
             </select>
           </div>
@@ -1941,7 +1991,7 @@
       </div>
       <div class="faq-item fi d2">
         <button class="faq-q">Jak dlouho trvá výroba jednoho videa?<div class="faq-chev">▾</div></button>
-        <div class="faq-ans"><div class="faq-ans-inner">Standardní video kreativa je hotová do 3–5 pracovních dní od schválení briefu. U složitějších kampaňových videí počítejte s 5–7 dny. Urgentní zakázky řešíme individuálně.</div></div>
+        <div class="faq-ans"><div class="faq-ans-inner">Standardní AI UGC video je hotové do 5 pracovních dní od dodání briefu — to je náš závazný termín. U složitějších reklamních videí počítejte s 5–10 dny. Urgentní zakázky řešíme individuálně.</div></div>
       </div>
       <div class="faq-item fi d3">
         <button class="faq-q">Jak funguje měsíční balíček?<div class="faq-chev">▾</div></button>
@@ -1956,8 +2006,12 @@
         <div class="faq-ans"><div class="faq-ans-inner">Začínáme krátkým discovery callem — pochopíme váš brand a cíle. Pak připravíme první ukázkové kreativy, na nichž vidíte, jak naše práce vypadá v praxi. Teprve poté se rozhodujete o pokračování. Žádný závazek předem.</div></div>
       </div>
       <div class="faq-item fi d2">
-        <button class="faq-q">Kolik stojí videa? Jaký máte ceník?<div class="faq-chev">▾</div></button>
-        <div class="faq-ans"><div class="faq-ans-inner">Cena je vždy individuální — záleží na složitosti, délce a počtu videí měsíčně. Pracujeme na měsíční bázi, kde rozsah spolupráce určuje výslednou cenu. Pro orientaci: jednoduchá UGC videa se pohybují od 2 500 do 20 000 Kč za video, složitější produkce v rozmezí 10 000–25 000 Kč a větší projekty, reklamní videa nebo profesionální záběry 50 000 Kč+. Přesnou nabídku vždy připravíme na míru po prvním callu.</div></div>
+        <button class="faq-q">Co potřebujete od nás pro výrobu videa?<div class="faq-chev">▾</div></button>
+        <div class="faq-ans"><div class="faq-ans-inner">Stačí fotografie vašeho produktu (nebo odkaz na váš web), krátký popis cílové skupiny, záměr videa a základní informace o brandu. Fyzické zasílání produktu není nutné — vše proběhne online. Čím přesnější brief, tím lepší výsledek.</div></div>
+      </div>
+      <div class="faq-item fi">
+        <button class="faq-q">Jsou AI videa povolená na Facebooku, Instagramu nebo TikToku?<div class="faq-chev">▾</div></button>
+        <div class="faq-ans"><div class="faq-ans-inner">Ano — Meta, TikTok i YouTube AI obsah plně podporují. Platformy hodnotí výkon a angažovanost, ne způsob výroby. Naše AI videa procházejí na všech hlavních platformách bez omezení a dosahují srovnatelných nebo lepších výsledků než tradiční obsah.</div></div>
       </div>
     </div>
   </div>
@@ -1967,20 +2021,20 @@
 <footer>
   <div class="container">
     <div class="ft-top">
-      <a href="#hero" class="ft-logo">Scrollers</a>
+      <a href="#hero" class="ft-logo">Upgraide</a>
       <div class="ft-links">
-        <a href="#compare">Proč AI</a>
+        <a href="#compare-tool">Proč AI</a>
         <a href="#services">Balíčky</a>
         <a href="#calculator">Kalkulačka</a>
         <a href="#showcase">Ukázky</a>
         <a href="#about">O nás</a>
-        <a href="portfolio.html">Portfolio</a>
+        <a href="portfolio/">Portfolio</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Kontakt</a>
       </div>
     </div>
     <div class="ft-bot">
-      <span class="ft-copy">© 2026 Scrollers. Všechna práva vyhrazena.</span>
+      <span class="ft-copy">© 2026 Upgraide. Všechna práva vyhrazena.</span>
       <span class="ft-made">Vytvořeno s <span>♥</span> a umělou inteligencí</span>
     </div>
   </div>
@@ -2138,8 +2192,10 @@
     });
   });
 
-  document.getElementById('wwdNext').addEventListener('click', () => wwdGoTo(wwdCurrent + 1));
-  document.getElementById('wwdPrev').addEventListener('click', () => wwdGoTo(wwdCurrent - 1));
+  const wwdNextBtn = document.getElementById('wwdNext');
+  const wwdPrevBtn = document.getElementById('wwdPrev');
+  if (wwdNextBtn) wwdNextBtn.addEventListener('click', () => wwdGoTo(wwdCurrent + 1));
+  if (wwdPrevBtn) wwdPrevBtn.addEventListener('click', () => wwdGoTo(wwdCurrent - 1));
   wwdDots.forEach((d, i) => d.addEventListener('click', () => wwdGoTo(i)));
 
   // ── Calculator ──
@@ -2308,8 +2364,8 @@
   // ── Language switcher ──
   const LANGS = {
     cs: {
-      'title': 'Scrollers – AI reklamní videa pro e-commerce značky',
-      'meta-desc': 'AI kreativní studio. Pomáháme e-commerce značkám tvořit video kreativy rychleji, levněji a bez natáčení.',
+      'title': 'Upgraide – AI video tvorba, která upgraduje váš marketing',
+      'meta-desc': 'AI kreativní studio. Upgradujeme váš marketing pomocí AI videí — rychleji, levněji a bez natáčení.',
       // NAV
       'nav-compare': 'Proč AI',
       'nav-services': 'Balíčky',
@@ -2325,13 +2381,13 @@
       'mob-faq': 'FAQ',
       'mob-contact': 'Kontakt',
       // HERO
-      'hero-h1': 'Realistické AI videa,<br />která <span class="gt">nahrazují skutečné herce.</span>',
-      'hero-sub': 'Vytváříme AI obsah, který je k nerozeznání od skutečně natočeného videa — <strong>bez influencerů, bez natáčení.</strong> Ušetřete čas i náklady, aniž by zákazník poznal rozdíl.',
+      'hero-h1': 'Upgradujte svůj marketing<br />pomocí <span class="gt">AI video tvorby.</span>',
+      'hero-sub': 'Vytváříme AI videa, která vypadají jako skutečná — bez influencerů, bez natáčení.<br />Přinášíme kvalitní AI obsah, který prodává vaše produkty.<br /><br /><span style="color:var(--accent-2);">👀 Psst:</span> 99,9 % lidí nerozezná naše AI videa od skutečnosti.',
       'hero-cta1': 'Nezávazná poptávka',
       'hero-cta2': 'Spočítat úspory',
       // COMPARISON SLIDER
       'cs-bottom': '99,9 % lidí nerozezná AI video od natočeného',
-      'cs-ai-label': 'AI video · Scrollers',
+      'cs-ai-label': 'AI video · Upgraide',
       'cs-real-label': 'Skutečný influencer',
       'cs-bullet-ai-1': '✓ Rychlé dodání',
       'cs-bullet-ai-2': '✓ Bez castingu a natáčení',
@@ -2392,6 +2448,7 @@
       'cmp-ctl-time2-bad': '1–2 týdny',
       'cmp-ctl-step3-bad': 'Střih a schválení',
       'cmp-ctl-time3-bad': '3–4 týdny celkem',
+      'cmp-good-title': 'Upgraide AI',
       'cmp-good-sub': 'Moderní přístup',
       'cmp-good-1-strong': 'Pošlete fotku produktu',
       'cmp-good-1-span': 'Žádné natáčení, žádné fyzické zasílání. Stačí fotografie a brief.',
@@ -2419,22 +2476,22 @@
       'calc-header': 'Orientační výsledek',
       'calc-bar-title': 'Porovnání měsíčních nákladů',
       'calc-bar-now': 'Nyní',
-      'calc-bar-with': 'Se Scrollers',
+      'calc-bar-with': 'Se Upgraide',
       'calc-lbl-savm': 'Měsíční úspora',
       'calc-sub-savm': 'každý měsíc',
       'calc-lbl-savy': 'Roční úspora',
       'calc-sub-savy': 'za rok',
       'calc-lbl-perv': 'Cena za video',
-      'calc-sub-perv': 'se Scrollers',
+      'calc-sub-perv': 'se Upgraide',
       'calc-lbl-more': 'Videí za stejný budget',
       'calc-sub-more': 'místo',
       'calc-disclaimer': '⚠️ Výsledky jsou orientační. Skutečná cena závisí na rozsahu projektu a může být vyšší. Přesnou nabídku sestavíme na bezplatném callu.',
       'calc-cta-p': 'Zajímá vás přesná cena pro váš konkrétní projekt?',
       'calc-cta-btn': 'Chci přesnou nabídku',
       // SERVICES
-      'svc-tag': 'Naše balíčky',
-      'svc-h2': 'Co pro vás <span class="gt">vytvoříme</span>',
-      'svc-sub': 'Vyberte balíček, který odpovídá vašim potřebám — nebo se ozvěte pro individuální řešení.',
+      'svc-tag': 'Naše služby',
+      'svc-h2': 'Co pro vás <span class="gt">uděláme</span>',
+      'svc-sub': 'Čtyři jasné služby. Žádné zbytečné balíčky — jen to, co přináší výsledky.',
       'pkg1-badge': 'Nejpopulárnější',
       'pkg1-desc': 'Krátké AI videa pro sociální sítě a reklamy. Realistický UGC formát — bez herců, bez natáčení.',
       'pkg1-f1': 'Realistické AI UGC videa', 'pkg1-f2': 'Meta Ads & TikTok Ads kreativy',
@@ -2474,22 +2531,22 @@
       // TESTIMONIALS
       'testi-tag': 'Reference',
       'testi-h2': 'Co říkají <span class="gt">naši klienti</span>',
-      'testi1-quote': '„Se Scrollers jsme konečně dokázali zásobovat kampaně pravidelným proudem čerstvých kreativ. Příprava jednoho videa trvala dříve týdny — teď to máme do pěti dní a testujeme mnohem více variant najednou."',
+      'testi1-quote': '„S Upgraide jsme konečně dokázali zásobovat kampaně pravidelným proudem čerstvých kreativ. Příprava jednoho videa trvala dříve týdny — teď to máme do pěti dní a testujeme mnohem více variant najednou."',
       'testi1-name': 'Marketing tým', 'testi1-role': 'Performance marketing',
-      'testi2-quote': '„Jako e-shop s tisíci produkty jsme potřebovali škálovatelné řešení pro video obsah. AI kreativy od Scrollers nám umožnily pokrýt mnohem víc kategorií bez navyšování produkčního rozpočtu."',
+      'testi2-quote': '„Jako e-shop s tisíci produkty jsme potřebovali škálovatelné řešení pro video obsah. AI kreativy od Upgraide nám umožnily pokrýt mnohem víc kategorií bez navyšování produkčního rozpočtu."',
       'testi2-name': 'E-commerce tým', 'testi2-role': 'Digitální marketing',
       // ABOUT
       'about-tag': 'O nás',
-      'about-h2': 'Nejsme agentura.<br /><span class="gt">Jsme AI kreativní studio.</span>',
-      'about-p1': 'Scrollers je studio zaměřené na tvorbu realistického video obsahu pomocí moderních AI nástrojů. Pomáháme firmám tvořit obsah rychle, škálovatelně a bez zbytečných nákladů — výsledek je k nerozeznání od tradičně natočeného videa.',
+      'about-h2': 'Nejsme jen dodavatel.<br /><span class="gt">Jsme váš AI partner.</span>',
+      'about-p1': 'Upgraide je váš AI partner pro marketing — specializujeme se na tvorbu realistického video obsahu pomocí moderních AI nástrojů. Upgradujeme marketing firem rychle, škálovatelně a bez zbytečných nákladů.',
       'about-p2': 'Věříme, že dobrý obsah nemusí stát jmění ani trvat týdny. AI to změnila — a my vám to přinášíme.',
       'about-val1': 'AI-first', 'about-val2': 'Rychlost', 'about-val3': 'Výsledky', 'about-val4': 'Transparentnost', 'about-val5': 'Škálovatelnost',
       'team-tag': 'Náš tím',
-      'team-h3': 'Lidé za <span class="gt">Scrollers</span>',
+      'team-h3': 'Lidé za <span class="gt">Upgraide</span>',
       'bruno-role': 'Vedoucí AI tvorby',
       'bruno-bio': 'Specialista na tvorbu realistického AI video obsahu s hlubokými zkušenostmi v oblasti AI produkce. Vede tým kreativních tvůrců stojících za výsledným obsahem pro naše klienty. Expert na nejnovější AI nástroje a technologie pro video tvorbu — od konceptu až po finální kreativy.',
       'daniel-role': 'Vedoucí obchodu & procesů',
-      'daniel-bio': 'Expert na digitální marketing, e-commerce a online reklamu. Jako ředitel e-commerce ve společnosti Dermacol získal hluboké zkušenosti v oblasti výkonnostního marketingu, Amazon Marketplace a škálování online prodeje. Ve Scrollers zajišťuje komunikaci s klienty a strategický rozvoj agentury.',
+      'daniel-bio': 'Expert na digitální marketing, e-commerce a online reklamu. Jako ředitel e-commerce ve společnosti Dermacol získal hluboké zkušenosti v oblasti výkonnostního marketingu, Amazon Marketplace a škálování online prodeje. V Upgraide zajišťuje komunikaci s klienty a strategický rozvoj studia.',
       // CONTACT
       'ct-tag': 'Kontakt',
       'ct-h2': 'Chcete AI video<br /><span class="gt">pro vaši značku?</span>',
@@ -2500,11 +2557,11 @@
       'f-label-firm': 'Firma / E-shop', 'f-ph-firm': 'Váš e-shop',
       'f-label-email': 'E-mail', 'f-ph-email': 'jan@vaseznacka.cz',
       'f-label-pkg': 'Co vás zajímá?',
-      'f-opt0': 'Vyberte balíček',
-      'f-opt1': 'Social & Paid Ads (UGC videa, Meta/TikTok Ads)',
-      'f-opt2': 'Marketingové vizuály & Reklamy',
-      'f-opt3': 'AI obsah pro firmy (kurzy, školení, onboarding)',
-      'f-opt4': 'Custom & Poradenství (konzultace, coaching)',
+      'f-opt0': 'Vyberte službu',
+      'f-opt1': 'UGC Videa (Reels, TikTok, Meta Ads)',
+      'f-opt2': 'Reklamní Videa (YouTube, TV, brand filmy)',
+      'f-opt3': 'AI Školení (interní tým, on-site workshop)',
+      'f-opt4': 'Na Míru (větší projekty, AI klony, brand)',
       'f-opt5': 'Chci se nejdřív poradit',
       'f-label-msg': 'Zpráva (volitelné)', 'f-ph-msg': 'Řekněte nám více o vašem produktu nebo projektu…',
       'f-submit': 'Odeslat poptávku',
@@ -2519,17 +2576,56 @@
       'faq-q2': 'Musím posílat fyzický produkt?',
       'faq-a2': 'Ne — a to je jedna z největších výhod AI produkce. Stačí nám fotografie vašeho produktu a popis. Žádné balení, žádné zasílání, žádné čekání na doručení. Celý proces probíhá online a je díky tomu mnohem rychlejší a pohodlnější.',
       'faq-q3': 'Jak dlouho trvá výroba jednoho videa?',
-      'faq-a3': 'Standardní video kreativa je hotová do 3–5 pracovních dní od schválení briefu. U složitějších kampaňových videí počítejte s 5–7 dny. Urgentní zakázky řešíme individuálně.',
+      'faq-a3': 'Standardní AI UGC video je hotové do 5 pracovních dní od dodání briefu — to je náš závazný termín. U složitějších reklamních videí počítejte s 5–10 dny. Urgentní zakázky řešíme individuálně.',
       'faq-q4': 'Jak funguje měsíční balíček?',
       'faq-a4': 'V rámci měsíčního balíčku dostáváte pravidelný přísun nových kreativ každý měsíc — takže vaše kampaně mají vždy čerstvý obsah pro testování. Balíček je výrazně výhodnější než jednorázové zakázky. Jednorázová produkce je také možná, ale cena za video vyjde dráže.',
       'faq-q5': 'Pro jaké platformy videa vytváříte?',
       'faq-a5': 'Primárně Meta (Facebook a Instagram), TikTok a YouTube. Dodáváme ve správných formátech — vertikální 9:16 pro Stories a Reels, čtvercové 1:1 nebo horizontální 16:9 dle potřeby.',
       'faq-q6': 'Jak začít, pokud jsme nikdy AI video nepoužívali?',
       'faq-a6': 'Začínáme krátkým discovery callem — pochopíme váš brand a cíle. Pak připravíme první ukázkové kreativy, na nichž vidíte, jak naše práce vypadá v praxi. Teprve poté se rozhodujete o pokračování. Žádný závazek předem.',
+      'faq-q7': 'Co potřebujete od nás pro výrobu videa?',
+      'faq-a7': 'Stačí fotografie vašeho produktu (nebo odkaz na váš web), krátký popis cílové skupiny, záměr videa a základní informace o brandu. Fyzické zasílání produktu není nutné — vše proběhne online. Čím přesnější brief, tím lepší výsledek.',
+      'faq-q8': 'Jsou AI videa povolená na Facebooku, Instagramu nebo TikToku?',
+      'faq-a8': 'Ano — Meta, TikTok i YouTube AI obsah plně podporují. Platformy hodnotí výkon a angažovanost, ne způsob výroby. Naše AI videa procházejí na všech hlavních platformách bez omezení.',
+      // WWD
+      'wwd-samples': 'Ukázky naší tvorby',
+      // COMPARE TOOL
+      'comp-tag': 'Porovnání',
+      'comp-h2': 'Porovnejte sami — <span class="gt">výhoda za výhodou</span>',
+      'comp-tab-ugc': 'AI UGC Video', 'comp-tab-ads': 'AI Reklamní video',
+      'comp-skip': 'Přeskočit na souhrn →→', 'comp-back': '← Zpět na začátek',
+      'ugc-bad-who': 'Klasický influencer',
+      'ugc-s1-topic':'CENA','ugc-s1-bad-val':'10 000 – 20 000+ Kč','ugc-s1-bad-desc':'Cena za jedno video včetně dalších podmínek — a výsledek nikdy není garantovaný.','ugc-s1-good-val':'od 6 000 Kč','ugc-s1-good-desc':'Při dlouhodobé spolupráci — garantovaná kvalita, 4 varianty hooků v ceně.',
+      'ugc-s2-topic':'DOBA DODÁNÍ','ugc-s2-bad-val':'10+ dní','ugc-s2-bad-desc':'Koordinace, cestování, čekání na herce. Každý krok zdržuje.','ugc-s2-good-val':'do 5 dní','ugc-s2-good-desc':'Od dodání briefu po hotové video — max 5 pracovních dní, vždy.',
+      'ugc-s3-topic':'CO DOSTANETE','ugc-s3-bad-val':'1 video','ugc-s3-bad-desc':'Jeden výsledek, bez variant. Testování? Jen s dalším výdajem.','ugc-s3-good-val':'1 video = 4 hooky','ugc-s3-good-desc':'Čtyři varianty v ceně — testujte co funguje a škálujte vítěze.',
+      'ugc-s4-topic':'LOGISTIKA','ugc-s4-bad-val':'Fyzické zaslání','ugc-s4-bad-desc':'Musíte zabalit a odeslat produkt. Čekáte na doručení, zboží může být poškozeno.','ugc-s4-good-val':'Stačí fotografie','ugc-s4-good-desc':'Žádné balení, žádné zasílání. Pošlete fotku a brief — to je vše.',
+      'ugc-s5-topic':'JAZYKY','ugc-s5-bad-val':'1 jazyk','ugc-s5-bad-desc':'Každý překlad = nový influencer, nová smlouva, nové náklady.','ugc-s5-good-val':'Libovolný jazyk','ugc-s5-good-desc':'Čeština, angličtina, němčina — stejné video v libovolném jazyce.',
+      'ugc-s6-topic':'KVALITA','ugc-s6-bad-val':'Nepředvídatelná','ugc-s6-bad-desc':'Výsledek závisí na herci — jeho náladě, schopnostech a interpretaci.','ugc-s6-good-val':'99,9 % reálné','ugc-s6-good-desc':'Lidé nerozpoznají AI video od natočeného. Výsledek přesně podle briefu.',
+      'ugc-sum-bad-title':'Klasický influencer',
+      'ugc-sum-bad-1':'Vysoká cena za video','ugc-sum-bad-2':'10+ dní dodání','ugc-sum-bad-3':'1 video bez variant','ugc-sum-bad-4':'Fyzické zasílání produktu','ugc-sum-bad-5':'Pouze 1 jazyk','ugc-sum-bad-6':'Nestálá, nepředvídatelná kvalita',
+      'ugc-sum-good-1':'Zlomek ceny tradičních influencerů','ugc-sum-good-2':'Max 5 dní od briefu','ugc-sum-good-3':'4 hooky v ceně','ugc-sum-good-4':'Stačí fotografie produktu','ugc-sum-good-5':'Libovolný jazyk','ugc-sum-good-6':'99,9 % reálné — k nerozeznání',
+      'ads-bad-who':'Tradiční produkce',
+      'ads-s1-topic':'CENA','ads-s1-bad-val':'50 000 – 200 000+ Kč','ads-s1-bad-desc':'Kameraman, lokace, herci, střih, postprodukce. Každá položka přičítá.','ads-s1-good-val':'Zlomek ceny','ads-s1-good-desc':'Profesionální výsledek bez fyzické produkce. Ušetříte desítky tisíc.',
+      'ads-s2-topic':'ČASOVÁ NÁROČNOST','ads-s2-bad-val':'4–8 týdnů','ads-s2-bad-desc':'Příprava, casting, natáčení, postprodukce. Každá fáze zdržuje.','ads-s2-good-val':'Zlomek doby','ads-s2-good-desc':'Celá produkce hotová za čas, kdy klasické natáčení teprve začíná.',
+      'ads-s3-topic':'FLEXIBILITA','ads-s3-bad-val':'Nulová','ads-s3-bad-desc':'Každá změna = přetáčení a nové náklady. Chyba v textu? Nové natáčení.','ads-s3-good-val':'Plná kontrola','ads-s3-good-desc':'Úpravy bez přetáčení — varianty, jazykové verze i změny scénáře v ceně.',
+      'ads-s4-topic':'SCÉNÁŘ','ads-s4-bad-val':'Extra náklad','ads-s4-bad-desc':'Copywriter, schvalovací kola, čas navíc. Scénář nikdy nebývá zahrnut.','ads-s4-good-val':'Zahrnuto v ceně','ads-s4-good-desc':'Píšeme scénáře i briefy — vy jen schválíte. Žádné skryté náklady.',
+      'ads-sum-bad-title':'Tradiční produkce',
+      'ads-sum-bad-1':'50 000–200 000+ Kč za video','ads-sum-bad-2':'4–8 týdnů přípravy','ads-sum-bad-3':'Nulová flexibilita','ads-sum-bad-4':'Scénář = extra náklad',
+      'ads-sum-good-1':'Zlomek ceny tradičních produkcí','ads-sum-good-2':'Zlomek doby tradičních produkcí','ads-sum-good-3':'Plná kontrola a varianty','ads-sum-good-4':'Scénář v ceně',
+      // SERVICES CARDS
+      'svc1-title':'AI UGC Videa','svc1-sub':'AI UGC obsah · Reels / TikTok / Meta',
+      'svc1-f1':'✓ 4 varianty hooků v ceně','svc1-f2':'✓ Žádný casting ani natáčení','svc1-f3':'✓ Od 6 000 Kč / video','svc1-f4':'✓ Dodání do 5 dní',
+      'svc2-title':'AI Reklamní Videa','svc2-sub':'Profesionální ad kreativy · Brand storytelling',
+      'svc2-f1':'✓ TV i social formáty','svc2-f2':'✓ Scénář v ceně','svc2-f3':'✓ YouTube & Meta Ads','svc2-f4':'✓ Brand storytelling',
+      'svc3-title':'AI Školení','svc3-sub':'Naučíme váš tým AI video tvorbu',
+      'svc3-f1':'✓ Interní školení on-site','svc3-f2':'✓ Onboarding AI nástrojů','svc3-f3':'✓ Individuální plán','svc3-f4':'✓ Follow-up podpora',
+      'svc4-title':'Na Míru','svc4-sub':'Komplexní video projekty na zakázku',
+      'svc4-f1':'✓ Brand filmy & TV reklamy','svc4-f2':'✓ Větší kampaňové projekty','svc4-f3':'✓ AI klony & firemní obsah','svc4-f4':'✓ Cenová nabídka na míru',
+      'svc-btn':'Více info →',
       // FOOTER
       'ft-compare': 'Proč AI', 'ft-services': 'Balíčky', 'ft-calculator': 'Kalkulačka',
       'ft-showcase': 'Ukázky', 'ft-about': 'O nás', 'ft-faq': 'FAQ', 'ft-contact': 'Kontakt',
-      'ft-copy': '© 2026 Scrollers. Všechna práva vyhrazena.',
+      'ft-copy': '© 2026 Upgraide. Všechna práva vyhrazena.',
       'ft-made': 'Vytvořeno s <span>♥</span> a umělou inteligencí',
       // STICKY CTA
       'sticky-cta': 'Domluvit nezávazný call',
@@ -2541,8 +2637,8 @@
       'f-retry': 'Zkuste to znovu',
     },
     en: {
-      'title': 'Scrollers – AI Ad Videos for E-Commerce Brands',
-      'meta-desc': 'AI creative studio. We help e-commerce brands create video creatives faster, cheaper, and without filming.',
+      'title': 'Upgraide – AI Video Production That Upgrades Your Marketing',
+      'meta-desc': 'AI creative studio. We upgrade your marketing with AI videos — faster, cheaper, and without filming.',
       'nav-compare': 'Why AI',
       'nav-services': 'Packages',
       'nav-calculator': 'Calculator',
@@ -2555,12 +2651,13 @@
       'mob-about': 'About',
       'mob-faq': 'FAQ',
       'mob-contact': 'Contact',
-      'hero-h1': 'Realistic AI videos<br />that <span class="gt">replace real actors.</span>',
-      'hero-sub': 'We create AI content indistinguishable from real footage — <strong>no influencers, no filming.</strong> Save time and costs while customers can\'t tell the difference.',
+      'hero-h1': 'Upgrade your marketing<br />with <span class="gt">AI video production.</span>',
+      'hero-sub': 'We create AI videos indistinguishable from real footage — <strong>no influencers, no filming.</strong> Scale your marketing without an agency, without compromise.',
       'hero-cta1': 'Get a free quote',
       'hero-cta2': 'Calculate savings',
       'cs-bottom': '99.9% of people can\'t tell AI video from real footage',
-      'cs-ai-label': 'AI video · Scrollers',
+      'cs-ai-label': 'AI video · Upgraide',
+
       'cs-real-label': 'Real influencer',
       'cs-bullet-ai-1': '✓ Fast delivery',
       'cs-bullet-ai-2': '✓ No casting or filming',
@@ -2643,21 +2740,21 @@
       'calc-header': 'Indicative result',
       'calc-bar-title': 'Monthly cost comparison',
       'calc-bar-now': 'Now',
-      'calc-bar-with': 'With Scrollers',
+      'calc-bar-with': 'With Upgraide',
       'calc-lbl-savm': 'Monthly savings',
       'calc-sub-savm': 'every month',
       'calc-lbl-savy': 'Annual savings',
       'calc-sub-savy': 'per year',
       'calc-lbl-perv': 'Price per video',
-      'calc-sub-perv': 'with Scrollers',
+      'calc-sub-perv': 'with Upgraide',
       'calc-lbl-more': 'Videos for same budget',
       'calc-sub-more': 'instead of',
       'calc-disclaimer': '⚠️ Results are indicative. Actual price depends on project scope and may be higher. We\'ll build an exact offer on a free call.',
       'calc-cta-p': 'Want an exact price for your specific project?',
       'calc-cta-btn': 'Get exact pricing',
-      'svc-tag': 'Our packages',
-      'svc-h2': 'What we\'ll <span class="gt">create for you</span>',
-      'svc-sub': 'Choose the package that fits your needs — or reach out for a custom solution.',
+      'svc-tag': 'Our services',
+      'svc-h2': 'What we\'ll <span class="gt">do for you</span>',
+      'svc-sub': 'Four clear services. No unnecessary packages — just what delivers results.',
       'pkg1-badge': 'Most popular',
       'pkg1-desc': 'Short AI videos for social media and ads. Realistic UGC format — no actors, no filming.',
       'pkg1-f1': 'Realistic AI UGC videos', 'pkg1-f2': 'Meta Ads & TikTok Ads creatives',
@@ -2694,21 +2791,21 @@
       'step3-chip': '📦 Monthly creative package',
       'testi-tag': 'Testimonials',
       'testi-h2': 'What our <span class="gt">clients say</span>',
-      'testi1-quote': '"With Scrollers we were finally able to supply our campaigns with a steady stream of fresh creatives. Preparing one video used to take weeks — now we have it within five days and test many more variants at once."',
+      'testi1-quote': '"With Upgraide we were finally able to supply our campaigns with a steady stream of fresh creatives. Preparing one video used to take weeks — now we have it within five days and test many more variants at once."',
       'testi1-name': 'Marketing team', 'testi1-role': 'Performance marketing',
-      'testi2-quote': '"As an e-shop with thousands of products we needed a scalable solution for video content. AI creatives from Scrollers allowed us to cover far more categories without increasing our production budget."',
+      'testi2-quote': '"As an e-shop with thousands of products we needed a scalable solution for video content. AI creatives from Upgraide allowed us to cover far more categories without increasing our production budget."',
       'testi2-name': 'E-commerce team', 'testi2-role': 'Digital marketing',
       'about-tag': 'About us',
-      'about-h2': 'We\'re not an agency.<br /><span class="gt">We\'re an AI creative studio.</span>',
-      'about-p1': 'Scrollers is a studio focused on creating realistic video content using modern AI tools. We help companies create content quickly, scalably, and without unnecessary costs — the result is indistinguishable from traditionally filmed video.',
+      'about-h2': 'We\'re not just a supplier.<br /><span class="gt">We\'re your AI partner.</span>',
+      'about-p1': 'Upgraide is your AI partner for marketing — we specialize in creating realistic video content using modern AI tools. We upgrade company marketing quickly, scalably, and without unnecessary costs.',
       'about-p2': 'We believe great content doesn\'t have to cost a fortune or take weeks. AI changed that — and we bring it to you.',
       'about-val1': 'AI-first', 'about-val2': 'Speed', 'about-val3': 'Results', 'about-val4': 'Transparency', 'about-val5': 'Scalability',
       'team-tag': 'Our team',
-      'team-h3': 'The people behind <span class="gt">Scrollers</span>',
+      'team-h3': 'The people behind <span class="gt">Upgraide</span>',
       'bruno-role': 'Head of AI Production',
       'bruno-bio': 'Specialist in creating realistic AI video content with deep experience in AI production. Leads the team of creative producers behind the content for our clients. Expert in the latest AI tools and technologies for video creation — from concept to final creatives.',
       'daniel-role': 'Head of Business & Operations',
-      'daniel-bio': 'Expert in digital marketing, e-commerce and online advertising. As e-commerce director at Dermacol, gained deep experience in performance marketing, Amazon Marketplace and scaling online sales. At Scrollers he manages client communications and strategic agency development.',
+      'daniel-bio': 'Expert in digital marketing, e-commerce and online advertising. As e-commerce director at Dermacol, gained deep experience in performance marketing, Amazon Marketplace and scaling online sales. At Upgraide he manages client communications and strategic studio development.',
       'ct-tag': 'Contact',
       'ct-h2': 'Want an AI video<br /><span class="gt">for your brand?</span>',
       'ct-p': 'Let\'s schedule a short 20-minute call. We\'ll show you samples and discuss how AI creatives can work for your e-shop.',
@@ -2718,11 +2815,11 @@
       'f-label-firm': 'Company / E-shop', 'f-ph-firm': 'Your e-shop',
       'f-label-email': 'Email', 'f-ph-email': 'john@yourbrand.com',
       'f-label-pkg': 'What are you interested in?',
-      'f-opt0': 'Select a package',
-      'f-opt1': 'Social & Paid Ads (UGC videos, Meta/TikTok Ads)',
-      'f-opt2': 'Marketing Visuals & Ads',
-      'f-opt3': 'AI Content for Business (courses, training, onboarding)',
-      'f-opt4': 'Custom & Consulting (consultation, coaching)',
+      'f-opt0': 'Select a service',
+      'f-opt1': 'UGC Videos (Reels, TikTok, Meta Ads)',
+      'f-opt2': 'Ad Videos (YouTube, TV, brand films)',
+      'f-opt3': 'AI Training (in-house team, on-site workshop)',
+      'f-opt4': 'Custom (large projects, AI clones, brand)',
       'f-opt5': 'I\'d like to consult first',
       'f-label-msg': 'Message (optional)', 'f-ph-msg': 'Tell us more about your product or project…',
       'f-submit': 'Send inquiry',
@@ -2736,16 +2833,55 @@
       'faq-q2': 'Do I need to send a physical product?',
       'faq-a2': 'No — and that\'s one of the biggest advantages of AI production. We just need photos of your product and a description. No packaging, no shipping, no waiting for delivery. The entire process happens online and is therefore much faster and more convenient.',
       'faq-q3': 'How long does it take to produce one video?',
-      'faq-a3': 'A standard video creative is ready within 3–5 business days from brief approval. For more complex campaign videos expect 5–7 days. Urgent orders are handled individually.',
+      'faq-a3': 'A standard AI UGC video is ready within 5 business days from brief delivery — that is our committed timeline. For more complex ad videos expect 5–10 days. Urgent orders are handled individually.',
       'faq-q4': 'How does the monthly package work?',
       'faq-a4': 'Within the monthly package you receive a regular supply of new creatives every month — so your campaigns always have fresh content for testing. The package is significantly more cost-effective than one-off orders. One-off production is also possible but the per-video price will be higher.',
       'faq-q5': 'Which platforms do you create videos for?',
       'faq-a5': 'Primarily Meta (Facebook and Instagram), TikTok and YouTube. We deliver in the correct formats — vertical 9:16 for Stories and Reels, square 1:1 or horizontal 16:9 as needed.',
       'faq-q6': 'How do I start if we\'ve never used AI video before?',
       'faq-a6': 'We start with a short discovery call — we understand your brand and goals. Then we prepare the first sample creatives so you can see how our work looks in practice. Only then do you decide whether to continue. No commitment upfront.',
+      'faq-q7': 'What do you need from us to produce a video?',
+      'faq-a7': 'All we need is a photo of your product (or a link to your website), a short description of the target audience, the intent of the video, and basic brand information. No physical product shipping required — everything happens online. The more precise the brief, the better the result.',
+      'faq-q8': 'Are AI videos allowed on Facebook, Instagram or TikTok?',
+      'faq-a8': 'Yes — Meta, TikTok and YouTube fully support AI content. Platforms care about engagement and performance, not how the content was made. Our AI videos work on all major platforms without restrictions.',
+      // WWD
+      'wwd-samples': 'Our work samples',
+      // COMPARE TOOL
+      'comp-tag': 'Comparison',
+      'comp-h2': 'Compare for yourself — <span class="gt">advantage by advantage</span>',
+      'comp-tab-ugc': 'AI UGC Video', 'comp-tab-ads': 'AI Ad Video',
+      'comp-skip': 'Skip to summary →→', 'comp-back': '← Back to start',
+      'ugc-bad-who': 'Traditional influencer',
+      'ugc-s1-topic':'COST','ugc-s1-bad-val':'10,000 – 20,000+ CZK','ugc-s1-bad-desc':'Price per video including conditions — and the result is never guaranteed.','ugc-s1-good-val':'from 6,000 CZK','ugc-s1-good-desc':'With long-term collaboration — guaranteed quality, 4 hook variants included.',
+      'ugc-s2-topic':'DELIVERY TIME','ugc-s2-bad-val':'10+ days','ugc-s2-bad-desc':'Coordination, travel, waiting for the actor. Every step causes delays.','ugc-s2-good-val':'within 5 days','ugc-s2-good-desc':'From brief delivery to finished video — max 5 business days, always.',
+      'ugc-s3-topic':'WHAT YOU GET','ugc-s3-bad-val':'1 video','ugc-s3-bad-desc':'One result, no variants. Testing? Only with extra spend.','ugc-s3-good-val':'1 video = 4 hooks','ugc-s3-good-desc':'Four variants included — test what works and scale the winner.',
+      'ugc-s4-topic':'LOGISTICS','ugc-s4-bad-val':'Physical shipping','ugc-s4-bad-desc':'You need to pack and ship the product. Wait for delivery, goods may be damaged.','ugc-s4-good-val':'Just a photo','ugc-s4-good-desc':'No packing, no shipping. Send a photo and a brief — that\'s it.',
+      'ugc-s5-topic':'LANGUAGES','ugc-s5-bad-val':'1 language','ugc-s5-bad-desc':'Every translation = new influencer, new contract, new costs.','ugc-s5-good-val':'Any language','ugc-s5-good-desc':'Czech, English, German — the same video in any language.',
+      'ugc-s6-topic':'QUALITY','ugc-s6-bad-val':'Unpredictable','ugc-s6-bad-desc':'Result depends on the actor — their mood, skills and interpretation.','ugc-s6-good-val':'99.9% real','ugc-s6-good-desc':'People can\'t tell AI video from filmed content. Result exactly as briefed.',
+      'ugc-sum-bad-title':'Traditional influencer',
+      'ugc-sum-bad-1':'High cost per video','ugc-sum-bad-2':'10+ days delivery','ugc-sum-bad-3':'1 video, no variants','ugc-sum-bad-4':'Physical product shipping','ugc-sum-bad-5':'Single language only','ugc-sum-bad-6':'Inconsistent, unpredictable quality',
+      'ugc-sum-good-1':'Fraction of influencer costs','ugc-sum-good-2':'Max 5 days from brief','ugc-sum-good-3':'4 hooks included','ugc-sum-good-4':'Just a product photo','ugc-sum-good-5':'Any language','ugc-sum-good-6':'99.9% real — indistinguishable',
+      'ads-bad-who':'Traditional production',
+      'ads-s1-topic':'COST','ads-s1-bad-val':'50,000 – 200,000+ CZK','ads-s1-bad-desc':'Cameraman, location, actors, editing, post-production. Every item adds up.','ads-s1-good-val':'Fraction of cost','ads-s1-good-desc':'Professional result without physical production. Save tens of thousands.',
+      'ads-s2-topic':'TIME REQUIRED','ads-s2-bad-val':'4–8 weeks','ads-s2-bad-desc':'Preparation, casting, filming, post-production. Every phase causes delays.','ads-s2-good-val':'Fraction of time','ads-s2-good-desc':'Full production done in the time it takes traditional filming to begin.',
+      'ads-s3-topic':'FLEXIBILITY','ads-s3-bad-val':'Zero','ads-s3-bad-desc':'Every change = reshoot and new costs. Error in text? New filming.','ads-s3-good-val':'Full control','ads-s3-good-desc':'Edits without reshooting — variants, language versions and script changes included.',
+      'ads-s4-topic':'SCRIPT','ads-s4-bad-val':'Extra cost','ads-s4-bad-desc':'Copywriter, approval rounds, extra time. Script is never included.','ads-s4-good-val':'Included in price','ads-s4-good-desc':'We write scripts and briefs — you just approve. No hidden costs.',
+      'ads-sum-bad-title':'Traditional production',
+      'ads-sum-bad-1':'50,000–200,000+ CZK per video','ads-sum-bad-2':'4–8 weeks preparation','ads-sum-bad-3':'Zero flexibility','ads-sum-bad-4':'Script = extra cost',
+      'ads-sum-good-1':'Fraction of traditional production costs','ads-sum-good-2':'Fraction of traditional production time','ads-sum-good-3':'Full control and variants','ads-sum-good-4':'Script included in price',
+      // SERVICES CARDS
+      'svc1-title':'AI UGC Videos','svc1-sub':'AI UGC content · Reels / TikTok / Meta',
+      'svc1-f1':'✓ 4 hook variants included','svc1-f2':'✓ No casting or filming','svc1-f3':'✓ From 6,000 CZK / video','svc1-f4':'✓ Delivery within 5 days',
+      'svc2-title':'AI Ad Videos','svc2-sub':'Professional ad creatives · Brand storytelling',
+      'svc2-f1':'✓ TV and social formats','svc2-f2':'✓ Script included','svc2-f3':'✓ YouTube & Meta Ads','svc2-f4':'✓ Brand storytelling',
+      'svc3-title':'AI Training','svc3-sub':'We\'ll train your team in AI video creation',
+      'svc3-f1':'✓ In-house on-site training','svc3-f2':'✓ AI tools onboarding','svc3-f3':'✓ Individual plan','svc3-f4':'✓ Follow-up support',
+      'svc4-title':'Custom','svc4-sub':'Complex video projects on demand',
+      'svc4-f1':'✓ Brand films & TV commercials','svc4-f2':'✓ Larger campaign projects','svc4-f3':'✓ AI clones & corporate content','svc4-f4':'✓ Custom price quote',
+      'svc-btn':'More info →',
       'ft-compare': 'Why AI', 'ft-services': 'Packages', 'ft-calculator': 'Calculator',
       'ft-showcase': 'Showcase', 'ft-about': 'About', 'ft-faq': 'FAQ', 'ft-contact': 'Contact',
-      'ft-copy': '© 2026 Scrollers. All rights reserved.',
+      'ft-copy': '© 2026 Upgraide. All rights reserved.',
       'ft-made': 'Made with <span>♥</span> and artificial intelligence',
       'sticky-cta': 'Book a free call',
       // WWD sound button
@@ -2772,7 +2908,7 @@
     // NAV desktop
     const nl = document.querySelector('.nl');
     if (nl) {
-      nl.querySelector('a[href="#compare"]').textContent = t['nav-compare'];
+      nl.querySelector('a[href="#compare-tool"]').textContent = t['nav-compare'];
       nl.querySelector('a[href="#services"]').textContent = t['nav-services'];
       nl.querySelector('a[href="#calculator"]').textContent = t['nav-calculator'];
       nl.querySelector('a[href="#about"]').textContent = t['nav-about'];
@@ -2782,7 +2918,7 @@
     // MOB MENU
     const mm = document.querySelector('.mob-menu');
     if (mm) {
-      mm.querySelector('a[href="#compare"]').textContent = t['mob-compare'];
+      mm.querySelector('a[href="#compare-tool"]').textContent = t['mob-compare'];
       mm.querySelector('a[href="#services"]').textContent = t['mob-services'];
       mm.querySelector('a[href="#calculator"]').textContent = t['mob-calculator'];
       mm.querySelector('a[href="#about"]').textContent = t['mob-about'];
@@ -2813,51 +2949,68 @@
     if (aivhType) aivhType.textContent = t['client-aivh-type'];
 
     // WHAT WE DO
-    document.querySelector('#whatwedo .tag').innerHTML = '<span class="dot"></span>' + t['wwd-tag'];
-    document.querySelector('.wwd-text h2').innerHTML = t['wwd-h2'];
-    document.querySelector('.wwd-text .lead').textContent = t['wwd-lead'];
-    const uses = document.querySelectorAll('.wwd-use');
-    [['wwd-use1-strong','wwd-use1-span'],['wwd-use2-strong','wwd-use2-span'],['wwd-use3-strong','wwd-use3-span'],['wwd-use4-strong','wwd-use4-span']].forEach(([sk,spk],i) => {
-      if (!uses[i]) return;
-      uses[i].querySelector('strong').textContent = t[sk];
-      uses[i].querySelector('span').textContent = t[spk];
+    const wwdTag = document.querySelector('#whatwedo .tag');
+    if (wwdTag) wwdTag.innerHTML = '<span class="dot"></span>' + t['wwd-tag'];
+    const wwdH2 = document.querySelector('#whatwedo h2');
+    if (wwdH2) wwdH2.innerHTML = t['wwd-h2'];
+    const wwdLead = document.querySelector('.wwd-lead');
+    if (wwdLead) wwdLead.textContent = t['wwd-lead'];
+    const wwdSamplesLbl = document.querySelector('.ukázky-label');
+    if (wwdSamplesLbl) wwdSamplesLbl.textContent = t['wwd-samples'];
+
+    // COMPARE TOOL
+    const cmpTag = document.querySelector('#compare-tool .tag');
+    if (cmpTag) cmpTag.innerHTML = '<span class="dot"></span>' + t['comp-tag'];
+    const cmpH2 = document.querySelector('#compare-tool h2');
+    if (cmpH2) cmpH2.innerHTML = t['comp-h2'];
+    const ctabEls = document.querySelectorAll('.ctab');
+    if (ctabEls[0]) ctabEls[0].textContent = t['comp-tab-ugc'];
+    if (ctabEls[1]) ctabEls[1].textContent = t['comp-tab-ads'];
+    const cSkipEl = document.getElementById('cSkip');
+    if (cSkipEl) cSkipEl.textContent = t['comp-skip'];
+    const cBackEl = document.getElementById('cBack');
+    if (cBackEl) cBackEl.textContent = t['comp-back'];
+    // UGC regular slides
+    document.querySelectorAll('#cSlider .cslide[data-group="ugc"]:not(.cslide-summary)').forEach((slide, i) => {
+      const n = i + 1;
+      slide.querySelector('.cslide-topic').textContent = t['ugc-s'+n+'-topic'] || '';
+      slide.querySelector('.cslide-bad .cslide-who').textContent = t['ugc-bad-who'] || '';
+      slide.querySelector('.cslide-bad .cslide-val').textContent = t['ugc-s'+n+'-bad-val'] || '';
+      slide.querySelector('.cslide-bad .cslide-desc').textContent = t['ugc-s'+n+'-bad-desc'] || '';
+      slide.querySelector('.cslide-good .cslide-val').textContent = t['ugc-s'+n+'-good-val'] || '';
+      slide.querySelector('.cslide-good .cslide-desc').textContent = t['ugc-s'+n+'-good-desc'] || '';
     });
-    document.querySelector('.wwd-note').innerHTML = t['wwd-note'];
-
-    // PILLARS
-    document.querySelector('.pillars-title').innerHTML = t['pillars-title'];
-    const pillars = document.querySelectorAll('.pillar');
-    if (pillars[0]) { pillars[0].querySelector('.pillar-title').textContent = t['pillar1-title']; pillars[0].querySelector('.pillar-sub').textContent = t['pillar1-sub']; }
-    if (pillars[1]) { pillars[1].querySelector('.pillar-num').textContent = t['pillar2-num']; pillars[1].querySelector('.pillar-title').textContent = t['pillar2-title']; pillars[1].querySelector('.pillar-sub').textContent = t['pillar2-sub']; }
-    if (pillars[2]) { pillars[2].querySelector('.pillar-num').textContent = t['pillar3-num']; pillars[2].querySelector('.pillar-title').textContent = t['pillar3-title']; pillars[2].querySelector('.pillar-sub').textContent = t['pillar3-sub']; }
-    if (pillars[3]) { pillars[3].querySelector('.pillar-title').textContent = t['pillar4-title']; pillars[3].querySelector('.pillar-sub').textContent = t['pillar4-sub']; }
-
-    // COMPARE section
-    document.querySelector('#compare .tag').innerHTML = '<span class="dot"></span>' + t['cmp-tag'];
-    document.querySelector('#compare .sh-title').innerHTML = t['cmp-h2'];
-    document.querySelector('#compare .sh-sub').textContent = t['cmp-sub'];
-    const badCol = document.querySelector('.cmp-col.bad');
-    const goodCol = document.querySelector('.cmp-col.good');
-    if (badCol) {
-      badCol.querySelector('.cmp-head-title').textContent = t['cmp-bad-title'];
-      badCol.querySelector('.cmp-head-sub').textContent = t['cmp-bad-sub'];
-      const bi = badCol.querySelectorAll('.cmp-item');
-      [['cmp-bad-1-strong','cmp-bad-1-span'],['cmp-bad-2-strong','cmp-bad-2-span'],['cmp-bad-3-strong','cmp-bad-3-span'],['cmp-bad-4-strong','cmp-bad-4-span']].forEach(([sk,spk],i) => {
-        if (!bi[i]) return; bi[i].querySelector('strong').textContent = t[sk]; bi[i].querySelector('span').textContent = t[spk];
+    // UGC summary
+    const ugcSum = document.querySelector('#cSlider .cslide-summary[data-group="ugc"]');
+    if (ugcSum) {
+      ugcSum.querySelector('.csum-col.bad .csum-title').textContent = t['ugc-sum-bad-title'];
+      ugcSum.querySelectorAll('.csum-col.bad .csum-list li').forEach((li, i) => {
+        li.innerHTML = '<span style="color:#f87171;flex-shrink:0">✕</span> ' + (t['ugc-sum-bad-'+(i+1)] || '');
       });
-      badCol.querySelector('.ctl-heading').textContent = t['cmp-ctl-heading-bad'];
-      const bs = badCol.querySelectorAll('.ctl-step'); const bt = badCol.querySelectorAll('.ctl-time');
-      [['cmp-ctl-step1-bad','cmp-ctl-time1-bad'],['cmp-ctl-step2-bad','cmp-ctl-time2-bad'],['cmp-ctl-step3-bad','cmp-ctl-time3-bad']].forEach(([sk,tk],i) => { if(bs[i]) bs[i].textContent=t[sk]; if(bt[i]) bt[i].textContent=t[tk]; });
+      ugcSum.querySelectorAll('.csum-col.good .csum-list li').forEach((li, i) => {
+        li.innerHTML = '<span style="color:#2dd4bf;flex-shrink:0">✓</span> ' + (t['ugc-sum-good-'+(i+1)] || '');
+      });
     }
-    if (goodCol) {
-      goodCol.querySelector('.cmp-head-sub').textContent = t['cmp-good-sub'];
-      const gi = goodCol.querySelectorAll('.cmp-item');
-      [['cmp-good-1-strong','cmp-good-1-span'],['cmp-good-2-strong','cmp-good-2-span'],['cmp-good-3-strong','cmp-good-3-span'],['cmp-good-4-strong','cmp-good-4-span']].forEach(([sk,spk],i) => {
-        if (!gi[i]) return; gi[i].querySelector('strong').textContent = t[sk]; gi[i].querySelector('span').textContent = t[spk];
+    // ADS regular slides
+    document.querySelectorAll('#cSlider .cslide[data-group="ads"]:not(.cslide-summary)').forEach((slide, i) => {
+      const n = i + 1;
+      slide.querySelector('.cslide-topic').textContent = t['ads-s'+n+'-topic'] || '';
+      slide.querySelector('.cslide-bad .cslide-who').textContent = t['ads-bad-who'] || '';
+      slide.querySelector('.cslide-bad .cslide-val').textContent = t['ads-s'+n+'-bad-val'] || '';
+      slide.querySelector('.cslide-bad .cslide-desc').textContent = t['ads-s'+n+'-bad-desc'] || '';
+      slide.querySelector('.cslide-good .cslide-val').textContent = t['ads-s'+n+'-good-val'] || '';
+      slide.querySelector('.cslide-good .cslide-desc').textContent = t['ads-s'+n+'-good-desc'] || '';
+    });
+    // ADS summary
+    const adsSum = document.querySelector('#cSlider .cslide-summary[data-group="ads"]');
+    if (adsSum) {
+      adsSum.querySelector('.csum-col.bad .csum-title').textContent = t['ads-sum-bad-title'];
+      adsSum.querySelectorAll('.csum-col.bad .csum-list li').forEach((li, i) => {
+        li.innerHTML = '<span style="color:#f87171;flex-shrink:0">✕</span> ' + (t['ads-sum-bad-'+(i+1)] || '');
       });
-      goodCol.querySelector('.ctl-heading').textContent = t['cmp-ctl-heading-good'];
-      const gs = goodCol.querySelectorAll('.ctl-step'); const gt2 = goodCol.querySelectorAll('.ctl-time');
-      [['cmp-ctl-step1-good','cmp-ctl-time1-good'],['cmp-ctl-step2-good','cmp-ctl-time2-good'],['cmp-ctl-step3-good','cmp-ctl-time3-good']].forEach(([sk,tk],i) => { if(gs[i]) gs[i].textContent=t[sk]; if(gt2[i]) gt2[i].textContent=t[tk]; });
+      adsSum.querySelectorAll('.csum-col.good .csum-list li').forEach((li, i) => {
+        li.innerHTML = '<span style="color:#2dd4bf;flex-shrink:0">✓</span> ' + (t['ads-sum-good-'+(i+1)] || '');
+      });
     }
 
     // CALCULATOR
@@ -2886,30 +3039,25 @@
     if (calcCtaBtn) calcCtaBtn.childNodes[0].textContent = t['calc-cta-btn'] + ' ';
 
     // SERVICES
-    document.querySelector('#services .tag').innerHTML = '<span class="dot"></span>' + t['svc-tag'];
-    document.querySelector('#services .sh-title').innerHTML = t['svc-h2'];
-    document.querySelector('#services .sh-sub').textContent = t['svc-sub'];
-    const pkgs = document.querySelectorAll('.pkg');
-    [['pkg1','pkg1-f1','pkg1-f2','pkg1-f3','pkg1-f4','pkg1-f5'],
-     ['pkg2','pkg2-f1','pkg2-f2','pkg2-f3','pkg2-f4','pkg2-f5'],
-     ['pkg3','pkg3-f1','pkg3-f2','pkg3-f3','pkg3-f4','pkg3-f5'],
-     ['pkg4','pkg4-f1','pkg4-f2','pkg4-f3','pkg4-f4','pkg4-f5']].forEach(([pk,...fks], i) => {
-      if (!pkgs[i]) return;
-      pkgs[i].querySelector('.pkg-badge').textContent = t[pk+'-badge'];
-      pkgs[i].querySelector('.pkg-desc').textContent = t[pk+'-desc'];
-      const lis = pkgs[i].querySelectorAll('.pkg-feats li');
-      fks.forEach((fk,j) => { if(lis[j]) lis[j].textContent = t[fk]; });
-      pkgs[i].querySelector('.pkg-cta').textContent = t['pkg-cta'];
+    const svcTagEl = document.querySelector('#services .tag');
+    if (svcTagEl) svcTagEl.innerHTML = '<span class="dot"></span>' + t['svc-tag'];
+    const svcTitleEl = document.querySelector('#services .sh-title');
+    if (svcTitleEl) svcTitleEl.innerHTML = t['svc-h2'];
+    const svcSubEl = document.querySelector('#services .sh-sub');
+    if (svcSubEl) svcSubEl.textContent = t['svc-sub'];
+    // Service cards
+    document.querySelectorAll('.svc-card').forEach((card, i) => {
+      const pfx = 'svc' + (i + 1);
+      const titleEl = card.querySelector('.svc-card-title');
+      const subEl = card.querySelector('.svc-card-subtitle');
+      const btnEl = card.querySelector('.svc-card-btn');
+      if (titleEl) titleEl.textContent = t[pfx+'-title'] || titleEl.textContent;
+      if (subEl) subEl.textContent = t[pfx+'-sub'] || subEl.textContent;
+      card.querySelectorAll('.svc-card-bullets li').forEach((li, j) => {
+        li.textContent = t[pfx+'-f'+(j+1)] || li.textContent;
+      });
+      if (btnEl) btnEl.textContent = t['svc-btn'] || btnEl.textContent;
     });
-
-    // SHOWCASE
-    document.querySelector('#showcase .tag').innerHTML = '<span class="dot"></span>' + t['sc-tag'];
-    document.querySelector('#showcase h2').innerHTML = t['sc-h2'];
-    document.querySelector('#showcase .sc-text p').textContent = t['sc-p'];
-    const chips = document.querySelectorAll('.sc-chip');
-    ['sc-chip1','sc-chip2','sc-chip3','sc-chip4'].forEach((k,i) => { if(chips[i]) chips[i].textContent = t[k]; });
-    const scBtn = document.querySelector('#showcase .btn-primary');
-    if (scBtn) scBtn.childNodes[0].textContent = t['sc-btn'] + ' ';
 
     // HOW IT WORKS
     document.querySelector('#how .tag').innerHTML = '<span class="dot"></span>' + t['how-tag'];
@@ -2988,7 +3136,7 @@
     document.querySelector('#faq .tag').innerHTML = '<span class="dot"></span>' + t['faq-tag'];
     document.querySelector('#faq .sh-title').innerHTML = t['faq-h2'];
     const faqItems = document.querySelectorAll('.faq-item');
-    [['faq-q1','faq-a1'],['faq-q2','faq-a2'],['faq-q3','faq-a3'],['faq-q4','faq-a4'],['faq-q5','faq-a5'],['faq-q6','faq-a6']].forEach(([qk,ak],i) => {
+    [['faq-q1','faq-a1'],['faq-q2','faq-a2'],['faq-q3','faq-a3'],['faq-q4','faq-a4'],['faq-q5','faq-a5'],['faq-q6','faq-a6'],['faq-q7','faq-a7'],['faq-q8','faq-a8']].forEach(([qk,ak],i) => {
       if (!faqItems[i]) return;
       const qBtn = faqItems[i].querySelector('.faq-q');
       // Preserve the chevron div
@@ -3001,7 +3149,7 @@
     // FOOTER
     const ftLinks = document.querySelector('.ft-links');
     if (ftLinks) {
-      ftLinks.querySelector('a[href="#compare"]').textContent = t['ft-compare'];
+      ftLinks.querySelector('a[href="#compare-tool"]').textContent = t['ft-compare'];
       ftLinks.querySelector('a[href="#services"]').textContent = t['ft-services'];
       ftLinks.querySelector('a[href="#calculator"]').textContent = t['ft-calculator'];
       ftLinks.querySelector('a[href="#showcase"]').textContent = t['ft-showcase'];
@@ -3039,6 +3187,184 @@
     opt.addEventListener('click', () => {
       applyLang(opt.dataset.lang);
       langSw.classList.remove('open');
+    });
+  });
+
+  // ── Service Modals ──
+  const SVC_MODALS = {
+    ugc: {
+      emoji: '📱',
+      title: 'AI UGC Videa',
+      body: `<p>AI UGC videa jsou naším vlajkovým produktem. Vytváříme realistické video reklamy, které vypadají jako obsah od skutečných uživatelů — ale jsou rychlejší, levnější a plně pod vaší kontrolou.</p>
+<ul>
+  <li>Každé video dodáváme ve <strong>4 variantách hooků</strong> — testujte, co funguje nejlépe</li>
+  <li>Žádný casting, žádné natáčení — stačí fotografie produktu</li>
+  <li>Cena od <strong>6 000 Kč za video</strong> (při větším objemu výrazně méně)</li>
+  <li>Dodání do <strong>5 pracovních dní</strong> od schválení briefu</li>
+  <li>Překlad do libovolného jazyka v ceně</li>
+  <li>Formáty: 9:16 pro Reels, TikTok, Stories; 1:1 nebo 16:9 na vyžádání</li>
+</ul>`
+    },
+    reklama: {
+      emoji: '🎬',
+      title: 'AI Reklamní Videa',
+      body: `<p>Profesionální reklamní videa pro YouTube Ads, Meta Ads a TV. Scénář, produkce i finální střih — vše v jednom balíčku bez potřeby fyzického natáčení.</p>
+<ul>
+  <li>Scénář a storyboard <strong>v ceně</strong></li>
+  <li>TV i social formáty — 16:9, 9:16, 1:1</li>
+  <li>YouTube & Meta Ads kreativy</li>
+  <li>Brand storytelling a produktové filmy</li>
+  <li>Snadné varianty a úpravy bez příplatku</li>
+  <li>Dodání do 5–10 pracovních dní</li>
+</ul>`
+    },
+    skoleni: {
+      emoji: '🤖',
+      title: 'AI Školení',
+      body: `<p>Naučíme váš tým tvořit AI videa interně. Jednorázová investice — a od té chvíle máte vlastní schopnosti bez závislosti na agentuře.</p>
+<ul>
+  <li>Interní školení on-site nebo online</li>
+  <li>Onboarding AI nástrojů (výběr a nastavení pro váš tým)</li>
+  <li>Individuální plán přizpůsobený vašemu týmu a brandu</li>
+  <li>Follow-up podpora po školení</li>
+  <li>Praktické workshopy s reálnými výstupy</li>
+  <li>Vhodné pro marketingové a kreativní týmy</li>
+</ul>`
+    },
+    namiru: {
+      emoji: '⚡',
+      title: 'Na Míru',
+      body: `<p>Větší projekty, brand filmy, TV reklamy nebo AI klony konkrétní osoby. Zpracujeme jakýkoli nestandardní projekt na míru s cenovou nabídkou přesně pro vaše potřeby.</p>
+<ul>
+  <li>Brand filmy a TV reklamy</li>
+  <li>Větší kampaňové projekty s více videi</li>
+  <li>AI klony — videa s tváří konkrétní osoby bez natáčení</li>
+  <li>Firemní obsah, e-learning a onboarding videa</li>
+  <li>Cenová nabídka na míru po úvodním callu</li>
+  <li>Možnost dlouhodobé spolupráce</li>
+</ul>`
+    }
+  };
+
+  function openSvcModal(key) {
+    const data = SVC_MODALS[key];
+    if (!data) return;
+    document.getElementById('svcModalEmoji').textContent = data.emoji;
+    document.getElementById('svcModalTitle').textContent = data.title;
+    document.getElementById('svcModalBody').innerHTML = data.body;
+    document.getElementById('svcModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSvcModal(e) {
+    if (e && e.target !== document.getElementById('svcModal')) return;
+    document.getElementById('svcModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close modal on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { document.getElementById('svcModal').classList.remove('open'); document.body.style.overflow = ''; }
+  });
+
+  // ── Interactive Compare Slider ──
+  (function() {
+    const tabs      = document.querySelectorAll('.ctab');
+    const allSlides = document.querySelectorAll('#cSlider .cslide');
+    const dotsEl    = document.getElementById('cDots');
+    const prevBtn   = document.getElementById('cPrev');
+    const nextBtn   = document.getElementById('cNext');
+    const skipBtn   = document.getElementById('cSkip');
+    const backBtn   = document.getElementById('cBack');
+    if (!tabs.length || !dotsEl || !prevBtn || !nextBtn) return;
+
+    let activeTab = 'ugc';
+    let activeIdx = 0;
+
+    function getSlides() {
+      return Array.from(allSlides).filter(s => s.dataset.group === activeTab);
+    }
+
+    function buildDots() {
+      dotsEl.innerHTML = '';
+      getSlides().forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'cdot' + (i === 0 ? ' active' : '');
+        d.addEventListener('click', () => goTo(i));
+        dotsEl.appendChild(d);
+      });
+    }
+
+    function updateJumpBtns() {
+      if (!skipBtn || !backBtn) return;
+      const slides = getSlides();
+      const isLast = activeIdx === slides.length - 1;
+      skipBtn.style.display = isLast ? 'none' : 'inline-flex';
+      backBtn.style.display = isLast ? 'inline-flex' : 'none';
+    }
+
+    function goTo(idx) {
+      const slides = getSlides();
+      if (idx < 0 || idx >= slides.length) return;
+      allSlides.forEach(s => s.classList.remove('active'));
+      activeIdx = idx;
+      slides[activeIdx].classList.add('active');
+      dotsEl.querySelectorAll('.cdot').forEach((d, i) => d.classList.toggle('active', i === activeIdx));
+      prevBtn.disabled = activeIdx === 0;
+      nextBtn.disabled = activeIdx === slides.length - 1;
+      updateJumpBtns();
+    }
+
+    function skipToLast() {
+      const slides = getSlides();
+      const last = slides.length - 1;
+      if (activeIdx >= last) return;
+      let i = activeIdx + 1;
+      function cycle() {
+        if (i >= last) { goTo(last); return; }
+        allSlides.forEach(s => s.classList.remove('active'));
+        slides[i].classList.add('active');
+        dotsEl.querySelectorAll('.cdot').forEach((d, j) => d.classList.toggle('active', j === i));
+        i++;
+        setTimeout(cycle, 100);
+      }
+      cycle();
+    }
+
+    function switchTab(group) {
+      activeTab = group;
+      activeIdx = 0;
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === group));
+      buildDots();
+      allSlides.forEach(s => s.classList.remove('active'));
+      const slides = getSlides();
+      if (slides[0]) slides[0].classList.add('active');
+      prevBtn.disabled = true;
+      nextBtn.disabled = slides.length <= 1;
+      updateJumpBtns();
+    }
+
+    tabs.forEach(t => t.addEventListener('click', () => switchTab(t.dataset.tab)));
+    prevBtn.addEventListener('click', () => goTo(activeIdx - 1));
+    nextBtn.addEventListener('click', () => goTo(activeIdx + 1));
+    if (skipBtn) skipBtn.addEventListener('click', skipToLast);
+    if (backBtn) backBtn.addEventListener('click', () => goTo(0));
+
+    switchTab('ugc');
+  })();
+
+  // ── YouTube click-to-play facade ──
+  document.querySelectorAll('.results-video[data-ytid]').forEach(wrap => {
+    wrap.addEventListener('click', function() {
+      const id = this.dataset.ytid;
+      const facade = this.querySelector('.yt-facade');
+      if (facade) facade.classList.add('hidden');
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      this.appendChild(iframe);
     });
   });
 
