@@ -33,9 +33,11 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html { background: #090912; }
+
     :root {
-      --bg:        #090912;
-      --bg-2:      #0e0e1c;
+      --bg:        rgba(9,9,18,0.82);
+      --bg-2:      rgba(14,14,28,0.86);
       --surface:   #14142c;
       --surface-2: #1c1c3a;
       --border:    rgba(255,255,255,0.08);
@@ -93,26 +95,27 @@
     .fi.vis { opacity: 1; transform: none; }
 
     /* buttons */
-    @keyframes shimmer { 0%{background-position:200% center} 100%{background-position:-200% center} }
+    @keyframes btnPulse { 0%,100%{box-shadow:0 4px 22px rgba(255,255,255,.18),0 0 0 0 rgba(124,109,250,0)} 50%{box-shadow:0 4px 36px rgba(255,255,255,.28),0 0 0 10px rgba(124,109,250,.06)} }
     .btn {
       display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
       font-family: inherit; font-weight: 600; font-size: clamp(14px,1.05vw,15px);
       border: none; cursor: pointer; border-radius: 100px;
-      transition: transform .22s ease, box-shadow .22s ease, opacity .22s ease;
+      transition: transform .22s ease, box-shadow .22s ease;
       letter-spacing: .01em;
     }
     .btn:hover { transform: translateY(-2px); }
     .btn-primary {
-      background: linear-gradient(135deg, #7c6dfa 0%, #a78bfa 40%, #2dd4bf 100%);
-      background-size: 200% auto;
-      color: #fff; padding: 15px 30px;
-      box-shadow: 0 4px 24px rgba(124,109,250,.35), inset 0 1px 0 rgba(255,255,255,.15);
+      background: #ffffff;
+      color: #0c0c20; padding: 15px 30px;
+      box-shadow: 0 4px 22px rgba(255,255,255,.18);
+      animation: btnPulse 4s ease-in-out infinite;
     }
     .btn-primary:hover {
-      background-position: right center;
-      box-shadow: 0 6px 36px rgba(124,109,250,.55), inset 0 1px 0 rgba(255,255,255,.2);
-      animation: shimmer 1.8s linear infinite;
+      background: #f4f0ff;
+      box-shadow: 0 8px 44px rgba(124,109,250,.6);
+      animation: none;
     }
+    .btn-primary svg { color: #0c0c20; }
     .btn-outline {
       background: rgba(255,255,255,.04); color: rgba(255,255,255,.7);
       border: 1px solid rgba(255,255,255,.12); padding: 14px 26px;
@@ -134,12 +137,12 @@
     .nl { display: flex; align-items: center; gap: 28px; list-style: none; }
     .nl a { color: var(--text-muted); text-decoration: none; font-size: clamp(13px,.95vw,15px); font-weight: 500; transition: color .2s; }
     .nl a:hover { color: var(--text); }
-    .nl .nc { background: var(--accent) !important; color: #fff !important; padding: 9px 20px; border-radius: 100px; font-weight: 700 !important; transition: box-shadow .2s, transform .2s !important; }
-    .nl .nc:hover { box-shadow: 0 0 24px var(--accent-glow); transform: translateY(-1px); }
+    .nl .nc { background: rgba(255,255,255,0.08) !important; color: rgba(255,255,255,0.88) !important; border: 1px solid rgba(255,255,255,0.18) !important; padding: 9px 20px; border-radius: 100px; font-weight: 700 !important; transition: all .2s !important; }
+    .nl .nc:hover { background: rgba(255,255,255,0.15) !important; border-color: rgba(255,255,255,0.3) !important; color: #fff !important; transform: translateY(-1px); }
     .ham { display: none; background: none; border: none; cursor: pointer; color: var(--text); }
     .mob-menu {
       display: flex; position: fixed; inset: 0; z-index: 199;
-      background: var(--bg-2); flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+      background: rgba(10,10,20,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 32px;
       opacity: 0; visibility: hidden; pointer-events: none;
       transform: translateY(-12px);
       transition: opacity .28s ease, transform .28s ease, visibility .28s;
@@ -166,7 +169,20 @@
       min-height: 100vh; position: relative; overflow: hidden;
       display: flex; align-items: center;
       padding: clamp(110px,14vw,150px) 0 clamp(60px,8vw,100px);
+      z-index: 1;
     }
+    /* ── Aurora background ── */
+    .aurora { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+    .ab { position: absolute; border-radius: 50%; filter: blur(120px); }
+    .ab1 { width: 80vw; height: 65vh; background: radial-gradient(ellipse, rgba(76,29,149,0.85) 0%, transparent 70%); top: -20%; left: 8%; animation: ab1m 22s ease-in-out infinite; }
+    .ab2 { width: 65vw; height: 75vh; background: radial-gradient(ellipse, rgba(109,40,217,0.65) 0%, transparent 70%); top: 15%; right: -12%; animation: ab2m 28s ease-in-out infinite; }
+    .ab3 { width: 90vw; height: 45vh; background: radial-gradient(ellipse, rgba(46,16,101,0.75) 0%, transparent 70%); bottom: -8%; left: -8%; animation: ab3m 34s ease-in-out infinite; }
+    .ab4 { width: 55vw; height: 55vh; background: radial-gradient(ellipse, rgba(139,92,246,0.5) 0%, transparent 70%); top: 35%; left: 22%; animation: ab4m 19s ease-in-out infinite; }
+    @keyframes ab1m { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(-7%,9%) scale(1.06)} 66%{transform:translate(8%,-5%) scale(0.96)} }
+    @keyframes ab2m { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-9%,7%) scale(1.1)} }
+    @keyframes ab3m { 0%,100%{transform:translate(0,0) scale(1)} 40%{transform:translate(5%,4%) scale(1.07)} 80%{transform:translate(-3%,-6%) scale(0.93)} }
+    @keyframes ab4m { 0%,100%{transform:translate(0,0) scale(1);opacity:.5} 50%{transform:translate(10%,-10%) scale(1.12);opacity:.8} }
+
     .hblob { position: absolute; border-radius: 50%; filter: blur(130px); pointer-events: none; }
     .hblob-1 { width: 1000px; height: 600px; background: radial-gradient(circle,rgba(124,109,250,.2) 0%,transparent 70%); top: -260px; left: 50%; transform: translateX(-50%); }
     .hblob-2 { width: 500px; height: 500px; background: radial-gradient(circle,rgba(45,212,191,.12) 0%,transparent 70%); bottom: -80px; right: -80px; }
@@ -388,7 +404,7 @@
     .cslide { display:none; flex-direction:column; align-items:center; gap:28px; animation:csFadeIn .35s ease; }
     .cslide.active { display:flex; }
     @keyframes csFadeIn { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
-    .cslide-icon { font-size:3.2rem; line-height:1; filter:drop-shadow(0 0 18px rgba(124,109,250,.4)); }
+    .cslide-icon { font-size:2.8rem; line-height:1; filter:drop-shadow(0 0 16px rgba(124,109,250,.5)); }
     .cslide-topic { font-size:.72rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-2); }
     .cslide-cols { display:grid; grid-template-columns:1fr 48px 1fr; gap:12px; align-items:stretch; width:100%; }
     .cslide-bad, .cslide-good { border-radius:18px; padding:28px 22px; text-align:center; display:flex; flex-direction:column; gap:8px; }
@@ -627,8 +643,8 @@
     .f-grp input::placeholder,.f-grp textarea::placeholder { color: var(--text-dim); }
     .f-grp textarea { resize: vertical; min-height: 105px; }
     .f-grp select option { background: var(--bg-2); }
-    .f-submit { width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 100px; padding: 15px 28px; font-weight: 700; font-size: clamp(14px,1.1vw,16px); cursor: pointer; font-family: inherit; transition: box-shadow .2s, transform .2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .f-submit:hover { box-shadow: 0 0 44px var(--accent-glow); transform: translateY(-1px); }
+    .f-submit { width: 100%; background: #ffffff; color: #0c0c20; border: none; border-radius: 100px; padding: 15px 28px; font-weight: 700; font-size: clamp(14px,1.1vw,16px); cursor: pointer; font-family: inherit; transition: box-shadow .2s, transform .2s; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 22px rgba(255,255,255,.16); animation: btnPulse 4s ease-in-out infinite; }
+    .f-submit:hover { box-shadow: 0 8px 44px rgba(124,109,250,.55); transform: translateY(-1px); background: #f4f0ff; animation: none; }
     .f-note { font-size: .7rem; color: var(--text-dim); text-align: center; margin-top: 10px; }
     .succ-msg { display: none; text-align: center; padding: clamp(32px,5vw,52px) 24px; }
     .succ-msg .s-ico { font-size: 3rem; margin-bottom: 14px; display: block; }
@@ -964,7 +980,7 @@
 
     /* sticky mobile cta */
     .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 150; padding: 12px 20px 20px; background: linear-gradient(to top,rgba(9,9,18,1) 50%,transparent); }
-    .sticky-cta a { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 100px; padding: 15px 24px; font-family: inherit; font-weight: 700; font-size: clamp(14px,4vw,16px); text-decoration: none; box-shadow: 0 8px 32px var(--accent-glow); }
+    .sticky-cta a { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #ffffff; color: #0c0c20; border: none; border-radius: 100px; padding: 15px 24px; font-family: inherit; font-weight: 700; font-size: clamp(14px,4vw,16px); text-decoration: none; box-shadow: 0 4px 28px rgba(124,109,250,.4); }
 
     /* ══════════════════════════════
        RESPONSIVE
@@ -1032,7 +1048,11 @@
     .svc-card:nth-child(2):hover { border-color: rgba(59,130,246,.4); box-shadow: 0 20px 60px rgba(59,130,246,.1); }
     .svc-card:nth-child(3):hover { border-color: rgba(45,212,191,.4); box-shadow: 0 20px 60px rgba(45,212,191,.1); }
     .svc-card:nth-child(4):hover { border-color: rgba(245,158,11,.4); box-shadow: 0 20px 60px rgba(245,158,11,.1); }
-    .svc-card-emoji { font-size: 2.4rem; margin-bottom: 14px; display: block; }
+    .svc-card-emoji { width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:1px solid;color:#fff; }
+    .svc-card:nth-child(1) .svc-card-emoji { background:rgba(124,109,250,.12);border-color:rgba(124,109,250,.25);color:var(--accent-2); }
+    .svc-card:nth-child(2) .svc-card-emoji { background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.25);color:#60a5fa; }
+    .svc-card:nth-child(3) .svc-card-emoji { background:rgba(45,212,191,.1);border-color:rgba(45,212,191,.25);color:var(--cyan); }
+    .svc-card:nth-child(4) .svc-card-emoji { background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.25);color:#fbbf24; }
     .svc-card-title { font-size: clamp(16px,1.4vw,20px); font-weight: 800; margin-bottom: 6px; }
     .svc-card-subtitle { font-size: clamp(12px,.9vw,14px); color: var(--text-dim); margin-bottom: 18px; }
     .svc-card-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; flex: 1; }
@@ -1146,6 +1166,7 @@
   </style>
 </head>
 <body>
+<div class="aurora" aria-hidden="true"><div class="ab ab1"></div><div class="ab ab2"></div><div class="ab ab3"></div><div class="ab ab4"></div></div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -1581,7 +1602,7 @@
 
       <!-- Karta 1: AI UGC Videa -->
       <div class="svc-card fi">
-        <span class="svc-card-emoji">📱</span>
+        <div class="svc-card-emoji"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-linecap="round" stroke-width="2.5"/></svg></div>
         <div class="svc-card-title">AI UGC Videa</div>
         <div class="svc-card-subtitle">AI UGC obsah · Reels / TikTok / Meta</div>
         <ul class="svc-card-bullets">
@@ -1595,7 +1616,7 @@
 
       <!-- Karta 2: AI Reklamní Videa -->
       <div class="svc-card fi d1">
-        <span class="svc-card-emoji">🎬</span>
+        <div class="svc-card-emoji"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
         <div class="svc-card-title">AI Reklamní Videa</div>
         <div class="svc-card-subtitle">Profesionální ad kreativy · Brand storytelling</div>
         <ul class="svc-card-bullets">
@@ -1609,7 +1630,7 @@
 
       <!-- Karta 3: AI Školení -->
       <div class="svc-card fi d2">
-        <span class="svc-card-emoji">🤖</span>
+        <div class="svc-card-emoji"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
         <div class="svc-card-title">AI Školení</div>
         <div class="svc-card-subtitle">Naučíme váš tým AI video tvorbu</div>
         <ul class="svc-card-bullets">
@@ -1623,7 +1644,7 @@
 
       <!-- Karta 4: Na Míru -->
       <div class="svc-card fi d3">
-        <span class="svc-card-emoji">⚡</span>
+        <div class="svc-card-emoji"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="svc-card-title">Na Míru</div>
         <div class="svc-card-subtitle">Komplexní video projekty na zakázku</div>
         <ul class="svc-card-bullets">
@@ -1643,7 +1664,6 @@
 <div class="svc-modal-overlay" id="svcModal" onclick="closeSvcModal(event)">
   <div class="svc-modal">
     <button class="svc-modal-close" onclick="closeSvcModal()">✕</button>
-    <span class="svc-modal-emoji" id="svcModalEmoji"></span>
     <div class="svc-modal-title" id="svcModalTitle"></div>
     <div class="svc-modal-body" id="svcModalBody"></div>
     <div class="svc-modal-cta">
@@ -1722,7 +1742,7 @@
           </div>
         </div>
         <div class="cr-disclaimer">
-          ⚠️ Výsledky jsou orientační. Skutečná cena závisí na rozsahu projektu a může být vyšší. Přesnou nabídku sestavíme na bezplatném callu.
+          Výsledky jsou orientační. Skutečná cena závisí na rozsahu projektu a může být vyšší. Přesnou nabídku sestavíme na bezplatném callu.
         </div>
         <div class="cr-cta">
           <p>Zajímá vás přesná cena pro váš konkrétní projekt?</p>
@@ -1749,19 +1769,19 @@
         <div class="step-ball"><span>01</span></div>
         <h3>Pošlete brief a fotku</h3>
         <p>Sdílíte nám produkt, cílovou skupinu a záměr. Stačí fotografie — fyzické zasílání není nutné. Zbytek zvládneme my.</p>
-        <div class="step-chip">⚡ Rychlý onboarding</div>
+        <div class="step-chip">Rychlý onboarding</div>
       </div>
       <div class="step fi d1">
         <div class="step-ball"><span>02</span></div>
         <h3>Tvoříme AI kreativy</h3>
         <p>Náš tým připraví scénáře a AI produkuje videa přesně podle vašeho brandu, tónu a reklamního cíle.</p>
-        <div class="step-chip">🎨 Plná kreativní kontrola</div>
+        <div class="step-chip">Plná kreativní kontrola</div>
       </div>
       <div class="step fi d2">
         <div class="step-ball"><span>03</span></div>
         <h3>Každý měsíc nové kreativy</h3>
         <p>V rámci měsíčního balíčku dostáváte pravidelný přísun nových unikátních videí. Algoritmy tak mají vždy čerstvý obsah k testování. Jednorázové zakázky jsou také možné — ale balíček vám dá lepší poměr ceny a výkonu.</p>
-        <div class="step-chip">📦 Měsíční kreativní balíček</div>
+        <div class="step-chip">Měsíční kreativní balíček</div>
       </div>
     </div>
   </div>
@@ -1832,7 +1852,8 @@
       </div>
     </div>
 
-    <!-- Tím -->
+    <!-- Tím — skryté, odkomentovat pro zobrazení -->
+    <div style="display:none">
     <div class="team-intro fi">
       <div class="tag" style="margin:0 auto;"><span class="dot"></span>Náš tím</div>
       <h3>Lidé za <span class="gt">Upgraide</span></h3>
@@ -1876,6 +1897,7 @@
       </div>
 
     </div>
+    </div><!-- /team hidden -->
   </div>
 </section>
 
@@ -1888,9 +1910,9 @@
         <h2 class="fi d1">Chcete AI video<br /><span class="gt">pro vaši značku?</span></h2>
         <p class="fi d2">Domluvme si krátký 20minutový call. Ukážeme vám ukázky a probereme, jak AI kreativy mohou fungovat pro váš e-shop.</p>
         <div class="ct-list fi d3">
-          <div class="ct-item"><div class="ct-ico">✉️</div><a href="mailto:info@upgraide.cz" style="color:inherit;text-decoration:none;">info@upgraide.cz</a></div>
-          <div class="ct-item"><div class="ct-ico">⚡</div><span>Odpovídáme do 24 hodin</span></div>
-          <div class="ct-item"><div class="ct-ico">☎️</div><span>Call domluvíte přes formulář</span></div>
+          <div class="ct-item"><div class="ct-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><a href="mailto:info@upgraide.cz" style="color:inherit;text-decoration:none;">info@upgraide.cz</a></div>
+          <div class="ct-item"><div class="ct-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span>Odpovídáme do 24 hodin</span></div>
+          <div class="ct-item"><div class="ct-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.93 3.41 2 2 0 0 1 3.92 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l1.42-1.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><span>Call domluvíte přes formulář</span></div>
         </div>
       </div>
       <div class="ct-form fi d1" id="formWrap">
@@ -1919,7 +1941,7 @@
           <p class="f-note">Nezávazné · Odpovídáme do 24 hodin v pracovní dny</p>
         </form>
         <div class="succ-msg" id="succMsg">
-          <span class="s-ico">✅</span>
+          <span class="s-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--cyan)"><polyline points="20 6 9 17 4 12"/></svg></span>
           <h3>Zpráva odeslána!</h3>
           <p>Děkujeme za zájem. Ozveme se vám do 24 hodin.</p>
         </div>
@@ -2467,21 +2489,21 @@
       'sc-tag': 'Jak to vypadá',
       'sc-h2': 'Výsledky, které <span class="gt">vidíte hned</span>',
       'sc-p': 'Naše AI videa vypadají jako profesionálně natočený obsah. Platformy jako Meta a TikTok tento formát odměňují — vypadá autenticky a zastavuje scroll.',
-      'sc-chip1': '📱 9:16 pro Reels a TikTok', 'sc-chip2': '🎯 Optimalizováno pro konverze',
-      'sc-chip3': '🔁 Neomezené varianty', 'sc-chip4': '⚡ Do 5 pracovních dní',
+      'sc-chip1': '9:16 pro Reels a TikTok', 'sc-chip2': 'Optimalizováno pro konverze',
+      'sc-chip3': 'Neomezené varianty', 'sc-chip4': 'Do 5 pracovních dní',
       'sc-btn': 'Chci ukázky pro svůj produkt',
       // HOW
       'how-tag': 'Jak to funguje',
       'how-h2': 'Od briefu k videu<br /><span class="gt">za 3 jednoduché kroky</span>',
       'step1-h3': 'Pošlete brief a fotku',
       'step1-p': 'Sdílíte nám produkt, cílovou skupinu a záměr. Stačí fotografie — fyzické zasílání není nutné. Zbytek zvládneme my.',
-      'step1-chip': '⚡ Rychlý onboarding',
+      'step1-chip': 'Rychlý onboarding',
       'step2-h3': 'Tvoříme AI kreativy',
       'step2-p': 'Náš tým připraví scénáře a AI produkuje videa přesně podle vašeho brandu, tónu a reklamního cíle.',
-      'step2-chip': '🎨 Plná kreativní kontrola',
+      'step2-chip': 'Plná kreativní kontrola',
       'step3-h3': 'Každý měsíc nové kreativy',
       'step3-p': 'V rámci měsíčního balíčku dostáváte pravidelný přísun nových unikátních videí. Algoritmy tak mají vždy čerstvý obsah k testování. Jednorázové zakázky jsou také možné — ale balíček vám dá lepší poměr ceny a výkonu.',
-      'step3-chip': '📦 Měsíční kreativní balíček',
+      'step3-chip': 'Měsíční kreativní balíček',
       // TESTIMONIALS
       'testi-tag': 'Reference',
       'testi-h2': 'Co říkají <span class="gt">naši klienti</span>',
@@ -2703,7 +2725,7 @@
       'calc-sub-perv': 'with Upgraide',
       'calc-lbl-more': 'Videos for same budget',
       'calc-sub-more': 'instead of',
-      'calc-disclaimer': '⚠️ Results are indicative. Actual price depends on project scope and may be higher. We\'ll build an exact offer on a free call.',
+      'calc-disclaimer': 'Results are indicative. Actual price depends on project scope and may be higher. We\'ll build an exact offer on a free call.',
       'calc-cta-p': 'Want an exact price for your specific project?',
       'calc-cta-btn': 'Get exact pricing',
       'svc-tag': 'Our services',
@@ -2729,20 +2751,20 @@
       'sc-tag': 'See the results',
       'sc-h2': 'Results you <span class="gt">see immediately</span>',
       'sc-p': 'Our AI videos look like professionally filmed content. Platforms like Meta and TikTok reward this format — it looks authentic and stops the scroll.',
-      'sc-chip1': '📱 9:16 for Reels and TikTok', 'sc-chip2': '🎯 Optimized for conversions',
-      'sc-chip3': '🔁 Unlimited variants', 'sc-chip4': '⚡ Within 5 business days',
+      'sc-chip1': '9:16 for Reels and TikTok', 'sc-chip2': 'Optimized for conversions',
+      'sc-chip3': 'Unlimited variants', 'sc-chip4': 'Within 5 business days',
       'sc-btn': 'Get samples for my product',
       'how-tag': 'How it works',
       'how-h2': 'From brief to video<br /><span class="gt">in 3 simple steps</span>',
       'step1-h3': 'Send your brief & photo',
       'step1-p': 'Share your product, target audience and intent. Just a photo — no physical shipping needed. We handle the rest.',
-      'step1-chip': '⚡ Quick onboarding',
+      'step1-chip': 'Quick onboarding',
       'step2-h3': 'We create AI creatives',
       'step2-p': 'Our team prepares scripts and AI produces videos exactly to your brand, tone and advertising goal.',
-      'step2-chip': '🎨 Full creative control',
+      'step2-chip': 'Full creative control',
       'step3-h3': 'New creatives every month',
       'step3-p': 'Within a monthly package you receive a regular stream of new unique videos. Algorithms always have fresh content to test. One-off orders are also possible — but the package gives you a better price-performance ratio.',
-      'step3-chip': '📦 Monthly creative package',
+      'step3-chip': 'Monthly creative package',
       'testi-tag': 'Testimonials',
       'testi-h2': 'What our <span class="gt">clients say</span>',
       'testi1-quote': '"With Upgraide we were finally able to supply our campaigns with a steady stream of fresh creatives. Preparing one video used to take weeks — now we have it within five days and test many more variants at once."',
@@ -3142,7 +3164,6 @@
   // ── Service Modals ──
   const SVC_MODALS = {
     ugc: {
-      emoji: '📱',
       title: 'AI UGC Videa',
       body: `<p>AI UGC videa jsou naším vlajkovým produktem. Vytváříme realistické video reklamy, které vypadají jako obsah od skutečných uživatelů — ale jsou rychlejší, levnější a plně pod vaší kontrolou.</p>
 <ul>
@@ -3155,7 +3176,6 @@
 </ul>`
     },
     reklama: {
-      emoji: '🎬',
       title: 'AI Reklamní Videa',
       body: `<p>Profesionální reklamní videa pro YouTube Ads, Meta Ads a TV. Scénář, produkce i finální střih — vše v jednom balíčku bez potřeby fyzického natáčení.</p>
 <ul>
@@ -3168,7 +3188,6 @@
 </ul>`
     },
     skoleni: {
-      emoji: '🤖',
       title: 'AI Školení',
       body: `<p>Naučíme váš tým tvořit AI videa interně. Jednorázová investice — a od té chvíle máte vlastní schopnosti bez závislosti na agentuře.</p>
 <ul>
@@ -3181,7 +3200,6 @@
 </ul>`
     },
     namiru: {
-      emoji: '⚡',
       title: 'Na Míru',
       body: `<p>Větší projekty, brand filmy, TV reklamy nebo AI klony konkrétní osoby. Zpracujeme jakýkoli nestandardní projekt na míru s cenovou nabídkou přesně pro vaše potřeby.</p>
 <ul>
@@ -3198,7 +3216,6 @@
   function openSvcModal(key) {
     const data = SVC_MODALS[key];
     if (!data) return;
-    document.getElementById('svcModalEmoji').textContent = data.emoji;
     document.getElementById('svcModalTitle').textContent = data.title;
     document.getElementById('svcModalBody').innerHTML = data.body;
     document.getElementById('svcModal').classList.add('open');
@@ -3324,6 +3341,7 @@
       if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
     });
   });
+
 </script>
 <script src="https://player.vimeo.com/api/player.js"></script>
 </body>
