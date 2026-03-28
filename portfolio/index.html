@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio – Scrollers AI videa</title>
-  <meta name="description" content="Ukázky AI video kreativ od Scrollers — UGC reklamy, produktová videa a brand kampaně pro e-commerce značky." />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 110'><rect width='110' height='110' rx='28' fill='%230c0c20'/><path d='M73 27C73 14,37 14,37 35C37 51,75 51,75 67C75 88,39 88,39 75' stroke='url(%23g)' stroke-width='10' stroke-linecap='round' fill='none'/><defs><linearGradient id='g' x1='5' y1='5' x2='105' y2='105' gradientUnits='userSpaceOnUse'><stop stop-color='%237c6dfa'/><stop offset='1' stop-color='%232dd4bf'/></linearGradient></defs></svg>" />
+  <title>Portfolio – Upgraide AI videa</title>
+  <meta name="description" content="Ukázky AI video kreativ od Upgraide — UGC reklamy, produktová videa a brand kampaně pro e-commerce značky." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 110'><rect width='110' height='110' rx='22' fill='%230c0c20'/><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='0'><stop stop-color='%23a78bfa'/><stop offset='.5' stop-color='%232dd4bf'/><stop offset='1' stop-color='%23f472b6'/></linearGradient></defs><text x='55' y='76' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='54' text-anchor='middle' fill='url(%23g)'>ai</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -62,7 +62,9 @@
     .ni { display: flex; align-items: center; justify-content: space-between; }
     .logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
     .logo-mark { flex-shrink: 0; width: 34px; height: 34px; }
-    .logo-text { font-size: clamp(18px,1.5vw,22px); font-weight: 900; letter-spacing: -.03em; background: linear-gradient(130deg,#fff 30%,var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .logo-text { font-size: clamp(18px,1.5vw,22px); font-weight: 900; letter-spacing: -.03em; color: #fff; display: inline-block !important; }
+    .logo-ai { background: linear-gradient(90deg,#a78bfa,#7c6dfa,#2dd4bf,#f472b6,#fbbf24,#a78bfa); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: rainbowShift 3s linear infinite; }
+    @keyframes rainbowShift { 0%{background-position:0%} 100%{background-position:200%} }
     .nl { display: flex; align-items: center; gap: 28px; list-style: none; }
     .nl a { color: var(--text-muted); text-decoration: none; font-size: clamp(13px,.95vw,15px); font-weight: 500; transition: color .2s; }
     .nl a:hover { color: var(--text); }
@@ -120,7 +122,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 980px) {
-      .logo-text { display: none; }
+      /* logo-text always visible */
     }
     @media (max-width: 640px) {
       .nl { display: none; }
@@ -136,22 +138,8 @@
 <nav id="nav">
   <div class="container">
     <div class="ni">
-      <a href="index.html" class="logo">
-        <svg class="logo-mark" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="nlg" x1="5" y1="5" x2="105" y2="105" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#d8b4fe"/>
-              <stop offset="0.48" stop-color="#7c6dfa"/>
-              <stop offset="1" stop-color="#2dd4bf"/>
-            </linearGradient>
-          </defs>
-          <rect width="110" height="110" rx="28" fill="#0c0c20"/>
-          <rect width="110" height="110" rx="28" fill="url(#nlg)" fill-opacity="0.09"/>
-          <rect x="0.5" y="0.5" width="109" height="109" rx="27.5" stroke="url(#nlg)" stroke-opacity="0.3" stroke-width="1"/>
-          <path d="M73 27C73 14,37 14,37 35C37 51,75 51,75 67C75 88,39 88,39 75"
-            stroke="url(#nlg)" stroke-width="10" stroke-linecap="round" fill="none"/>
-        </svg>
-        <span class="logo-text">Scrollers</span>
+      <a href="../" class="logo">
+        <span class="logo-text">Upgr<span class="logo-ai">ai</span>de</span>
       </a>
       <ul class="nl">
         <li><a href="index.html#compare">Proč AI</a></li>
@@ -273,7 +261,7 @@
 <footer>
   <div class="container">
     <div class="ft-top">
-      <a href="index.html" class="ft-logo">Scrollers</a>
+      <a href="../" class="ft-logo">Upgraide</a>
       <div class="ft-links">
         <a href="index.html#compare">Proč AI</a>
         <a href="index.html#services">Balíčky</a>
@@ -285,7 +273,7 @@
       </div>
     </div>
     <div class="ft-bot">
-      <span class="ft-copy">© 2026 Scrollers. Všechna práva vyhrazena.</span>
+      <span class="ft-copy">© 2026 Upgraide. Všechna práva vyhrazena.</span>
       <span class="ft-made">Vytvořeno s <span>♥</span> a umělou inteligencí</span>
     </div>
   </div>
